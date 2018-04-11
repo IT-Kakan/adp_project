@@ -5,9 +5,10 @@ import android.content.pm.PackageManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
+import java.lang.Object;
 import com.recyclerush.group5.recyclerush.itemObject;
+import java.util.HashMap;
+import java.util.TreeMap;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        openCameraIfAllowed();
+       // openCameraIfAllowed();
     }
 
     private void openCameraIfAllowed() {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Create two objects, one for snus and one for redbull
     itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
-    itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
+    itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");  
 
     // use functions in the itemobjectclass to retrieve information about each object.
     //String snusname = snus.getName();

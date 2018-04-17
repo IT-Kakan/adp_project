@@ -19,7 +19,6 @@ public class SecondActivity extends Activity{
     TextView text1;
     TextView text2;
     TextView text3;
-
     ConstraintLayout layout;
 
     @Override
@@ -43,6 +42,5 @@ public class SecondActivity extends Activity{
         snack.show();
 
         text3.setText("Material:");
-
     }
 }

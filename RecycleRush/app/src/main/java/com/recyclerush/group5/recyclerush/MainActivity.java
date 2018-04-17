@@ -2,39 +2,27 @@ package com.recyclerush.group5.recyclerush;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.recyclerush.group5.recyclerush.itemObject;
-import com.recyclerush.group5.recyclerush.SecondActivity;
 
 import java.util.HashMap;
-import java.util.Map;
-
 
 public class MainActivity extends AppCompatActivity {
-
-    HashMap<String, itemObject> map = new HashMap<String, itemObject>();
+    HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
     // Create two objects, one for snus and one for redbull
-    itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
-    itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
-
-
+    ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
+    ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         openScanner();
-
     }
 
     private void openScanner() {
@@ -44,13 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void openCameraIfAllowed() {
         PackageManager packageManager = getPackageManager();
-
         if (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
             Intent openCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivity(openCamera);
         }
     }
-
 
     // use functions in the itemobjectclass to retrieve information about each object.
     //String snusname = snus.getName();
@@ -64,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void display(itemObject obj) {
+    private void display(ItemObject obj) {
         Intent displayInfo = new Intent(this, SecondActivity.class);
         displayInfo.putExtra("scanId", obj.getScanId());
         displayInfo.putExtra("name", obj.getName());
@@ -78,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(displayInfo);
     }
 
-
-    private itemObject getScannedItem(String id){
+    private ItemObject getScannedItem(String id){
             return map.get(id);
     }
     

@@ -83,6 +83,44 @@ The team velocity were quite inaccurate this sprint. All the group members finis
 
 Mahshid and Emil experienced pair-programming in our group and it took 4 hours to complete task. Moreover, Johan and Kalayu also partly applied extreme programming agile practices while applying an API for our barcode scanner feature. One positive aspect of this practice was knowledge transfering because we have this chance that one act as a observer and monitored the driver's code in order to collaburate regularly and switched the role at any time. However, we experience some difficulties in time management.
 
+# Sprint 3 Log
+Per sprint, fill out one sprint log section and its subsections.
+
+## Commitment
+List the features/stories that the team committed to finish during the sprint.
+
+## Work Done
+Log what was accomplished, and how.
+Please report on all activities; for example, in addition to coding, planning and design discussion.
+
+Feature | Time estimated | Time spent per team member
+--------|----------------|--------
+*User story estimation*|*7 hours*|*Kalayu: 1 hour, Johan: 1 hour, Mahshid: 1 hour, Tom: 1 hour, Emil: 1 hour, Jesper O: 1 hour, Jesper R: 1 hour*
+*Acceptance test 2*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+
+## Reflections
+Reflect on how the work worked.
+This data will form the basis for your final reflection.
+As the postmortem will be a writeup, it's fine to use shorthand notes, bullet list, and similar.
+Keep within 1000-1500 words.
+
+Discuss any deviations from the sprint commitment.
+
+Reflect on the agile practice practiced:
+
+- Did your experience correspond to or contradict with what literature claims?
+
+    - Analysis of why. Mostly interesting if something unexpected happens, but even
+      if everything runs according to plan, reflecting on the underlying mechanisms
+      can be interesting.
+
+- How did the practices interact?
+  Did they complement or counteract each other?
+
+- How efficient were the practices, given the time they took to use?
+
 # Sprint X Log
 Per sprint, fill out one sprint log section and its subsections.
 

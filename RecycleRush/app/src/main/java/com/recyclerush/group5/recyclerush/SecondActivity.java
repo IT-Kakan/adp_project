@@ -3,6 +3,7 @@ package com.recyclerush.group5.recyclerush;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -10,6 +11,8 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 /**
  * Created by emillundgren on 2018-04-12.
@@ -44,5 +47,20 @@ public class SecondActivity extends Activity{
 
         text3.setText("Material:");
 
+    }
+
+    private void openMaps(double latitude, double longitude, String name) {
+        String uri;
+        if(name == null) {
+            uri = String.format(Locale.ENGLISH, "geo:0,0?q=%f,%f(Recycling+Station)?z=12", latitude, longitude);
+        } else {
+            uri = String.format(Locale.ENGLISH, "geo:0,0?q=%f,%f(%s)?z=12", latitude, longitude, Uri.encode(name));
+        }
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(uri));
+        intent.setPackage("com.google.android.apps.maps");
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 }

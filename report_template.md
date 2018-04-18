@@ -66,11 +66,8 @@ We completed the following user stories
 ## Work done
 Feature | Time estimated | Time spent per team member
 --------|----------------|--------
-*Set up the project environment*|*14 hours*|*Kalayu: 2 hours, Johan: 2 hours, Mahshid: 2 hours, Tom: 2 hours, Emil: 2 hours, Jesper O: 2 hours, Jesper R: 2 hours*
-*Filled the backlog and met with the customer*|*7 hours*|*Kalayu: 1 hour, Johan: 1 hour, Mahshid: 1 hour, Tom: 1 hours, Emil: 1 hour, Jesper O: 1 hour, Jesper R: 1 hour*
-*Initialised the report*|*40 mins*|*Jesper O: 40 mins*
-*Initialised the Android Project*|*20 mins*|*Johan: 20 mins*
-*Set up Travis-CI*|*20 mins*|*Jesper O: 20 mins*
+Acceptance test 1 | 3 hours 30 mins | Kalayu: 30 mins, Johan: 30 mins, Mahshid: 30 mins, Tom: 30 mins, Emil: 30 mins, Jesper O: 30 mins, Jesper R: 30 mins
+Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins
 *ID: 1.*|*3 hours*|*Jesper O: 3 hours*
 *ID: 2.*|*4 hours 20 mins*|*Mahshid: 2 hours, Emil: 2 hours, Jesper R: 1 hour*
 *ID: 3.*|*8 hours 10 mins*|*Kalayu: 3 hours 40 mins , Johan: 4 hours 10 mins, Tom: 20 mins*

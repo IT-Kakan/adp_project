@@ -17,6 +17,7 @@ import com.recyclerush.group5.recyclerush.itemObject;
 import com.recyclerush.group5.recyclerush.SecondActivity;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 
@@ -34,23 +35,12 @@ public class MainActivity extends AppCompatActivity {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         openScanner();
-
     }
 
     private void openScanner() {
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.initiateScan();
     }
-
-    private void openCameraIfAllowed() {
-        PackageManager packageManager = getPackageManager();
-
-        if (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-            Intent openCamera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivity(openCamera);
-        }
-    }
-
 
     // use functions in the itemobjectclass to retrieve information about each object.
     //String snusname = snus.getName();
@@ -90,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                setContentView(R.layout.second_layout);
                 displayHelper(in.getStringExtra("SCAN_RESULT"));
             }
             catch (NullPointerException e){}

@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openScanner() {
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+        scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
         scanIntegrator.initiateScan();
     }
 

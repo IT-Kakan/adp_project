@@ -5,4 +5,5 @@
     <string name="textview3">TextView</string>
     <string name="materialHeader">TextView</string>
     <string name="Material">TextView</string>
+    <string name="buttonTextInput">Button</string>
 </resources>

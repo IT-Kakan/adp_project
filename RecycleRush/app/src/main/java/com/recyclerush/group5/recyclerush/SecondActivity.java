@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,8 @@ public class SecondActivity extends Activity{
     TextView text1;
     TextView text2;
     TextView text3;
+    //TODO set text to this button when the name of the closest recycling place is known
+    Button mapsButton;
 
     ConstraintLayout layout;
 
@@ -33,6 +36,7 @@ public class SecondActivity extends Activity{
         text1=(TextView) findViewById(R.id.textView);
         text2=(TextView) findViewById(R.id.textView2);
         text3=(TextView) findViewById(R.id.textView3);
+        mapsButton = findViewById(R.id.button_open_maps);
 
         text1.setText(getIntent().getExtras().getString("name"));
         text2.setText(getIntent().getExtras().getString("materials"));
@@ -47,6 +51,10 @@ public class SecondActivity extends Activity{
 
         text3.setText("Material:");
 
+    }
+
+    public void openMaps(View view) {
+        // TODO call openMaps using the coordinates and name of nearest recycling place from this method!
     }
 
     private void openMaps(double latitude, double longitude, String name) {

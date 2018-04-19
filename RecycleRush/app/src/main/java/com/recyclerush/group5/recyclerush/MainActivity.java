@@ -34,7 +34,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
-        openScanner();
+
+        Intent userAct = new Intent(this, UserActivity.class);
+
+        startActivity(userAct);
+
+       // openScanner();
     }
 
     private void openScanner() {
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void display(itemObject obj) {
+
         Intent displayInfo = new Intent(this, SecondActivity.class);
         displayInfo.putExtra("scanId", obj.getScanId());
         displayInfo.putExtra("name", obj.getName());

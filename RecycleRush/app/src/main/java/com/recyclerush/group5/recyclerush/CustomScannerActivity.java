@@ -1,7 +1,9 @@
 package com.recyclerush.group5.recyclerush;
 
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
@@ -11,13 +13,12 @@ import com.journeyapps.barcodescanner.DecoratedBarcodeView;
  * This activity has a margin.
  */
 public class CustomScannerActivity extends CaptureActivity {
-    private DecoratedBarcodeView barcodeScannerView;
 
     @Override
     protected DecoratedBarcodeView initializeContent() {
         setContentView(R.layout.custom_barcode_scanner);
 
-        barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);
+        DecoratedBarcodeView barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);
 
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeRight() {
@@ -27,9 +28,9 @@ public class CustomScannerActivity extends CaptureActivity {
 
         });
 
-        Button button = findViewById(R.id.button2);
+        Button enterBarcode = findViewById(R.id.button3);
 
-        button.setOnClickListener(new View.OnClickListener()
+        enterBarcode.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         openScanner();
+        setContentView(R.layout.activity_main);
     }
 
     private void openScanner() {
@@ -45,8 +47,36 @@ public class MainActivity extends AppCompatActivity {
     // use functions in the itemobjectclass to retrieve information about each object.
     //String snusname = snus.getName();
     //String snusID = snus.getScanId();
+    String message = "";
+    public void searchBarcode(View view){
+        EditText usersBarcode = (EditText) findViewById(R.id.editText1);
+            // Toast.makeText(MainActivity.this, usersBarcode.getText().toString(), Toast.LENGTH_SHORT).show();
+        if (usersBarcode.getText().toString().isEmpty()) {
+           // message = "Please enter a barcode";
+            Toast.makeText(MainActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
+        } else {
+            UserBarcode myNumber = new UserBarcode();
+            myNumber.number = usersBarcode.getText().toString();
 
-    private void displayHelper(String scanId) {
+            if (myNumber.isRecylable()) {
+
+                if (myNumber.number.equals("7340131610000")){
+                    display(redbull);
+                    // message = " It is redbull and It is recyclable!";
+                } else if (myNumber.number.equals("7311250004360")){
+                    display(snus);
+                    //message = "It is snus and It is recyclable!";
+                }
+            } else {
+                message = "Sorry, I can't identify this material.";
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+            // Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+  private void displayHelper(String scanId) {
         if (scanId.equals("7340131610000")) {
             display(redbull);
         } else  if (scanId.equals("7311250004360")){

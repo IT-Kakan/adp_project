@@ -22,8 +22,17 @@ public class CustomScannerActivity extends CaptureActivity {
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeRight() {
                 // Here it should change view to the profile
-                Intent userAct = new Intent(CustomScannerActivity.this, UserActivity.class);
-                startActivityForResult(userAct, 100);
+
+
+                String username = (String)getIntent().getStringExtra("name");
+                Integer points =(Integer)getIntent().getIntExtra("points",-1);
+    
+                if(username.equals("unknown")){
+                    Intent userAct = new Intent(CustomScannerActivity.this, UserActivity.class);
+                    startActivityForResult(userAct, 100);
+                }
+                    Intent displayIntent = new Intent(CustomScannerActivity.this, DisplayUser.class);
+                    startActivity(displayIntent);
             }
 
         });

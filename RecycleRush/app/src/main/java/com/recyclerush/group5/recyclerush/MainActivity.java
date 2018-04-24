@@ -21,28 +21,49 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
+
 
 public class MainActivity extends AppCompatActivity {
-
     HashMap<String, itemObject> map = new HashMap<String, itemObject>();
     // Create two objects, one for snus and one for redbull
     itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
     itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
-
-
+    boolean first = true;
+    //map for the uesrs
+    HashMap<String, userClass> userMap = new HashMap<String, userClass>();
+    // The current user of the app, unknown as login-state
+    userClass currentUser = new userClass("unknown");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
+        //start loginscreen, and wait for a loginresult
         openScanner();
         setContentView(R.layout.activity_main);
     }
 
+
     private void openScanner() {
+
+        try{
+            String user = getIntent().getExtras().getString("user");
+            addMember(user);
+            currentUser = getUser(user);
+        }catch(Exception e){
+        }
+
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
+        scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
         scanIntegrator.initiateScan();
-    }
+
+        Intent passData = new Intent(this, CustomScannerActivity.class);
+        passData.putExtra("name", currentUser.getUser());
+        passData.putExtra("points", currentUser.getPoints());
+        startActivity(passData);
+
+        }
 
     // use functions in the itemobjectclass to retrieve information about each object.
     //String snusname = snus.getName();
@@ -85,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void display(itemObject obj) {
+
         Intent displayInfo = new Intent(this, SecondActivity.class);
         displayInfo.putExtra("scanId", obj.getScanId());
         displayInfo.putExtra("name", obj.getName());
@@ -114,5 +136,14 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (NullPointerException e){}
         }
+    }
+    private void addMember(String user){
+        if (getUser(user) == null){
+            //user not in list
+            userMap.put(user, new userClass(user));
+        }
+    }
+    private userClass getUser(String id){
+        return userMap.get(id);
     }
 }

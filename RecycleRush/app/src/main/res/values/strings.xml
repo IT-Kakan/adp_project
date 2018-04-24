@@ -8,6 +8,8 @@
     <string name="editText1">EditText</string>
     <string name="button1">Button</string>
     <string name="search">Search</string>
-
-
+    <string name="buttonTextInput">Button</string>
+    <string name="username">TextView</string>
+    <string name="points">TextView</string>
+    <string name="points_profile">TextView</string>
 </resources>

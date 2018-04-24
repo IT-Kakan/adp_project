@@ -94,7 +94,7 @@ We completed the following user stories
 * ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application (Estimate: 2 pts)
 * ID: 5. 
 * ID: 6.
-* ID: 7.
+* ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it (Estimate: * pts)
 * ID: 8.
 * ID: 9.
 
@@ -112,7 +112,7 @@ Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, 
 *ID: 4.*|*4 hours*|*Kalayu: 4 hours*
 *ID: 5.*|*  hours |*Jesper R: 
 *ID: 6.*|* hours |*Jesper O:
-*ID: 7.*|* hours |*Johan, Mahshid
+*ID: 7.*|* hours |*Johan, *Mahshid: 8 hours*
 *ID: 8.*|* hours |*Emil 
 *ID: 9.*|* hours |*Tom
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*

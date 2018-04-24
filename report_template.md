@@ -84,10 +84,19 @@ The team velocity were quite inaccurate this sprint. All the group members finis
 Mahshid and Emil experienced pair-programming in our group and it took 4 hours to complete task. Moreover, Johan and Kalayu also partly applied extreme programming agile practices while applying an API for our barcode scanner feature. One positive aspect of this practice was knowledge transfering because we have this chance that one act as a observer and monitored the driver's code in order to collaburate regularly and switched the role at any time. However, we experience some difficulties in time management.
 
 # Sprint 3 Log
-Per sprint, fill out one sprint log section and its subsections.
 
 ## Commitment
-List the features/stories that the team committed to finish during the sprint.
+* The group attended the acceptance test and sprint retrospective for the last sprint.
+* We estimated the story points for most of the features in sprint 3's backlog using planning poker.
+
+We completed the following user stories
+
+* ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application (Estimate: 2 pts)
+* ID: 5. 
+* ID: 6.
+* ID: 7.
+* ID: 8.
+* ID: 9.
 
 ## Work Done
 Log what was accomplished, and how.
@@ -99,7 +108,15 @@ Feature | Time estimated | Time spent per team member
 *Acceptance test 2*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-
+Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins
+*ID: 4.*|*4 hours*|*Kalayu: 4 hours*
+*ID: 5.*|*  hours |*Jesper R: 
+*ID: 6.*|* hours |*Jesper O:
+*ID: 7.*|* hours |*Johan, Mahshid
+*ID: 8.*|* hours |*Emil 
+*ID: 9.*|* hours |*Tom
+*Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Wrote report*|*30 mins*|*Kalayu: 30 mins,
 ## Reflections
 Reflect on how the work worked.
 This data will form the basis for your final reflection.

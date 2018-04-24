@@ -21,6 +21,8 @@ import com.recyclerush.group5.recyclerush.SecondActivity;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
 
@@ -54,7 +56,30 @@ public class MainActivity extends AppCompatActivity {
                 openScanner();
             }
         });
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.main, menu);//Menu Resource, Menu
+            return true;
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+
+            switch (item.getItemId()) {
+                case R.id.action_camera:
+                    openScanner();
+                   // IntentIntegrator scanIntegrator = new IntentIntegrator(MainActivity.this);
+                    // scanIntegrator.initiateScan();
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        }
+
 
 
     private void openScanner() {

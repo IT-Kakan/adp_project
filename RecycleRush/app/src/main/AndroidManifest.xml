@@ -34,11 +34,11 @@
 
         <activity android:name=".SecondActivity" />
 
+        <activity android:name=".UserActivity" />
+
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
-
-        <activity android:name=".UserActivity"></activity>
     </application>
 
 </manifest>

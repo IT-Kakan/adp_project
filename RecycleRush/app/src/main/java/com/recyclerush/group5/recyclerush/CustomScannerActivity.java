@@ -1,9 +1,8 @@
 package com.recyclerush.group5.recyclerush;
 
-import android.support.design.widget.FloatingActionButton;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
@@ -23,7 +22,8 @@ public class CustomScannerActivity extends CaptureActivity {
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeRight() {
                 // Here it should change view to the profile
-                Toast.makeText(getApplicationContext(), "STRING MESSAGE", Toast.LENGTH_LONG).show();
+                Intent userAct = new Intent(CustomScannerActivity.this, UserActivity.class);
+                startActivityForResult(userAct, 100);
             }
 
         });

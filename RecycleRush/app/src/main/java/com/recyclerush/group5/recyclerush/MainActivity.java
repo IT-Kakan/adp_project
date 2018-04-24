@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         //start loginscreen, and wait for a loginresult
 
      openScanner();
-     //   Intent userAct = new Intent(this, UserActivity.class);
-       // startActivityForResult(userAct, 100);
 
     }
 

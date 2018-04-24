@@ -4,8 +4,9 @@
 
     <!-- Since barcodes can be entered manually, the camera is not required -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -21,8 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity">
-        </activity>
+
         <activity
             android:name=".CustomScannerActivity"
             android:screenOrientation="fullSensor"
@@ -31,9 +31,14 @@
             android:windowSoftInputMode="stateAlwaysHidden">
 
         </activity>
+
+        <activity android:name=".SecondActivity" />
+
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
+
+        <activity android:name=".UserActivity"></activity>
     </application>
 
 </manifest>

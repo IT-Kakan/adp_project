@@ -20,22 +20,33 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
+
 
 public class MainActivity extends AppCompatActivity {
-
     HashMap<String, itemObject> map = new HashMap<String, itemObject>();
     // Create two objects, one for snus and one for redbull
     itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
     itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
 
-
+    //map for the uesrs
+    HashMap<String, userClass> userMap = new HashMap<String, userClass>();
+    // The current user of the app, unknown as login-state
+    userClass currentUser = new userClass("unknown");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
-        openScanner();
+
+        //start loginscreen, and wait for a loginresult
+
+     openScanner();
+     //   Intent userAct = new Intent(this, UserActivity.class);
+       // startActivityForResult(userAct, 100);
+
     }
+
 
     private void openScanner() {
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
@@ -56,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void display(itemObject obj) {
+
         Intent displayInfo = new Intent(this, SecondActivity.class);
         displayInfo.putExtra("scanId", obj.getScanId());
         displayInfo.putExtra("name", obj.getName());
@@ -85,5 +97,23 @@ public class MainActivity extends AppCompatActivity {
             }
             catch (NullPointerException e){}
         }
+
+        if(requestCode == 100){
+
+                //if someone logged in, set that user as current
+            String user = in.getStringExtra("name");
+            addMember(user);
+            currentUser = getUser(user);
+                openScanner();
+        }
+    }
+    private void addMember(String user){
+        if (getUser(user) == null){
+            //user not in list
+            userMap.put(user, new userClass(user));
+        }
+    }
+    private userClass getUser(String id){
+        return userMap.get(id);
     }
 }

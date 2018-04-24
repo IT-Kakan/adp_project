@@ -14,15 +14,23 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    // Create two objects, one for snus and one for redbull
-    ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
-    ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
+        initDummyObjects();
         openScanner();
+    }
+
+    private void initDummyObjects(){
+        // Create two objects, one for snus and one for redbull
+        ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
+        map.put(redbull.getScanId(),redbull);
+        ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
+        map.put(snus.getScanId(),snus);
+        ItemObject toms = new ItemObject("Toms", "5901234123457", true, "plastic, paper");
+        map.put(toms.getScanId(),toms);
     }
 
     private void openScanner() {
@@ -37,18 +45,13 @@ public class MainActivity extends AppCompatActivity {
             startActivity(openCamera);
         }
     }
-
-    // use functions in the itemobjectclass to retrieve information about each object.
-    //String snusname = snus.getName();
-    //String snusID = snus.getScanId();
-
-    private void displayHelper(String scanId) {
+  /*  private void displayHelper(String scanId) {
         if (scanId.equals("7340131610000")) {
             display(redbull);
         } else  if (scanId.equals("7311250004360")){
             display(snus);
         }
-    }
+    }*/
 
     private void display(ItemObject obj) {
         Intent displayInfo = new Intent(this, SecondActivity.class);
@@ -64,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(displayInfo);
     }
 
-    private ItemObject getScannedItem(String id){
-            return map.get(id);
+    private ItemObject getItem(String id){
+        return map.get(id);
     }
     
     @Override
@@ -76,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
                 setContentView(R.layout.second_layout);
-                displayHelper(in.getStringExtra("SCAN_RESULT"));
+//                displayHelper(in.getStringExtra("SCAN_RESULT"));
+                display(getItem(in.getStringExtra("SCAN_RESULT")));
+
             }
             catch (NullPointerException e){}
         }

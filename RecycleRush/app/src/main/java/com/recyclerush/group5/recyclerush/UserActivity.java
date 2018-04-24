@@ -1,6 +1,7 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,6 @@ import java.util.HashMap;
 public class UserActivity extends Activity {
 
     EditText eText;
-    HashMap<String, userClass> map = new HashMap<String, userClass>();
     String userLogin;
     Button loginButton;
     @Override
@@ -33,30 +33,16 @@ public class UserActivity extends Activity {
                 String userLogin = eText.getText().toString();
 
                if(userLogin.length() > 2){
-                   userClass user = addMember(userLogin);
-                  // finish();
+                 //  userClass user = addMember(userLogin);
+                   Intent intent = new Intent();
+                   intent.putExtra("name", userLogin);
+                   setResult(100, intent);
+                   finish();
 
-
-                   // TOOODOOO
-                   //openScanner();
-                   //start camera with the user.
               }
               //else do nothing
             }
 
         });
     }
-
-    private userClass addMember(String user){
-        if (getUser(user) == null){
-            //user not in list
-            map.put(user, new userClass(user));
-        }
-            return getUser(user);
-    }
-
-    private userClass getUser(String id){
-        return map.get(id);
-    }
-
 }

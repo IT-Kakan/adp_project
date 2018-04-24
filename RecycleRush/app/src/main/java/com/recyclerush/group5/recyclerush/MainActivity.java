@@ -68,12 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
+        scanIntegrator.addExtra("name", currentUser.getUser());
+        scanIntegrator.addExtra("points", currentUser.getPoints());
         scanIntegrator.initiateScan();
-
-        Intent passData = new Intent(this, CustomScannerActivity.class);
-        passData.putExtra("name", currentUser.getUser());
-        passData.putExtra("points", currentUser.getPoints());
-        startActivity(passData);
 
         }
 

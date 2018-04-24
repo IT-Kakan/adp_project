@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -42,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
         //start loginscreen, and wait for a loginresult
         openScanner();
         setContentView(R.layout.activity_main);
+
+
+        Button backButton = findViewById(R.id.backbuttonmanual);
+
+        backButton.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                openScanner();
+            }
+        });
     }
 
 

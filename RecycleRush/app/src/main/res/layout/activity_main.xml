@@ -23,10 +23,21 @@
         android:id="@+id/button1"
         android:layout_width="107dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="180dp"
         android:onClick="searchBarcode"
         android:text="@string/search"
         app:layout_constraintStart_toStartOf="@+id/editText1"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backbuttonmanual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

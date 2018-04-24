@@ -117,7 +117,7 @@ Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, 
 *ID: 9.*|* hours |*Tom
 *ID: 10.*|* 6 hours |*Jesper R, Emil:
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Wrote report*|*100 mins*|*Kalayu: 30 mins,  Jesper O: 30 mins, Jesper: 30 mins, Johan: 10 mins
+*Wrote report*|*100 mins*|*Kalayu: 30 mins,  Jesper O: 30 mins, Jesper: 30 mins, Johan: 10 mins, Mahshid: 10 mins
 
 
 ## Reflections

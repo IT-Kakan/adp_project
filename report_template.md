@@ -92,12 +92,12 @@ Mahshid and Emil experienced pair-programming in our group and it took 4 hours t
 We completed the following user stories
 
 * ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application (Estimate: 2 pts)
-* ID: 5. 
+* ID: 5. Create local users
 * ID: 6.
 * ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it (Estimate: * pts)
 * ID: 8.
 * ID: 9.
-
+* ID: 10. Display user information
 ## Work Done
 Log what was accomplished, and how.
 Please report on all activities; for example, in addition to coding, planning and design discussion.
@@ -110,13 +110,14 @@ Feature | Time estimated | Time spent per team member
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins
 *ID: 4.*|*4 hours*|*Kalayu: 4 hours*
-*ID: 5.*|*  hours |*Jesper R: 
+*ID: 5.*|* 7 hours |*Jesper R: 
 *ID: 6.*|* hours |*Jesper O:
 *ID: 7.*|* hours |*Johan, *Mahshid: 8 hours*
 *ID: 8.*|* hours |*Emil 
 *ID: 9.*|* hours |*Tom
+*ID: 10.*|* 6 hours |*Jesper R, Emil: 
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Wrote report*|*30 mins*|*Kalayu: 30 mins,
+*Wrote report*|*30 mins*|*Kalayu: 30 mins,  Jesper: 30 mins
 ## Reflections
 Reflect on how the work worked.
 This data will form the basis for your final reflection.
@@ -126,6 +127,8 @@ Keep within 1000-1500 words.
 Discuss any deviations from the sprint commitment.
 
 Reflect on the agile practice practiced:
+
+Jesper and Emil experienced pair-programming in our group, this was necessary since our tasks were closely related. We think it was more effective to do it as a pair, since both knew what had been done on each part. 
 
 - Did your experience correspond to or contradict with what literature claims?
 

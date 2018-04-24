@@ -112,10 +112,7 @@ public class MainActivity extends AppCompatActivity {
             userMap.put(user, new userClass(user));
         }
     }
-
     private userClass getUser(String id){
         return userMap.get(id);
     }
-
-
 }

@@ -19,9 +19,6 @@ public class DisplayUser extends AppCompatActivity {
         setContentView(R.layout.activity_display_user);
 
 
-      //  uText= findViewById(R.id.usernametext);
-     //   pText= findViewById(R.id.pointtext);
-
 
     }
 }

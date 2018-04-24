@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import com.recyclerush.group5.recyclerush.MainActivity;
@@ -36,9 +37,8 @@ public class UserActivity extends Activity {
                  //  userClass user = addMember(userLogin);
                    Intent intent = new Intent();
                    intent.putExtra("name", userLogin);
-                   setResult(100, intent);
+                   setResult(RESULT_OK, intent);
                    finish();
-
               }
               //else do nothing
             }

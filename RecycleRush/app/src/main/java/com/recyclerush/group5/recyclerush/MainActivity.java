@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     // Create two objects, one for snus and one for redbull
     itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
     itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
-
+    boolean first = true;
     //map for the uesrs
     HashMap<String, userClass> userMap = new HashMap<String, userClass>();
     // The current user of the app, unknown as login-state
@@ -38,23 +38,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
-
         //start loginscreen, and wait for a loginresult
-
-     openScanner();
-
+        openScanner();
     }
 
 
     private void openScanner() {
+
+        try{
+            String user = getIntent().getExtras().getString("user");
+            addMember(user);
+            currentUser = getUser(user);
+        }catch(Exception e){
+        }
+
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-
-
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
-        scanIntegrator.addExtra("user", currentUser.getUser());
-        scanIntegrator.addExtra("points",currentUser.getPoints());
         scanIntegrator.initiateScan();
-    }
+
+        Intent passData = new Intent(this, CustomScannerActivity.class);
+        passData.putExtra("name", currentUser.getUser());
+        passData.putExtra("points", currentUser.getPoints());
+        startActivity(passData);
+
+        }
 
     // use functions in the itemobjectclass to retrieve information about each object.
     //String snusname = snus.getName();
@@ -98,15 +105,6 @@ public class MainActivity extends AppCompatActivity {
                 displayHelper(in.getStringExtra("SCAN_RESULT"));
             }
             catch (NullPointerException e){}
-        }
-
-        if(requestCode == 100){
-
-                //if someone logged in, set that user as current
-            String user = in.getStringExtra("name");
-            addMember(user);
-            currentUser = getUser(user);
-                openScanner();
         }
     }
     private void addMember(String user){

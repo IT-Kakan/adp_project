@@ -6,4 +6,7 @@
     <string name="materialHeader">TextView</string>
     <string name="Material">TextView</string>
     <string name="buttonTextInput">Button</string>
+    <string name="username">TextView</string>
+    <string name="points">TextView</string>
+    <string name="points_profile">TextView</string>
 </resources>

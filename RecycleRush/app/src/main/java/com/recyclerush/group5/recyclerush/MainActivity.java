@@ -24,21 +24,22 @@ import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE
 
 
 public class MainActivity extends AppCompatActivity {
-
-    userClass currentUser;
-
     HashMap<String, itemObject> map = new HashMap<String, itemObject>();
     // Create two objects, one for snus and one for redbull
     itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
     itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
 
+    //map for the uesrs
     HashMap<String, userClass> userMap = new HashMap<String, userClass>();
+    // The current user of the app, unknown as login-state
+    userClass currentUser = new userClass("unknown");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
 
+        //start loginscreen, and wait for a loginresult
         Intent userAct = new Intent(this, UserActivity.class);
         startActivityForResult(userAct, 100);
 

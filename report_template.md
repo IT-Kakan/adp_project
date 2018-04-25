@@ -89,7 +89,7 @@ Mahshid and Emil experienced pair-programming in our group and it took 4 hours t
 * The group attended the acceptance test and sprint retrospective for the last sprint.
 * We estimated the story points for most of the features in sprint 3's backlog using planning poker.
 
-We committed the following user stories
+We committed to the following user stories
 
 * ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application. 
 * ID: 5. Create local users.
@@ -111,23 +111,23 @@ Feature | Time estimated | Time spent per team member
 *Acceptance test 2*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins
+*Planning*|*6 hours 10 mins*|*Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins*
 *ID: 4.*|*6 hours*|*Kalayu: 6 hours*
 *ID: 5.*|*7 hours*|*Jesper R:7 hours*
 *ID: 6*.| *7 hours* | *Jesper O: 7 hours*
-*ID: 7.*| *12 hours* |Johan: 4 hours, *Mahshid: 8 hours*
-*ID: 8.*|*hours* |*Emil*
+*ID: 7.*| *12 hours* |*Johan: 4 hours, Mahshid: 8 hours*
+*ID: 8.*|*5 hours* |*Emil: 5 hours*
 *ID: 9.*|*3 hours* |*Tom: 3 hours*
 *ID: 10.*|*6 hours* |*Jesper R:, Emil:*
 *Refactoring*|*2 hours*|*Tom: 2 hours*
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
-*Wrote report*|*2 hours 10 mins*|*Kalayu: 30 mins,  Jesper O: 50 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins*
+*Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins*
 
 
 ## Reflections
 Jesper and Emil experienced pair-programming in our group, this was necessary since their tasks were closely related. We think it was more effective to do it as a pair, since both knew what had been done on each part.
 
-When planning the sprint, we realised that we wanted to practice test-first. It sounds quite promising in theory, but we wanted some more practical experience. This is what ID 6 was about and as can be seen from the low estimate, we thought it should be quite straightforward to set up test suites for Travis to execute. Indeed, we understand this as one of the main purposes for the software. In spite of this, we were unable to complete the task within the allocated time. We were able to find neither sufficient documentation or tutorials and many of the solutions suggested on the web fell short. From what we gather, we must execute steps that the Travis team claim "are not fully supported by Travis CI Android builder." While it simply could be that we're missing something obvious, we never-the-less feel that we have not got enough instruction in how to use Travus, despite it being mandatory in the course.
+When planning the sprint, we realised that we wanted to practice test-first. It sounds quite promising in theory, but we wanted some more practical experience. This is what ID 6 was about and as can be seen from the low estimate, we thought it should be quite straightforward to set up test suites for Travis to execute. Indeed, we understand this as one of the main purposes for the software. In spite of this, we were unable to complete the task within the allocated time. We were able to find neither sufficient documentation or tutorials and many of the solutions suggested on the web fell short. From what we gather, we must execute steps that the Travis team claim "are not fully supported by Travis CI Android builder." While it simply could be that we're missing something obvious, we never-the-less feel that we have not got enough instruction in how to use Travis, despite it being mandatory in the course.
 
 Early in the sprint, we realised that we have difficulties with writing the report. The previous hand-ins have been completed on the final day, which results in us not properly reviewing the document. This became apparent with the report for sprint 2, where we after submission deadline detected errors thought to arise from text integration problems. As other issues have been more pressing this sprint, we have not reflected much on how to address this issue. While our process likely can be improved, it also feels like the current setup (at least partially) works against us. At least when compared to working at a company, our work schedule is quite ad-hoc. This makes time tracking difficult, especially since we are supposed to report on each activity. In addition, we read different courses, which results in us being split up and everyone has to keep track of their own time, what practices they used and their reflection of these. Naturally, this makes it difficult to synthesise the report. Finally, we feel that there is very little motivation for writing the report. It is administrative overhead and often feels like a chore that provide no real benefit.
 

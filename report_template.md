@@ -89,15 +89,19 @@ Mahshid and Emil experienced pair-programming in our group and it took 4 hours t
 * The group attended the acceptance test and sprint retrospective for the last sprint.
 * We estimated the story points for most of the features in sprint 3's backlog using planning poker.
 
-We completed the following user stories
+We committed the following user stories
 
 * ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application. 
 * ID: 5. Create local users.
-* ID: 6. 
+* ID: 6. Configure the test-environment, and write a sample test.
 * ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it. 
 * ID: 8. As a user I want to navigate through the app so that I can view different views.
-* ID: 9. 
+* ID: 9. fix scanning of barcode.
 * ID: 10. Display user information.
+
+We failed to complete the following user stories
+
+* ID: 6. 
 
 ## Work Done
 
@@ -109,33 +113,19 @@ Feature | Time estimated | Time spent per team member
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins
 *ID: 4.*|*6 hours*|*Kalayu: 6 hours*
-*ID: 5.*|*7 hours* |*Jesper R:7 hours*
-*ID: 6*| *7 hours* | *Jesper O: 7 hours*
-*ID: 7.*| *12 hours* |*Johan: 4 hours, *Mahshid: 8 hours*
-*ID: 8.*|*hours |*Emil
-*ID: 9.*|*3 hours |Tom: 3 hours
-*ID: 10.*|* 6 hours |*Jesper R, Emil:
-*Refactoring*|*2 hours* |*Tom: 2 hours*
+*ID: 5.*|*7 hours*|*Jesper R:7 hours*
+*ID: 6*.| *7 hours* | *Jesper O: 7 hours*
+*ID: 7.*| *12 hours* |Johan: 4 hours, *Mahshid: 8 hours*
+*ID: 8.*|*hours* |*Emil*
+*ID: 9.*|*3 hours* |*Tom: 3 hours*
+*ID: 10.*|*6 hours* |*Jesper R:, Emil:*
+*Refactoring*|*2 hours*|*Tom: 2 hours*
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
 *Wrote report*|*2 hours 10 mins*|*Kalayu: 30 mins,  Jesper O: 50 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins*
 
 
 ## Reflections
-
-Reflect on the agile practice practiced:
-
 Jesper and Emil experienced pair-programming in our group, this was necessary since their tasks were closely related. We think it was more effective to do it as a pair, since both knew what had been done on each part.
-
-- Did your experience correspond to or contradict with what literature claims?
-
-    - Analysis of why. Mostly interesting if something unexpected happens, but even
-      if everything runs according to plan, reflecting on the underlying mechanisms
-      can be interesting.
-
-- How did the practices interact?
-  Did they complement or counteract each other?
-
-- How efficient were the practices, given the time they took to use?
 
 When planning the sprint, we realised that we wanted to practice test-first. It sounds quite promising in theory, but we wanted some more practical experience. This is what ID 6 was about and as can be seen from the low estimate, we thought it should be quite straightforward to set up test suites for Travis to execute. Indeed, we understand this as one of the main purposes for the software. In spite of this, we were unable to complete the task within the allocated time. We were able to find neither sufficient documentation or tutorials and many of the solutions suggested on the web fell short. From what we gather, we must execute steps that the Travis team claim "are not fully supported by Travis CI Android builder." While it simply could be that we're missing something obvious, we never-the-less feel that we have not got enough instruction in how to use Travus, despite it being mandatory in the course.
 

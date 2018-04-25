@@ -113,17 +113,18 @@ Planning | 6 hours 10 mins | Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, 
 *ID: 6*| *7 hours* | *Jesper O: 7 hours*
 *ID: 7.*| 12 hours |Johan: 4 hours, *Mahshid: 8 hours*
 *ID: 8.*|* hours |*Emil
-*ID: 9.*|* hours |*Tom
+*ID: 9.*|3 hours |Tom: 3 hours
 *ID: 10.*|* 6 hours |*Jesper R, Emil:
-*Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Wrote report*|*2 hours 10 mins*|*Kalayu: 30 mins,  Jesper O: 50 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins*
+*Refactoring*|* 2 hours |*Tom: 2 hours
+*Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
+*Wrote report*|*2 hours 10 mins*|*Kalayu: 30 mins,  Jesper O: 50 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins*
 
 
 ## Reflections
 
 Reflect on the agile practice practiced:
 
-Jesper and Emil experienced pair-programming in our group, this was necessary since our tasks were closely related. We think it was more effective to do it as a pair, since both knew what had been done on each part.
+Jesper and Emil experienced pair-programming in our group, this was necessary since their tasks were closely related. We think it was more effective to do it as a pair, since both knew what had been done on each part.
 
 - Did your experience correspond to or contradict with what literature claims?
 

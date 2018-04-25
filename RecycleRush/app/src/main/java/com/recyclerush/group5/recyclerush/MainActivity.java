@@ -1,10 +1,6 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,23 +11,15 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.recyclerush.group5.recyclerush.itemObject;
-import com.recyclerush.group5.recyclerush.SecondActivity;
 
 import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
+
 import android.view.Menu;
 import android.view.MenuItem;
 
-import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
-
 
 public class MainActivity extends AppCompatActivity {
-    HashMap<String, itemObject> map = new HashMap<String, itemObject>();
-    // Create two objects, one for snus and one for redbull
-    itemObject redbull = new itemObject("Redbull","7340131610000", true, "metal" );
-    itemObject snus = new itemObject("Snus", "7311250004360", true, "plastic, paper");
+    HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
     boolean first = true;
     //map for the uesrs
     HashMap<String, userClass> userMap = new HashMap<String, userClass>();
@@ -43,12 +31,11 @@ public class MainActivity extends AppCompatActivity {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
+        initDummyObjects();
         openScanner();
         setContentView(R.layout.activity_main);
 
-
         Button backButton = findViewById(R.id.backbuttonmanual);
-
         backButton.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
@@ -56,7 +43,16 @@ public class MainActivity extends AppCompatActivity {
                 openScanner();
             }
         });
+    }
 
+
+    private void initDummyObjects(){
+        ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
+        map.put(redbull.getScanId(), redbull);
+        ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
+        map.put(snus.getScanId(), snus);
+        ItemObject tom = new ItemObject("Tom", "5901234123457", true, "paper");
+        map.put(tom.getScanId(), tom);
     }
 
     @Override
@@ -110,36 +106,25 @@ public class MainActivity extends AppCompatActivity {
            // message = "Please enter a barcode";
             Toast.makeText(MainActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
         } else {
-            UserBarcode myNumber = new UserBarcode();
-            myNumber.number = usersBarcode.getText().toString();
-
-            if (myNumber.isRecylable()) {
-
-                if (myNumber.number.equals("7340131610000")){
-                    display(redbull);
-                    // message = " It is redbull and It is recyclable!";
-                } else if (myNumber.number.equals("7311250004360")){
-                    display(snus);
-                    //message = "It is snus and It is recyclable!";
-                }
-            } else {
-                message = "Sorry, I can't identify this material.";
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-            }
-            // Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            display(usersBarcode.getText().toString());
         }
 
     }
-
-  private void displayHelper(String scanId) {
+/*
+    private void displayHelper(String scanId) {
         if (scanId.equals("7340131610000")) {
             display(redbull);
         } else  if (scanId.equals("7311250004360")){
             display(snus);
         }
-    }
+    }*/
 
-    private void display(itemObject obj) {
+    private void display(ItemObject obj) {
+        if(obj==null){
+            String message = "Barcode not found.";
+            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            return;
+        }
 
         Intent displayInfo = new Intent(this, SecondActivity.class);
         displayInfo.putExtra("scanId", obj.getScanId());
@@ -154,9 +139,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(displayInfo);
     }
 
+    private void display(String barcode){
+        display(getScannedItem(barcode));
+    }
 
-    private itemObject getScannedItem(String id){
-            return map.get(id);
+    private ItemObject getScannedItem(String id){
+        return map.get(id);
     }
     
     @Override
@@ -166,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                displayHelper(in.getStringExtra("SCAN_RESULT"));
+                display(in.getStringExtra("SCAN_RESULT"));
             }
             catch (NullPointerException e){}
         }

@@ -4,16 +4,16 @@ package com.recyclerush.group5.recyclerush;
  * Created by Jeppe on 2018-04-10.
  */
 
-public class itemObject {
+public class ItemObject {
     String name;
     String scanId;
-    Boolean recycleAble ;
+    Boolean recycleable;
     String materials;
 
-    public itemObject(String name, String scanId, Boolean recycleAble, String materials){
+    public ItemObject(String name, String scanId, Boolean recycleable, String materials){
         this.name = name;
         this.scanId = scanId;
-        this.recycleAble = recycleAble;
+        this.recycleable = recycleable;
         this.materials = materials;
     }
 
@@ -24,7 +24,7 @@ public class itemObject {
         return scanId;
     }
     public Boolean isRecycleable(){
-        return recycleAble;
+        return recycleable;
     }
     public String getMaterials(){
         return materials;

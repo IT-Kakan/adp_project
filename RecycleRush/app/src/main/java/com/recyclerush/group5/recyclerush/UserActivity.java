@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 
@@ -26,6 +27,15 @@ public class UserActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
         eText= findViewById(R.id.editText);
+
+        View userView = this.findViewById(android.R.id.content);
+
+        userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeLeft () {
+                Intent backToMain = new Intent(UserActivity.this, MainActivity.class);
+                startActivity(backToMain);
+            }
+        });
 
         loginButton = findViewById(R.id.button3);
 

@@ -13,4 +13,5 @@
     <string name="points">TextView</string>
     <string name="points_profile">TextView</string>
     <string name="userprofilepicture">UserProfilePicture</string>
+    <string name="usericon">UserIcon</string>
 </resources>

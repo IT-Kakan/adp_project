@@ -33,7 +33,7 @@ public class UserActivity extends Activity {
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft () {
                 Intent backToMain = new Intent(UserActivity.this, MainActivity.class);
-                backToMain.putExtra("name", "something");
+                //backToMain.putExtra("name", "something");
                 setResult(RESULT_OK, backToMain);
                 //startActivity(backToMain);
                 finish();

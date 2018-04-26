@@ -38,13 +38,8 @@ public class CustomScannerActivity extends CaptureActivity {
                     Intent userAct = new Intent(CustomScannerActivity.this, UserActivity.class);
                     startActivityForResult(userAct, 100);
                 } else {
-                    setContentView(R.layout.activity_display_user);
-
-                    text1= findViewById(R.id.points_profile);
-                    text2= findViewById(R.id.username_profile);
-
-                    text1.setText(points.toString());
-                    text2.setText(username);
+                    Intent startDisplayUser  = new Intent (CustomScannerActivity.this, DisplayUser.class);
+                    startActivity(startDisplayUser);
                 }
             }
 

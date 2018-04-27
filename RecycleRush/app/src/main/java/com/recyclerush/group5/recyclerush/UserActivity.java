@@ -78,12 +78,12 @@ public class UserActivity extends Activity {
             } else {
                 // Sign in failed
                 if (response == null) {
-                    //TODO handle
+                    Log.i(TAG, "No response");
                     return;
                 }
 
                 if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                    //TODO handle
+                    Log.i(TAG, "No network connection: " + response.getError());
                     return;
                 }
 

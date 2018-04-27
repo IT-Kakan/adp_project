@@ -32,7 +32,7 @@ public class DisplayUser extends AppCompatActivity {
 
     }
 
-    public void onClick(View v) {
+    public void logOut(View v) {
         AuthUI.getInstance()
                 .signOut(this)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

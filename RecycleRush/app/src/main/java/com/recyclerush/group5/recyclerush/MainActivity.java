@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
         initDummyObjects();
-        openScanner();
+        //openScanner();
+        openUserActivity();
         setContentView(R.layout.activity_main);
 
         Button backButton = findViewById(R.id.backbuttonmanual);
@@ -43,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
                 openScanner();
             }
         });
+    }
+
+    private void openUserActivity() {
+        Intent intent = new Intent(this, UserActivity.class);
+        startActivity(intent);
     }
 
 

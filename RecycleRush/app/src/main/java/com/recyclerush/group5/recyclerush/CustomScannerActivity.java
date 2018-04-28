@@ -39,6 +39,8 @@ public class CustomScannerActivity extends CaptureActivity {
                     startActivityForResult(userAct, 100);
                 } else {
                     Intent startDisplayUser  = new Intent (CustomScannerActivity.this, DisplayUser.class);
+                    startDisplayUser.putExtra("points", points);
+                    startDisplayUser.putExtra("username", username);
                     startActivity(startDisplayUser);
                 }
             }

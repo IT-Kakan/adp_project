@@ -14,4 +14,5 @@
     <string name="points_profile">TextView</string>
     <string name="userprofilepicture">UserProfilePicture</string>
     <string name="usericon">UserIcon</string>
+    <string name="full_oak">full_oak</string>
 </resources>

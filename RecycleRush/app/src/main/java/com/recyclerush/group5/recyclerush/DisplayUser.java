@@ -13,8 +13,8 @@ import org.w3c.dom.Text;
 public class DisplayUser extends AppCompatActivity {
 
 
-    TextView uText;
-    TextView pText;
+    TextView pointsText;
+    TextView usernameText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,16 @@ public class DisplayUser extends AppCompatActivity {
         setContentView(R.layout.activity_display_user);
 
         View userView = this.findViewById(android.R.id.content);
+
+
+        String username = getIntent().getStringExtra("username");
+        Integer points = getIntent().getIntExtra("points",-1);
+
+        pointsText= findViewById(R.id.points_profile);
+        usernameText= findViewById(R.id.username_profile);
+
+        pointsText.setText(points.toString());
+        usernameText.setText(username);
 
 
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {

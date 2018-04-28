@@ -10,9 +10,9 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="0dp"
-        android:layout_height="235dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_width="383dp"
+        android:layout_height="248dp"
+        android:background="@drawable/gradientposter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,13 +21,14 @@
             android:id="@+id/username_profile"
             android:layout_width="274dp"
             android:layout_height="66dp"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="144dp"
             android:text="@string/username"
             android:textAlignment="center"
             android:textColor="@color/cardview_light_background"
             android:textSize="40sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread_inside" />
@@ -48,8 +49,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="268dp"
-            android:layout_height="0dp"
+            android:layout_width="279dp"
+            android:layout_height="111dp"
             android:layout_marginBottom="56dp"
             android:layout_marginTop="40dp"
             android:contentDescription="@string/usericon"
@@ -63,13 +64,14 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="405dp"
+        android:layout_width="313dp"
+        android:layout_height="420dp"
         android:layout_marginEnd="60dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="196dp"
         android:contentDescription="@string/full_oak"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/full_oak" />

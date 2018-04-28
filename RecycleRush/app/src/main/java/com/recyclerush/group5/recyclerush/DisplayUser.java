@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ public class DisplayUser extends AppCompatActivity {
 
     TextView pointsText;
     TextView usernameText;
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,19 @@ public class DisplayUser extends AppCompatActivity {
         pointsText.setText(points.toString());
         usernameText.setText(username);
 
+        image = findViewById(R.id.imageView2);
+
+        if (points < 100) {
+            image.setImageResource(R.drawable.first_stage);
+        } else if (points < 200) {
+            image.setImageResource(R.drawable.second_stage);
+        } else if (points < 300) {
+            image.setImageResource(R.drawable.third_stage);
+        } else if (points < 400) {
+            image.setImageResource(R.drawable.fourth_stage);
+        } else {
+            image.setImageResource(R.drawable.full_oak);
+        }
 
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft () {

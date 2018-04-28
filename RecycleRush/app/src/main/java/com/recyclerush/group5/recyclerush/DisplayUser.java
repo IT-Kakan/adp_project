@@ -33,20 +33,24 @@ public class DisplayUser extends AppCompatActivity {
         pointsText= findViewById(R.id.points_profile);
         usernameText= findViewById(R.id.username_profile);
 
-        pointsText.setText(points.toString());
         usernameText.setText(username);
 
         image = findViewById(R.id.imageView2);
 
         if (points < 100) {
+            pointsText.setText(points.toString() + "/100");
             image.setImageResource(R.drawable.first_stage);
         } else if (points < 200) {
+            pointsText.setText(points.toString() + "/200");
             image.setImageResource(R.drawable.second_stage);
         } else if (points < 300) {
+            pointsText.setText(points.toString() + "/300");
             image.setImageResource(R.drawable.third_stage);
         } else if (points < 400) {
+            pointsText.setText(points.toString() + "/400");
             image.setImageResource(R.drawable.fourth_stage);
         } else {
+            pointsText.setText(points.toString());
             image.setImageResource(R.drawable.full_oak);
         }
 

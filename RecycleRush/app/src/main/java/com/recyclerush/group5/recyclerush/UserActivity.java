@@ -2,23 +2,12 @@ package com.recyclerush.group5.recyclerush;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
-
-
-import com.recyclerush.group5.recyclerush.MainActivity;
-import com.recyclerush.group5.recyclerush.userClass;
-
-import java.util.HashMap;
 
 public class UserActivity extends Activity {
-
     EditText eText;
     String userLogin;
     Button loginButton;
@@ -47,7 +36,7 @@ public class UserActivity extends Activity {
                 String userLogin = eText.getText().toString();
 
                if(userLogin.length() > 2){
-                 //  userClass user = addMember(userLogin);
+                 //  User user = addMember(userLogin);
                    Intent intent = new Intent();
                    intent.putExtra("name", userLogin);
                    setResult(RESULT_OK, intent);

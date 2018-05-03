@@ -15,4 +15,7 @@
     <string name="userprofilepicture">UserProfilePicture</string>
     <string name="usericon">UserIcon</string>
     <string name="full_oak">full_oak</string>
+    <string name="UserName">name</string>
+    <string name="Score">score</string>
+    <string name="Place">place</string>
 </resources>

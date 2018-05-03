@@ -26,9 +26,8 @@ public class DisplayUser extends AppCompatActivity {
 
         View userView = this.findViewById(android.R.id.content);
 
-
         String username = getIntent().getStringExtra("username");
-        Integer points = getIntent().getIntExtra("points",-1);
+        Integer points = getIntent().getIntExtra("score",-1);
 
         pointsText= findViewById(R.id.points_profile);
         usernameText= findViewById(R.id.username_profile);
@@ -64,5 +63,15 @@ public class DisplayUser extends AppCompatActivity {
             }
         });
 
+        pointsText.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showScoreboard();
+            }
+        });
+    }
+
+    void showScoreboard(){
+        Intent displayInfo = new Intent(this, ScoreboardActivity.class);
+        startActivity(displayInfo);
     }
 }

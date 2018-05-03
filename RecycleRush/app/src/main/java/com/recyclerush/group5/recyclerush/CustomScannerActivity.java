@@ -30,7 +30,7 @@ public class CustomScannerActivity extends CaptureActivity {
 
             public void onSwipeRight() {
                 String username = getIntent().getStringExtra("name");
-                Integer points = getIntent().getIntExtra("points",-1);
+                Integer points = getIntent().getIntExtra("score",-1);
 
                 // Here it should change view to the profile
 
@@ -39,7 +39,7 @@ public class CustomScannerActivity extends CaptureActivity {
                     startActivityForResult(userAct, 100);
                 } else {
                     Intent startDisplayUser  = new Intent (CustomScannerActivity.this, DisplayUser.class);
-                    startDisplayUser.putExtra("points", points);
+                    startDisplayUser.putExtra("score", points);
                     startDisplayUser.putExtra("username", username);
                     startActivity(startDisplayUser);
                 }

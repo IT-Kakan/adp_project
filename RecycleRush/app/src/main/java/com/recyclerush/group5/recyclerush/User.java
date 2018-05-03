@@ -4,23 +4,23 @@ package com.recyclerush.group5.recyclerush;
  * Created by Jeppe on 2018-04-19.
  */
 
-public class userClass {
+public class User {
     String userName;
-    Integer points;
+    int score;
 
-    public userClass(String name){
+    public User(String name){
         this.userName = name;
-        this.points = 0;
+        this.score = 0;
     }
 
-    public String getUser(){
+    public String getUserName(){
         return this.userName;
     }
-    public Integer getPoints(){
-        return this.points;
+    public int getScore(){
+        return this.score;
     }
     public void addScore(int score) {
-        this.points += score;
+        this.score += score;
     }
 
 }

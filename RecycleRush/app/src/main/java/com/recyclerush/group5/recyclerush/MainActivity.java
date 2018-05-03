@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     boolean first = true;
     //map for the uesrs
-    HashMap<String, userClass> userMap = new HashMap<String, userClass>();
+    HashMap<String, User> userMap = new HashMap<String, User>();
     // The current user of the app, unknown as login-state
-    userClass currentUser = new userClass("unknown");
+    User currentUser = new User("unknown");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -69,10 +66,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
-
     private void openScanner() {
-
         try{
             String user = getIntent().getExtras().getString("user");
             addMember(user);
@@ -82,28 +76,20 @@ public class MainActivity extends AppCompatActivity {
 
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
-        scanIntegrator.addExtra("name", currentUser.getUser());
-        scanIntegrator.addExtra("points", currentUser.getPoints());
+        scanIntegrator.addExtra("name", currentUser.getUserName());
+        scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
+    }
 
-        }
-
-    // use functions in the itemobjectclass to retrieve information about each object.
-    //String snusname = snus.getName();
-    //String snusID = snus.getScanId();
-    String message = "";
+    // Search item by textually intputting the barcode
     public void searchBarcode(View view){
         EditText usersBarcode = (EditText) findViewById(R.id.editText1);
-            // Toast.makeText(MainActivity.this, usersBarcode.getText().toString(), Toast.LENGTH_SHORT).show();
         if (usersBarcode.getText().toString().isEmpty()) {
-           // message = "Please enter a barcode";
             Toast.makeText(MainActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
         } else {
             display(ItemObject.getScannedItem(usersBarcode.getText().toString()));
         }
-
     }
-
 
     private void display(ItemObject obj) {
         if(obj==null){
@@ -141,10 +127,10 @@ public class MainActivity extends AppCompatActivity {
     private void addMember(String user){
         if (getUser(user) == null){
             //user not in list
-            userMap.put(user, new userClass(user));
+            userMap.put(user, new User(user));
         }
     }
-    private userClass getUser(String id){
+    private User getUser(String id){
         return userMap.get(id);
     }
 }

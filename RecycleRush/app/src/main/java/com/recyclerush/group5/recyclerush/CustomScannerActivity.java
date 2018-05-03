@@ -45,11 +45,6 @@ public class CustomScannerActivity extends CaptureActivity {
                 }
             }
 
-            public void onSwipeLeft() {
-                Intent backToMain = new Intent(CustomScannerActivity.this, Categories.class);
-                startActivity(backToMain);
-            }
-
         });
 
         Button enterBarcode = findViewById(R.id.button3);

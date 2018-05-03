@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         displayInfo.putExtra("materials", obj.getMaterials());
 
         if (obj.isRecycleable()) {
+            currentUser.addScore(obj.getScore());
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");

@@ -9,15 +9,17 @@ import java.util.HashMap;
 public class ItemObject {
     String name;
     String scanId;
-    Boolean recycleable;
+    boolean recycleable;
     String materials;
+    int score;
     private static HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
 
-    public ItemObject(String name, String scanId, Boolean recycleable, String materials){
+    public ItemObject(String name, String scanId, boolean recycleable, String materials){
         this.name = name;
         this.scanId = scanId;
         this.recycleable = recycleable;
         this.materials = materials;
+        this.score = 1;
     }
 
     public String getName (){
@@ -26,11 +28,14 @@ public class ItemObject {
     public String getScanId(){
         return scanId;
     }
-    public Boolean isRecycleable(){
+    public boolean isRecycleable(){
         return recycleable;
     }
     public String getMaterials(){
         return materials;
+    }
+    public int getScore(){
+        return score;
     }
 
     public static void initDummyObjects(){

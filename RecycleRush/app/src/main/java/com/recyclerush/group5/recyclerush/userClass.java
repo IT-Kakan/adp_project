@@ -19,5 +19,8 @@ public class userClass {
     public Integer getPoints(){
         return this.points;
     }
+    public void addScore(int score) {
+        this.points += score;
+    }
 
 }

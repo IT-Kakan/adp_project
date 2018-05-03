@@ -20,5 +20,4 @@ public class userClass {
         return this.points;
     }
 
-
 }

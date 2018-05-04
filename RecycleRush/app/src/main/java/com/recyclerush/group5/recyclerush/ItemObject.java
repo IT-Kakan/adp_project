@@ -7,12 +7,14 @@ import java.util.HashMap;
  */
 
 public class ItemObject {
-    String name;
-    String scanId;
-    boolean recycleable;
-    String materials;
-    int score;
     private static HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
+
+    private String name;
+    private String scanId;
+    private boolean recycleable;
+    private String materials;
+    private int score;
+
 
     public ItemObject(String name, String scanId, boolean recycleable, String materials){
         this.name = name;

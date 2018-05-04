@@ -5,8 +5,8 @@ package com.recyclerush.group5.recyclerush;
  */
 
 public class User {
-    String userName;
-    int score;
+    private String userName;
+    private int score;
 
     public User(String name){
         this.userName = name;
@@ -20,10 +20,11 @@ public class User {
         return this.score;
     }
     public void recycle(ItemObject item) {
-        addScore(item.getScore());
+        if (item != null) {
+            addScore(item.getScore());
+        }
     }
     public void addScore(int score) {
         this.score += score;
     }
-
 }

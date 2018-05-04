@@ -51,7 +51,12 @@ public class LoggedInUser {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                points = Integer.parseInt(value);
+                try{
+                    points = Integer.parseInt(value);
+                } catch (Exception e) {
+                    userRef.setValue("" + 0);
+                    points = 0;
+                }
                 Log.d(TAG, "Value is: " + points);
             }
 

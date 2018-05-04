@@ -1,27 +1,22 @@
 package com.recyclerush.group5.recyclerush;
 
-import java.util.HashMap;
-
 /**
  * Created by Jeppe on 2018-04-10.
  */
 
 public class ItemObject {
-    private static HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-
     private String name;
     private String scanId;
-    private boolean recycleable;
+    private boolean recyclable;
     private String materials;
     private int score;
 
-
-    public ItemObject(String name, String scanId, boolean recycleable, String materials){
+    public ItemObject(String scanId, String name, boolean recycleable, String materials){
         this.name = name;
         this.scanId = scanId;
-        this.recycleable = recycleable;
+        this.recyclable = recycleable;
         this.materials = materials;
-        this.score = 1;
+        this.score = 1; //For now, score is independent of item.
     }
 
     public String getName (){
@@ -30,8 +25,8 @@ public class ItemObject {
     public String getScanId(){
         return scanId;
     }
-    public boolean isRecycleable(){
-        return recycleable;
+    public boolean isRecyclable(){
+        return recyclable;
     }
     public String getMaterials(){
         return materials;
@@ -40,16 +35,27 @@ public class ItemObject {
         return score;
     }
 
-    public static void initDummyObjects(){
-        ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
-        map.put(redbull.getScanId(), redbull);
-        ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
-        map.put(snus.getScanId(), snus);
-        ItemObject tom = new ItemObject("Tom", "5901234123457", true, "paper");
-        map.put(tom.getScanId(), tom);
+    public static ItemObject getScannedItem(String id){
+        return readFromDB(id);
     }
 
-    public static ItemObject getScannedItem(String id){
-        return map.get(id);
+    private static ItemObject readFromDB(String scanId) {
+        // This is a mock database. It simulates data for a few chosen items.
+        ItemObject result = null;
+        switch (scanId) {
+            case "7340131610000": //Redbull barcode
+                result = new ItemObject("7340131610000", "Redbull", true, "metal" );
+                break;
+            case "7311250004360": //Snus barcode
+                result = new ItemObject("7311250004360","Snus" , true, "plastic, paper");
+                break;
+            case "5901234123457": //Tom barcode
+                result = new ItemObject("5901234123457","Tom",  true, "paper");
+                break;
+            default:
+                break;
+
+        }
+        return result;
     }
 }

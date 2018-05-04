@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
-        ItemObject.initDummyObjects();
         openScanner();
         setContentView(R.layout.activity_main);
 
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         displayInfo.putExtra("name", obj.getName());
         displayInfo.putExtra("materials", obj.getMaterials());
 
-        if (obj.isRecycleable()) {
+        if (obj.isRecyclable()) {
             currentUser.addScore(obj.getScore());
             displayInfo.putExtra("recyc", "Recycable!");
         } else {

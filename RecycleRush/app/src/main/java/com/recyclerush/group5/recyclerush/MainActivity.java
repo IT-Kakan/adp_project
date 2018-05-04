@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
-        ItemObject.initDummyObjects();
         openScanner();
         setContentView(R.layout.activity_main);
 
@@ -103,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         displayInfo.putExtra("name", obj.getName());
         displayInfo.putExtra("materials", obj.getMaterials());
 
-        if (obj.isRecycleable()) {
-            currentUser.addScore(obj.getScore());
+        currentUser.recycle(obj); // For now, we assume that scanning items means recycling them
+        if (obj.isRecyclable()) {
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");

@@ -19,6 +19,9 @@ public class User {
     public int getScore(){
         return this.score;
     }
+    public void recycle(ItemObject item) {
+        addScore(item.getScore());
+    }
     public void addScore(int score) {
         this.score += score;
     }

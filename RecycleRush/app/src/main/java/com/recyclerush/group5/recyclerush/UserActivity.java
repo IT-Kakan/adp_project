@@ -14,8 +14,10 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.ErrorCodes;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.recyclerush.group5.recyclerush.MainActivity;
-import com.recyclerush.group5.recyclerush.userClass;
+import com.recyclerush.group5.recyclerush.UserClass;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -72,8 +74,9 @@ public class UserActivity extends Activity {
 
             // Successfully signed in
             if (resultCode == RESULT_OK) {
-                //TODO display user here
-                startActivity(new Intent(this, DisplayUser.class));
+                Intent intent = new Intent(UserActivity.this, DisplayUser.class);
+                intent.putExtra("user", FirebaseAuth.getInstance().getCurrentUser());
+                startActivity(intent);
                 finish();
             } else {
                 // Sign in failed

@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
     boolean first = true;
     //map for the uesrs
-    HashMap<String, userClass> userMap = new HashMap<String, userClass>();
+    HashMap<String, UserClass> userMap = new HashMap<String, UserClass>();
     // The current user of the app, unknown as login-state
-    userClass currentUser = new userClass("unknown");
+    UserClass currentUser = new UserClass("unknown");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,10 +168,10 @@ public class MainActivity extends AppCompatActivity {
     private void addMember(String user){
         if (getUser(user) == null){
             //user not in list
-            userMap.put(user, new userClass(user));
+            userMap.put(user, new UserClass(user));
         }
     }
-    private userClass getUser(String id){
+    private UserClass getUser(String id){
         return userMap.get(id);
     }
 }

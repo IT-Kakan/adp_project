@@ -37,12 +37,14 @@
         <activity android:name=".SecondActivity" />
         <activity android:name=".UserActivity" />
         <activity android:name=".DisplayUser" />
+        <activity android:name=".ScoreboardActivity"></activity>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="barcode" />
-
-        <activity android:name=".ScoreboardActivity"></activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

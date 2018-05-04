@@ -133,6 +133,50 @@ Early in the sprint, we realised that we have difficulties with writing the repo
 
 After the project has grown over the last sprints, it made sense to think about refactoring the code. Two major things have been done in the process of refactoring. One was to check whether the coding style that the team decided on has been used at all time. This change was rather small as the coding style was mainly applied. A bigger change was made in the apps main activity, which we found to be a bit more challenging. Since everyone is working in or using the apps main activity, it was rather hard to incorporate bigger changes, since everyone had to merge their local solution with the refactored one. We solved it by waiting for refactoring until most tasks of the sprint have been implemented to reduce the time people spend merging the two conflicting versions of the solution. After all, it was a good step to introduce the refactoring to the project, as it made the code more readible and maintainable.
 
+# Sprint 4 Log
+Per sprint, fill out one sprint log section and its subsections.
+
+## Commitment
+List the features/stories that the team committed to finish during the sprint.
+
+## Work Done
+Log what was accomplished, and how.
+Please report on all activities; for example, in addition to coding, planning and design discussion.
+
+Feature | Time estimated | Time spent per team member
+--------|----------------|--------
+*Acceptance test*|*15 mins*|*Jesper O: 15 mins*
+*Sprint retrospective*|*20 mins*|*Jesper O: 20 mins*
+*Sprint planning*|*45 mins*|*Jesper O: 45 mins*
+*Stand-up meetings*|*1 hour 15 mins*|*Johan: 15 mins, Mahshid: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*ID: 11*|*6 hours*|*Tom: 3 hours, Jesper O: 3 hours*
+*Refactoring*|*1 hour*|*Tom: 30 mins, Jesper O: 30 mins*
+*Unit testing*|*1 hour 10 mins*|*Jesper O: 1 hour 10 mins*
+*Wrote report*|*30 mins*|*Jesper O: 30 mins*
+
+## Reflections
+Reflect on how the work worked.
+This data will form the basis for your final reflection.
+As the postmortem will be a writeup, it's fine to use shorthand notes, bullet list, and similar.
+Keep within 1000-1500 words.
+
+Discuss any deviations from the sprint commitment.
+
+Reflect on the agile practice practiced:
+
+- Did your experience correspond to or contradict with what literature claims?
+
+    - Analysis of why. Mostly interesting if something unexpected happens, but even
+      if everything runs according to plan, reflecting on the underlying mechanisms
+      can be interesting.
+
+- How did the practices interact?
+  Did they complement or counteract each other?
+
+- How efficient were the practices, given the time they took to use?
+
+Tom and Jesper O tried out pair programming. We feel that there certainly are many aspects to reflect on, both positive and negative. The topic is, however, rather multifaceted and we think it would too bold to make statements about the general case. We experienced pair programming to be a nice way of working with the product. Talking, sharing ideas, communicating or simply associating with one another had a positive impact on our attitude to the task. We believe that this is important in long-running projects (especially after Lucas' lecture), but also that it is difficult to quantify. In terms of conventional productivity measures, we think that we performed worse when pair programming this task, but we can't name a figure. The first part of the task was more or less routine work and is the main reason for our beliefs. The second part was more about knowledge gathering than anything else and we don't know if there would have been a difference, one way or another, if we were not pair programming. In the end, we think that the task was perhaps not the best for applying this practice on, but we remain optimistic about the human aspect of it.
+
 # Sprint X Log
 Per sprint, fill out one sprint log section and its subsections.
 

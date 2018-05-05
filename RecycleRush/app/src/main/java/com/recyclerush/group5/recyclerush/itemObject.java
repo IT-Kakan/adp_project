@@ -4,7 +4,7 @@ package com.recyclerush.group5.recyclerush;
  * Created by Jeppe on 2018-04-10.
  */
 
-public class ItemObject {
+ class ItemObject {
     String name;
     String scanId;
     Boolean recycleable;

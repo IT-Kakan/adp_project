@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -75,10 +76,8 @@ public class DisplayUser extends AppCompatActivity {
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft () {
                 Intent backToMain = new Intent(DisplayUser.this, MainActivity.class);
-                //backToMain.putExtra("name", "something");
-                setResult(RESULT_OK, backToMain);
-                //startActivity(backToMain);
-                finish();
+                backToMain.putExtra("user", user.getUser());
+                startActivity(backToMain);
             }
         });
 

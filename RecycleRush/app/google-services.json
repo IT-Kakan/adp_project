@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "614573683570",
+    "firebase_url": "https://recyclerush-e41ce.firebaseio.com",
+    "project_id": "recyclerush-e41ce",
+    "storage_bucket": "recyclerush-e41ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614573683570:android:df9d259456edf281",
+        "android_client_info": {
+          "package_name": "com.recyclerush.group5.recyclerush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614573683570-d7evtrc73giflnb3tcvnkn6fn37nd4dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLjuMm3oE2OKgygUMm9jc8Yn9cZfiSkzU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

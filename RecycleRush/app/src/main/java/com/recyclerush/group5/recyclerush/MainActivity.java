@@ -19,24 +19,25 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends AppCompatActivity {
-    HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
+
     boolean first = true;
     //map for the uesrs
-    HashMap<String, userClass> userMap = new HashMap<String, userClass>();
+    HashMap<String, User> userMap = new HashMap<String, User>();
     // The current user of the app, unknown as login-state
-    userClass currentUser = new userClass("unknown");
+    User currentUser = new User("unknown");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
-        initDummyObjects();
+        ItemObject.initDummyObjects();
         openScanner();
         finish();
 
     }
 
+<<<<<<< HEAD
 
     private void initDummyObjects(){
         ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
@@ -47,9 +48,30 @@ public class MainActivity extends AppCompatActivity {
         map.put(tom.getScanId(), tom);
     }
 
+=======
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.main, menu);//Menu Resource, Menu
+            return true;
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+
+            switch (item.getItemId()) {
+                case R.id.action_camera:
+                    openScanner();
+                   // IntentIntegrator scanIntegrator = new IntentIntegrator(MainActivity.this);
+                    // scanIntegrator.initiateScan();
+                    return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+            }
+        }
+>>>>>>> f64ea5331221f73285ae34ec204d41d51235ef15
 
     private void openScanner() {
-
         try{
             String user = getIntent().getExtras().getString("user");
             addMember(user);
@@ -59,12 +81,25 @@ public class MainActivity extends AppCompatActivity {
 
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
-        scanIntegrator.addExtra("name", currentUser.getUser());
-        scanIntegrator.addExtra("points", currentUser.getPoints());
+        scanIntegrator.addExtra("name", currentUser.getUserName());
+        scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
+    }
 
+<<<<<<< HEAD
         }
 
+=======
+    // Search item by textually intputting the barcode
+    public void searchBarcode(View view){
+        EditText usersBarcode = (EditText) findViewById(R.id.editText1);
+        if (usersBarcode.getText().toString().isEmpty()) {
+            Toast.makeText(MainActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
+        } else {
+            display(ItemObject.getScannedItem(usersBarcode.getText().toString()));
+        }
+    }
+>>>>>>> f64ea5331221f73285ae34ec204d41d51235ef15
 
     private void display(ItemObject obj) {
 
@@ -74,12 +109,14 @@ public class MainActivity extends AppCompatActivity {
         displayInfo.putExtra("materials", obj.getMaterials());
 
         if (obj.isRecycleable()) {
+            currentUser.addScore(obj.getScore());
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");
         }
         startActivity(displayInfo);
     }
+<<<<<<< HEAD
 
 
 
@@ -90,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
     private ItemObject getScannedItem(String id){
         return map.get(id);
     }
+=======
+>>>>>>> f64ea5331221f73285ae34ec204d41d51235ef15
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent in) {
@@ -98,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                display(in.getStringExtra("SCAN_RESULT"));
+                display(ItemObject.getScannedItem(in.getStringExtra("SCAN_RESULT")));
             }
             catch (NullPointerException e){}
         }
@@ -106,10 +145,10 @@ public class MainActivity extends AppCompatActivity {
     private void addMember(String user){
         if (getUser(user) == null){
             //user not in list
-            userMap.put(user, new userClass(user));
+            userMap.put(user, new User(user));
         }
     }
-    private userClass getUser(String id){
+    private User getUser(String id){
         return userMap.get(id);
     }
 

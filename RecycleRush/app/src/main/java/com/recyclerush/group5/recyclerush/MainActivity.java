@@ -67,12 +67,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
     private void openScanner() {
-        Toast.makeText(getApplicationContext(), "SAGE", Toast.LENGTH_SHORT).show();
         try{
             String user = getIntent().getExtras().getString("user");
             addMember(user);
             currentUser = getUser(user);
-            Toast.makeText(getApplicationContext(), "KOm hit", Toast.LENGTH_LONG).show();
         }catch(Exception e){
         }
 

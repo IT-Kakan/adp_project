@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RecycleRush.iml" filepath="$PROJECT_DIR$/RecycleRush.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\kalau\Desktop\Project\adp_project\RecycleRush\app\app.iml" filepath="C:\Users\kalau\Desktop\Project\adp_project\RecycleRush\app\app.iml" />
     </modules>
   </component>
 </project>

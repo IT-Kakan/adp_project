@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         displayInfo.putExtra("materials", obj.getMaterials());
 
         currentUser.recycle(obj); // For now, we assume that scanning items means recycling them
-        if (obj.isRecyclable()) {
+        if (obj.isRecycleable()) {
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");

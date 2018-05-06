@@ -159,11 +159,11 @@ Feature | Time estimated | Time spent per team member
 *ID: 11*.| *6 hours*| *Tom: 6h, Jesper O: x h*
 *ID: 12.*|*4 hours*| *Kalayu: 4h*
 *ID: 13.*|*6 hours*| *Johan: 7h*
-*ID: 14.*|*x hours*| **
+*ID: 14.*|*x hours*| *Emil: 6h*
 *ID: 15.*|*x hours*| *Mahshid: 13h*
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
-*Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins*
-Resolved merge conflicts| 1 hour | Kalayu: 40 mins, Johan 20 mins 
+*Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins, Emil: 10 mins*
+Resolved merge conflicts| 1 hour | Kalayu: 40 mins, Johan 20 mins, Emil 20 mins
 
 ## Reflections
 

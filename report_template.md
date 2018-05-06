@@ -91,17 +91,17 @@ Mahshid and Emil experienced pair-programming in our group and it took 4 hours t
 
 We committed to the following user stories
 
-* ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application. 
+* ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application.
 * ID: 5. Create local users.
 * ID: 6. Configure the test-environment, and write a sample test.
-* ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it. 
+* ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it.
 * ID: 8. As a user I want to navigate through the app so that I can view different views.
 * ID: 9. fix scanning of barcode.
 * ID: 10. Display user information.
 
 We failed to complete the following user stories
 
-* ID: 6. 
+* ID: 6.
 
 ## Work Done
 
@@ -132,6 +132,39 @@ When planning the sprint, we realised that we wanted to practice test-first. It 
 Early in the sprint, we realised that we have difficulties with writing the report. The previous hand-ins have been completed on the final day, which results in us not properly reviewing the document. This became apparent with the report for sprint 2, where we after submission deadline detected errors thought to arise from text integration problems. As other issues have been more pressing this sprint, we have not reflected much on how to address this issue. While our process likely can be improved, it also feels like the current setup (at least partially) works against us. At least when compared to working at a company, our work schedule is quite ad-hoc. This makes time tracking difficult, especially since we are supposed to report on each activity. In addition, we read different courses, which results in us being split up and everyone has to keep track of their own time, what practices they used and their reflection of these. Naturally, this makes it difficult to synthesise the report. Finally, we feel that there is very little motivation for writing the report. It is administrative overhead and often feels like a chore that provide no real benefit.
 
 After the project has grown over the last sprints, it made sense to think about refactoring the code. Two major things have been done in the process of refactoring. One was to check whether the coding style that the team decided on has been used at all time. This change was rather small as the coding style was mainly applied. A bigger change was made in the apps main activity, which we found to be a bit more challenging. Since everyone is working in or using the apps main activity, it was rather hard to incorporate bigger changes, since everyone had to merge their local solution with the refactored one. We solved it by waiting for refactoring until most tasks of the sprint have been implemented to reduce the time people spend merging the two conflicting versions of the solution. After all, it was a good step to introduce the refactoring to the project, as it made the code more readible and maintainable.
+
+# Sprint 4 Log
+
+## Commitment
+
+We committed to the following user stories
+
+* ID 11. As a user I want to be rewarded with credits for my recycled items and see my result on a scoreboard so that I can compare my recycling to others.
+* ID 12. Make an own file of the manual text input field and Add navigation from Barcode scanner into manual text layout and vice versa
+* ID 13. Create a profile for each user - firebase?
+* ID 14. As a user I want to have a visualisation of a seed that grows into a tree depending on my credit score history so that I can see my total amount of recycling
+* ID 15. View categories - closest place where to recycle what. Not all can be recycled everywhere
+
+## Work Done
+
+Feature | Time estimated | Time spent per team member
+--------|----------------|--------
+*User story estimation*|*7 hours*|*Kalayu: 1 hour, Johan: 1 hour, Mahshid: 1 hour, Tom: 1 hour, Emil: 1 hour, Jesper O: 1 hour, Jesper R: 1 hour*
+*Acceptance test 2*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Planning*|*6 hours 10 mins*|*Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins*
+*ID: 11*.| *x hours*| **
+*ID: 12.*| *x hours*| **
+*ID: 13.*|*6 hours*| *Johan: 7h*
+*ID: 14.*|*x hours*| **
+*ID: 15.*|*x hours*| **
+*Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
+*Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 10 mins, Mahshid: 10 mins, Tom: 10 mins*
+
+## Reflections
+
+
 
 # Sprint X Log
 Per sprint, fill out one sprint log section and its subsections.

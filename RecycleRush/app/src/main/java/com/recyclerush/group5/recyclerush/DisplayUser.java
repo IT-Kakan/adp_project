@@ -25,32 +25,26 @@ public class DisplayUser extends AppCompatActivity {
     TextView pointsText;
     TextView usernameText;
     ImageView image;
-    private LoggedInUser user;
-    private FirebaseDatabase database;
-    private DatabaseReference userRef;
+    private CurrentUser user;
     Button signOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        user = LoggedInUser.getInstance();
+        user = CurrentUser.getInstance();
         setContentView(R.layout.activity_display_user);
-
         View userView = this.findViewById(android.R.id.content);
-
         pointsText= findViewById(R.id.points_profile);
         usernameText= findViewById(R.id.username_profile);
-
-        usernameText.setText(user.getUser());
-
+        usernameText.setText(user.getUserName());
         image = findViewById(R.id.imageView2);
 
-        database = FirebaseDatabase.getInstance();
-        userRef = database.getReference(user.getUser());
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference(user.getUserName());
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                int points = user.getPoints();
+                int points = user.getScore();
                 if (points < 100) {
                     pointsText.setText(points + "/100");
                     image.setImageResource(R.drawable.first_stage);
@@ -76,7 +70,7 @@ public class DisplayUser extends AppCompatActivity {
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft () {
                 Intent backToMain = new Intent(DisplayUser.this, MainActivity.class);
-                backToMain.putExtra("user", user.getUser());
+                backToMain.putExtra("user", user.getUserName());
                 startActivity(backToMain);
             }
         });
@@ -94,6 +88,7 @@ public class DisplayUser extends AppCompatActivity {
     }
 
     public void logOut(View v) {
+        CurrentUser.getInstance().logOut();
         AuthUI.getInstance()
                 .signOut(this)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

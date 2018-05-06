@@ -37,15 +37,16 @@ public class ScoreboardActivity extends AppCompatActivity {
     // Caution: This does not mean that the users are dummies!
     ArrayList<User> getDummyUserList(){
         ArrayList<User> tempUL = new ArrayList<User>();
-        User magnus = new User("Magnus");
+        OtherUser magnus = new OtherUser("Magnus");
         magnus.addScore(5);
         tempUL.add(magnus);
-        User tom = new User("Tom");
+        OtherUser tom = new OtherUser("Tom");
         tom.addScore(1);
         tempUL.add(tom);
-        User terese = new User("Terese");
+        OtherUser terese = new OtherUser("Terese");
         terese.addScore(3);
         tempUL.add(terese);
+        tempUL.add(CurrentUser.getInstance());
         return tempUL;
     }
 

@@ -44,6 +44,10 @@ public class CustomScannerActivity extends CaptureActivity {
                     startActivity(startDisplayUser);
                 }
             }
+            public void onSwipeLeft(){
+                Intent backToMain = new Intent(CustomScannerActivity.this, Categories.class);
+                startActivity(backToMain);
+            }
 
         });
 

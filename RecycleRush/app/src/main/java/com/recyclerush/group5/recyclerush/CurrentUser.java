@@ -18,6 +18,7 @@ public class CurrentUser extends User {
     private static CurrentUser instance;
     private final String TAG = "User";
     private boolean isLoggedIn;
+    private boolean dbScoreFetched;
 
     private FirebaseUser user;
     private FirebaseDatabase database;
@@ -26,6 +27,7 @@ public class CurrentUser extends User {
     private CurrentUser() {
         super();
         this.isLoggedIn = false;
+        this.dbScoreFetched = false;
     }
 
     public void logIn() {
@@ -58,6 +60,10 @@ public class CurrentUser extends User {
                 String value = dataSnapshot.getValue(String.class);
                 try{
                     score += Integer.parseInt(value);
+                    if(!dbScoreFetched) {
+                        dbScoreFetched = true;
+                        userRef.setValue("" + score);
+                    }
                 } catch (Exception e) {
                     userRef.setValue("" + score);
                 }

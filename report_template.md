@@ -156,8 +156,8 @@ Feature | Time estimated | Time spent per team member
 *Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Planning*|*6 hours 10 mins*|*Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins*
-*ID: 11*.| *x hours*| **
-*ID: 12.*|*4 hours*| Kalayu: 4h
+*ID: 11*.| *6 hours*| *Tom: 6h, Jesper O: x h*
+*ID: 12.*|*4 hours*| *Kalayu: 4h*
 *ID: 13.*|*6 hours*| *Johan: 7h*
 *ID: 14.*|*x hours*| **
 *ID: 15.*|*x hours*| **

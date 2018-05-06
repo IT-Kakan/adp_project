@@ -20,8 +20,8 @@ import android.view.MenuItem;
 
 public class BarcodeReaderActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    HashMap<String, userClass> userMap = new HashMap<String, userClass>();
-    userClass currentUser = new userClass("unknown");
+    HashMap<String, User> userMap = new HashMap<String, User>();
+    User currentUser = new User("unknown");
 
 
     @Override
@@ -75,8 +75,8 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
-        scanIntegrator.addExtra("name", currentUser.getUser());
-        scanIntegrator.addExtra("points", currentUser.getPoints());
+        scanIntegrator.addExtra("name", currentUser.getUserName());
+        scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
 
     }
@@ -138,10 +138,10 @@ public class BarcodeReaderActivity extends AppCompatActivity {
     private void addMember(String user){
         if (getUser(user) == null){
             //user not in list
-            userMap.put(user, new userClass(user));
+            userMap.put(user, new User(user));
         }
     }
-    private userClass getUser(String id){
+    private User getUser(String id){
         return userMap.get(id);
     }
 

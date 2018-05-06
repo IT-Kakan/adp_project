@@ -6,7 +6,7 @@ import java.util.HashMap;
  * Created by Jeppe on 2018-04-10.
  */
 
-public class ItemObject {
+class ItemObject {
     String name;
     String scanId;
     boolean recycleable;

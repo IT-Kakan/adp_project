@@ -19,7 +19,7 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
     boolean first = true;
     //map for the uesrs
     HashMap<String, User> userMap = new HashMap<String, User>();
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
+
 
     private void initDummyObjects(){
         ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
@@ -48,28 +48,7 @@ public class MainActivity extends AppCompatActivity {
         map.put(tom.getScanId(), tom);
     }
 
-=======
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.main, menu);//Menu Resource, Menu
-            return true;
-        }
 
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-
-            switch (item.getItemId()) {
-                case R.id.action_camera:
-                    openScanner();
-                   // IntentIntegrator scanIntegrator = new IntentIntegrator(MainActivity.this);
-                    // scanIntegrator.initiateScan();
-                    return true;
-                default:
-                    return super.onOptionsItemSelected(item);
-            }
-        }
->>>>>>> f64ea5331221f73285ae34ec204d41d51235ef15
 
     private void openScanner() {
         try{
@@ -86,20 +65,10 @@ public class MainActivity extends AppCompatActivity {
         scanIntegrator.initiateScan();
     }
 
-<<<<<<< HEAD
-        }
 
-=======
-    // Search item by textually intputting the barcode
-    public void searchBarcode(View view){
-        EditText usersBarcode = (EditText) findViewById(R.id.editText1);
-        if (usersBarcode.getText().toString().isEmpty()) {
-            Toast.makeText(MainActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
-        } else {
-            display(ItemObject.getScannedItem(usersBarcode.getText().toString()));
-        }
-    }
->>>>>>> f64ea5331221f73285ae34ec204d41d51235ef15
+        
+
+
 
     private void display(ItemObject obj) {
 
@@ -116,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(displayInfo);
     }
-<<<<<<< HEAD
+
 
 
 
@@ -127,8 +96,7 @@ public class MainActivity extends AppCompatActivity {
     private ItemObject getScannedItem(String id){
         return map.get(id);
     }
-=======
->>>>>>> f64ea5331221f73285ae34ec204d41d51235ef15
+
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent in) {

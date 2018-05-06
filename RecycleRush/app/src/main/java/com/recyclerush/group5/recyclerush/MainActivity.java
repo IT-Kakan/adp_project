@@ -22,18 +22,19 @@ public class MainActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
     boolean first = true;
     //map for the uesrs
-    HashMap<String, User> userMap = new HashMap<String, User>();
+    //HashMap<String, CurrentUser> userMap = new HashMap<String, CurrentUser>();
     // The current user of the app, unknown as login-state
-    User currentUser = new User("unknown");
+    CurrentUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("mainactivity", "test");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
+        currentUser = CurrentUser.getInstance();
+        currentUser.setUserName("unknown");
         openScanner();
         finish();
-
     }
 
 
@@ -50,24 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void openScanner() {
-        try{
-            String user = getIntent().getExtras().getString("user");
-            addMember(user);
-            currentUser = getUser(user);
-        }catch(Exception e){
-        }
-
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
         scanIntegrator.addExtra("name", currentUser.getUserName());
         scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
     }
-
-
-        
-
-
 
     private void display(ItemObject obj) {
 
@@ -77,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         displayInfo.putExtra("materials", obj.getMaterials());
 
         currentUser.recycle(obj); // For now, we assume that scanning items means recycling them
-        if (obj.isRecycleable()) {
+        if (obj.isRecyclable()) {
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");
@@ -109,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
             catch (NullPointerException e){}
         }
     }
+
+    /*
     private void addMember(String user){
         if (getUser(user) == null){
             //user not in list
@@ -118,6 +109,6 @@ public class MainActivity extends AppCompatActivity {
     private User getUser(String id){
         return userMap.get(id);
     }
-
+    */
 
 }

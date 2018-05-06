@@ -1,30 +1,28 @@
 package com.recyclerush.group5.recyclerush;
 
-/**
- * Created by Jeppe on 2018-04-19.
- */
+public abstract class User {
+    protected String userName;
+    protected int score;
 
-public class User {
-    private String userName;
-    private int score;
-
-    public User(String name){
-        this.userName = name;
+    protected User() {
+        this.userName = "unknown";
         this.score = 0;
     }
 
-    public String getUserName(){
+    public User(String userName) {
+        this.userName = userName;
+        this.score = 0;
+    }
+
+    public String getUserName() {
         return this.userName;
     }
-    public int getScore(){
+
+    public abstract void setUserName(String userName);
+
+    public int getScore() {
         return this.score;
     }
-    public void recycle(ItemObject item) {
-        if (item != null) {
-            addScore(item.getScore());
-        }
-    }
-    public void addScore(int score) {
-        this.score += score;
-    }
+
+    public abstract void addScore(int points);
 }

@@ -10,24 +10,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LoggedInUser {
-    private static LoggedInUser instance;
-    private String userName;
-    private int points;
-    private final String TAG = "UserClass";
+/**
+ * Created by Jeppe on 2018-04-19.
+ */
+
+public class CurrentUser extends User {
+    private static CurrentUser instance;
+    private final String TAG = "User";
+    private boolean isLoggedIn;
 
     private FirebaseUser user;
     private FirebaseDatabase database;
     private DatabaseReference userRef;
 
-    private LoggedInUser() {
-        points = 0;
-        try {
-            logIn();
-        } catch (Exception e) {
-            e.printStackTrace();
-            userName = "not logged in";
-        }
+    private CurrentUser() {
+        super();
+        this.isLoggedIn = false;
     }
 
     public void logIn() {
@@ -38,9 +36,16 @@ public class LoggedInUser {
             userRef = database.getReference(user.getDisplayName());
             Log.i(TAG, "KEY: " + userRef.getKey());
             fetchUserData();
+            isLoggedIn = true;
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void logOut() {
+        isLoggedIn = false;
+        userName = "unknown";
+        this.score = 0;
     }
 
     private void fetchUserData() {
@@ -52,43 +57,44 @@ public class LoggedInUser {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 try{
-                    points = Integer.parseInt(value);
+                    score += Integer.parseInt(value);
                 } catch (Exception e) {
-                    userRef.setValue("" + 0);
-                    points = 0;
+                    userRef.setValue("" + score);
                 }
-                Log.d(TAG, "Value is: " + points);
+                Log.d(TAG, "Value is: " + score);
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Failed to read value
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
     }
 
-    public static LoggedInUser getInstance() {
+    public static CurrentUser getInstance() {
         if(instance == null) {
-            instance = new LoggedInUser();
+            instance = new CurrentUser();
         }
         return instance;
     }
 
-    public String getUser(){
-        return this.userName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public int getPoints(){
-        return this.points;
+    public void recycle(ItemObject item) {
+        if (item != null) {
+            addScore(item.getScore());
+        }
     }
 
-    public int addPoints(int points) throws IllegalArgumentException {
+    public void addScore(int points) throws IllegalArgumentException {
         Log.d(TAG, "Add points: " + points);
-        if(points > 0) {
-            this.points += points;
-            userRef.setValue("" + this.points);
-            return getPoints();
+        if(points >= 0 && isLoggedIn) {
+            this.score += points;
+            userRef.setValue("" + this.score);
+        } else if(points >= 0) {
+            this.score += points;
         } else {
             throw new IllegalArgumentException("Only positive integers");
         }

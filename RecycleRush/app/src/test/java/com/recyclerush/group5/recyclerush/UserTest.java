@@ -9,7 +9,8 @@ public class UserTest {
     @Test
     public void recycle() {
         //Set up fresh user
-        User user = new User("Tester");
+        CurrentUser user = CurrentUser.getInstance();
+        user.setUserName("Tester");
         int unmodifiedScore = user.getScore();
 
         //Non-existing items should not increase score

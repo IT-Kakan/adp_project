@@ -44,9 +44,9 @@ public class CustomScannerActivity extends CaptureActivity {
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
 
             public void onSwipeRight() {
-                String username = getIntent().getStringExtra("name");
+                String username = CurrentUser.getInstance().getUserName();
 
-                Integer points = getIntent().getIntExtra("score",-1);
+                Integer points = CurrentUser.getInstance().getScore();
 
                 // Here it should change view to the profile
 
@@ -54,18 +54,15 @@ public class CustomScannerActivity extends CaptureActivity {
                     Intent userAct = new Intent(CustomScannerActivity.this, UserActivity.class);
                     startActivityForResult(userAct, 100);
                 } else {
-
                     Intent startDisplayUser  = new Intent (CustomScannerActivity.this, DisplayUser.class);
                     startDisplayUser.putExtra("score", points);
                     startDisplayUser.putExtra("username", username);
                     startActivity(startDisplayUser);
-
                 }
             }
 
             public void onSwipeLeft()
             {
-
                 Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
                 startActivity(intent);
                 //Intent barcodee = new Intent(CustomScannerActivity.this, ThirdActivtiy.class);

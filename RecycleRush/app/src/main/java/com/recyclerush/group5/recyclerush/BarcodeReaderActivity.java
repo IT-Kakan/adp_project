@@ -20,8 +20,8 @@ import android.view.MenuItem;
 
 public class BarcodeReaderActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    HashMap<String, User> userMap = new HashMap<String, User>();
-    User currentUser = new User("unknown");
+    HashMap<String, CurrentUser> userMap = new HashMap<String, CurrentUser>();
+    CurrentUser currentUser = CurrentUser.getInstance();
 
 
     @Override
@@ -66,9 +66,9 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
         try{
 
-            String user = getIntent().getExtras().getString("user");
-            addMember(user);
-            currentUser = getUser(user);
+            //String user = getIntent().getExtras().getString("user");
+            //addMember(user);
+            currentUser = CurrentUser.getInstance();
 
         }catch(Exception e){
         }
@@ -106,7 +106,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         displayInfo.putExtra("name", obj.getName());
         displayInfo.putExtra("materials", obj.getMaterials());
 
-        if (obj.isRecycleable()) {
+        if (obj.isRecyclable()) {
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");
@@ -135,6 +135,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
             catch (NullPointerException e){}
         }
     }
+    /*
     private void addMember(String user){
         if (getUser(user) == null){
             //user not in list
@@ -144,6 +145,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
     private User getUser(String id){
         return userMap.get(id);
     }
-
+    */
 
 }

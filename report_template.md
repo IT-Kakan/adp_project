@@ -91,17 +91,17 @@ Mahshid and Emil experienced pair-programming in our group and it took 4 hours t
 
 We committed to the following user stories
 
-* ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application. 
+* ID: 4. As a user I want to input the barcode in text format so that I can get information about it in the application.
 * ID: 5. Create local users.
 * ID: 6. Configure the test-environment, and write a sample test.
-* ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it. 
+* ID: 7. As a user I want to see where I can recycle the scanned product so that I know where to recycle it.
 * ID: 8. As a user I want to navigate through the app so that I can view different views.
 * ID: 9. fix scanning of barcode.
 * ID: 10. Display user information.
 
 We failed to complete the following user stories
 
-* ID: 6. 
+* ID: 6.
 
 ## Work Done
 
@@ -134,10 +134,14 @@ Early in the sprint, we realised that we have difficulties with writing the repo
 After the project has grown over the last sprints, it made sense to think about refactoring the code. Two major things have been done in the process of refactoring. One was to check whether the coding style that the team decided on has been used at all time. This change was rather small as the coding style was mainly applied. A bigger change was made in the apps main activity, which we found to be a bit more challenging. Since everyone is working in or using the apps main activity, it was rather hard to incorporate bigger changes, since everyone had to merge their local solution with the refactored one. We solved it by waiting for refactoring until most tasks of the sprint have been implemented to reduce the time people spend merging the two conflicting versions of the solution. After all, it was a good step to introduce the refactoring to the project, as it made the code more readible and maintainable.
 
 # Sprint 4 Log
-Per sprint, fill out one sprint log section and its subsections.
-
 ## Commitment
-List the features/stories that the team committed to finish during the sprint.
+We committed to the following user stories
+
+* ID 11. As a user I want to be rewarded with credits for my recycled items and see my result on a scoreboard so that I can compare my recycling to others.
+* ID 12. Make an own file of the manual text input field and Add navigation from Barcode scanner into manual text layout and vice versa
+* ID 13. Create a profile for each user - firebase?
+* ID 14. As a user I want to have a visualisation of a seed that grows into a tree depending on my credit score history so that I can see my total amount of recycling
+* ID 15. View categories - closest place where to recycle what. Not all can be recycled everywhere
 
 ## Work Done
 Log what was accomplished, and how.
@@ -150,6 +154,7 @@ Feature | Time estimated | Time spent per team member
 *Sprint planning*|*45 mins*|*Jesper O: 45 mins*
 *Stand-up meetings*|*1 hour 15 mins*|*Johan: 15 mins, Mahshid: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
 *ID: 11*|*6 hours*|*Tom: 3 hours, Jesper O: 3 hours*
+*ID: 13.*|*6 hours*| *Johan: 7h*
 *Refactoring*|*1 hour*|*Tom: 30 mins, Jesper O: 30 mins*
 *Unit testing*|*1 hour 10 mins*|*Jesper O: 1 hour 10 mins*
 *Wrote report*|*30 mins*|*Jesper O: 30 mins*

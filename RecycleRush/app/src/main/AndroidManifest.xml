@@ -50,7 +50,7 @@
         <activity android:name=".DisplayUser" />
 
 
-        <provider android:authorities="com.facebook.app.FacebookContentProvider243515199558568"
+        <provider android:authorities="com.facebook.app.FacebookContentPrivider243515199558568"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="true"/>
 

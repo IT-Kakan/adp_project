@@ -35,11 +35,11 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
 
     private void initDummyObjects(){
-        ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
+        ItemObject redbull = new ItemObject("7340131610000","Redbull", true, "metal" );
         map.put(redbull.getScanId(), redbull);
-        ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
+        ItemObject snus = new ItemObject("7311250004360", "Snus", true, "plastic, paper");
         map.put(snus.getScanId(), snus);
-        ItemObject tom = new ItemObject("Tom", "5901234123457", true, "paper");
+        ItemObject tom = new ItemObject("5901234123457", "Tom", true, "paper");
         map.put(tom.getScanId(), tom);
     }
 

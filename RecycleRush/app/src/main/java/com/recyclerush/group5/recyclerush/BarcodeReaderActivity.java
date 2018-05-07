@@ -19,23 +19,12 @@ import android.view.MenuItem;
 
 
 public class BarcodeReaderActivity extends AppCompatActivity {
-    HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
     CurrentUser currentUser = CurrentUser.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initDummyObjects();
         setContentView(R.layout.activity_barcode_reader);
-    }
-
-    private void initDummyObjects(){
-        ItemObject redbull = new ItemObject("7340131610000","Redbull", true, "metal" );
-        map.put(redbull.getScanId(), redbull);
-        ItemObject snus = new ItemObject("7311250004360", "Snus", true, "plastic, paper");
-        map.put(snus.getScanId(), snus);
-        ItemObject tom = new ItemObject("5901234123457", "Tom", true, "paper");
-        map.put(tom.getScanId(), tom);
     }
 
     @Override
@@ -57,13 +46,11 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
     private void openScanner() {
         currentUser = CurrentUser.getInstance();
-
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
         scanIntegrator.addExtra("name", currentUser.getUserName());
         scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
-
     }
 
     String message = "";
@@ -74,7 +61,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
             // message = "Please enter a barcode";
             Toast.makeText(BarcodeReaderActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
         } else {
-            display(usersBarcode.getText().toString());
+            display(ItemObject.getScannedItem(usersBarcode.getText().toString()));
         }
     }
 
@@ -99,15 +86,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         startActivity(displayInfo);
     }
 
-
-    private void display(String barcode){
-        display(getScannedItem(barcode));
-    }
-
-    private ItemObject getScannedItem(String id){
-        return map.get(id);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent in) {
         super.onActivityResult(requestCode, resultCode, in);
@@ -115,7 +93,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                display(in.getStringExtra("SCAN_RESULT"));
+                display(ItemObject.getScannedItem(in.getStringExtra("SCAN_RESULT")));
             }
             catch (NullPointerException e){}
         }

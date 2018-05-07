@@ -20,19 +20,14 @@ import android.view.MenuItem;
 
 public class BarcodeReaderActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    HashMap<String, CurrentUser> userMap = new HashMap<String, CurrentUser>();
     CurrentUser currentUser = CurrentUser.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDummyObjects();
         setContentView(R.layout.activity_barcode_reader);
-
-
     }
-
 
     private void initDummyObjects(){
         ItemObject redbull = new ItemObject("7340131610000","Redbull", true, "metal" );
@@ -51,7 +46,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.action_camera:
                 openScanner();
@@ -61,17 +55,8 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         }
     }
 
-
     private void openScanner() {
-
-        try{
-
-            //String user = getIntent().getExtras().getString("user");
-            //addMember(user);
-            currentUser = CurrentUser.getInstance();
-
-        }catch(Exception e){
-        }
+        currentUser = CurrentUser.getInstance();
 
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
@@ -91,7 +76,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         } else {
             display(usersBarcode.getText().toString());
         }
-
     }
 
     private void display(ItemObject obj) {
@@ -107,6 +91,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         displayInfo.putExtra("materials", obj.getMaterials());
 
         if (obj.isRecyclable()) {
+            currentUser.recycle(obj);
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");
@@ -135,16 +120,4 @@ public class BarcodeReaderActivity extends AppCompatActivity {
             catch (NullPointerException e){}
         }
     }
-    /*
-    private void addMember(String user){
-        if (getUser(user) == null){
-            //user not in list
-            userMap.put(user, new User(user));
-        }
-    }
-    private User getUser(String id){
-        return userMap.get(id);
-    }
-    */
-
 }

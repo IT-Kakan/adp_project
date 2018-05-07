@@ -94,7 +94,7 @@ public class DisplayUser extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     public void onComplete(@NonNull Task<Void> task) {
                         // user is now signed out
-                        startActivity(new Intent(DisplayUser.this, UserActivity.class));
+                        startActivity(new Intent(DisplayUser.this, MainActivity.class));
                         finish();
                     }
                 });

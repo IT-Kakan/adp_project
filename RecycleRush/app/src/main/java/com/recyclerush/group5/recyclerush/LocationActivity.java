@@ -29,7 +29,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         LocationOnMap = getIntent().getExtras().getString("JsonValue");
-        Toast.makeText(getApplicationContext(),LocationOnMap,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),LocationOnMap,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -45,6 +45,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
+        float zoomLevel = (float) 12.0;
+
         try {
             JSONArray jsonArray = new JSONArray(LocationOnMap);
             for (int i = 0; i < jsonArray.length(); i++)
@@ -53,6 +55,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
 
                 mMap = googleMap;
+                mMap.moveCamera(CameraUpdateFactory.zoomTo(zoomLevel));
 
                 // Add a marker in Goteborg and move the camera
                 LatLng Position = new LatLng(jsonObject.getDouble("Lat"), jsonObject.getDouble("Lng"));

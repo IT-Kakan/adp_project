@@ -16,12 +16,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class CurrentUser extends User {
     private static CurrentUser instance;
-    private final String TAG = "User";
+    private final String TAG = "CurrentUser";
     private boolean isLoggedIn;
     private boolean dbScoreFetched;
-
-    private FirebaseUser user;
-    private FirebaseDatabase database;
     private DatabaseReference userRef;
 
     private CurrentUser() {
@@ -32,11 +29,14 @@ public class CurrentUser extends User {
 
     public void logIn() {
         try {
-            user = FirebaseAuth.getInstance().getCurrentUser();
-            userName = user.getDisplayName();
-            database = FirebaseDatabase.getInstance();
-            userRef = database.getReference(user.getDisplayName());
-            Log.i(TAG, "KEY: " + userRef.getKey());
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            try{
+                userName = user.getDisplayName();
+                userRef = database.getReference(userName);
+            } catch (NullPointerException e) {
+                e.printStackTrace();
+            }
             fetchUserData();
             isLoggedIn = true;
         } catch (Exception e) {
@@ -46,12 +46,12 @@ public class CurrentUser extends User {
 
     public void logOut() {
         isLoggedIn = false;
+        dbScoreFetched = false;
         userName = "unknown";
         this.score = 0;
     }
 
     private void fetchUserData() {
-        Log.d(TAG, "Trying to add event listener");
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -59,9 +59,11 @@ public class CurrentUser extends User {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 try{
-                    score += Integer.parseInt(value);
+                    Log.i("CurrentUser", "Score from database: " + value);
                     if(!dbScoreFetched) {
+                        Log.i("CurrentUser", "Score from databse not fetched");
                         dbScoreFetched = true;
+                        score += Integer.parseInt(value);
                         userRef.setValue("" + score);
                     }
                 } catch (Exception e) {
@@ -104,5 +106,9 @@ public class CurrentUser extends User {
         } else {
             throw new IllegalArgumentException("Only positive integers");
         }
+    }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
     }
 }

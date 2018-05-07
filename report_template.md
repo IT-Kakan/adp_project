@@ -134,7 +134,7 @@ Early in the sprint, we realised that we have difficulties with writing the repo
 After the project has grown over the last sprints, it made sense to think about refactoring the code. Two major things have been done in the process of refactoring. One was to check whether the coding style that the team decided on has been used at all time. This change was rather small as the coding style was mainly applied. A bigger change was made in the apps main activity, which we found to be a bit more challenging. Since everyone is working in or using the apps main activity, it was rather hard to incorporate bigger changes, since everyone had to merge their local solution with the refactored one. We solved it by waiting for refactoring until most tasks of the sprint have been implemented to reduce the time people spend merging the two conflicting versions of the solution. After all, it was a good step to introduce the refactoring to the project, as it made the code more readible and maintainable.
 
 # Sprint 4 Log
-
+ 
 ## Commitment
 * The group attended the acceptance test and sprint retrospective for the last sprint.
 * We estimated the story points for all of the features in sprint 4's backlog.
@@ -146,27 +146,27 @@ We committed to the following user stories
 * ID 13. Create a profile for each user - firebase?
 * ID 14. As a user I want to have a visualisation of a seed that grows into a tree depending on my credit score history so that I can see my total amount of recycling
 * ID 15. View categories - closest place where to recycle what. Not all can be recycled everywhere
-* ID 16. Connect the user profile to facebook. Be able to share something on facebookwall.
+
 ## Work Done
 
 Feature | Time estimated | Time spent per team member
 --------|----------------|--------
 *User story estimation*|*7 hours*|*Kalayu: 1 hour, Johan: 1 hour, Mahshid: 1 hour, Tom: 1 hour, Emil: 1 hour, Jesper O: 1 hour, Jesper R: 1 hour*
-*Acceptance test 2*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Acceptance test 3*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
 *Planning*|*6 hours 10 mins*|*Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins*
-*ID: 11*.| *6 hours*| *Tom: 6h, Jesper O: x h*
-*ID: 12.*|*4 hours*| *Kalayu: 4h*
+*ID: 11*.|*6 hours*| *Tom: 6h, Jesper O: x h*
+*ID: 12.*|*4 hours*| *Kalayu: 6h*
 *ID: 13.*|*6 hours*| *Johan: 9h*
 *ID: 14.*|*x hours*| *Emil: 6h*
 *ID: 15.*|*x hours*| *Mahshid: 13h*
-*ID: 16.*|*x hours*| *Jesper: 7h*
 *Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
 *Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 30 mins, Mahshid: 10 mins, Tom: 10 mins, Emil: 10 mins*
 *Resolved merge conflicts*| *1 hour 20 mins* | *Kalayu: 40 mins, Johan 20 mins, Emil 20 mins*
 
 ## Reflections
+
 
 
 

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
 
 import java.util.HashMap;
@@ -25,6 +26,14 @@ public class BarcodeReaderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barcode_reader);
+
+        findViewById(android.R.id.content).setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeRight() {
+                Intent backToMain = new Intent(BarcodeReaderActivity.this, MainActivity.class);
+                backToMain.putExtra("user", currentUser.getUserName());
+                startActivity(backToMain);
+            }
+        });
     }
 
     @Override

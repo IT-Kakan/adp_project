@@ -63,7 +63,7 @@ public class CustomScannerActivity extends CaptureActivity {
             }
         });
 
-        Button enterBarcode = (Button) findViewById(R.id.button3);
+        Button enterBarcode = findViewById(R.id.button3);
         enterBarcode.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)

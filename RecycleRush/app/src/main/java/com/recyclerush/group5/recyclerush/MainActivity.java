@@ -16,8 +16,19 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("MainActivity", "onCreate");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
+        currentUser = CurrentUser.getInstance();
+        if (!currentUser.isLoggedIn()) {
+            currentUser.setUserName("unknown");
+        }
+        openScanner();
+    }
+
+    protected void onResume() {
+        super.onResume();
+        Log.i("MainActivity", "onResume");
         currentUser = CurrentUser.getInstance();
         if (!currentUser.isLoggedIn()) {
             currentUser.setUserName("unknown");
@@ -51,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent in) {
+        Log.i("MainActivity", "onActivityResults");
         super.onActivityResult(requestCode, resultCode, in);
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, in);
         if (scanningResult != null) {

@@ -80,6 +80,7 @@ public class CustomScannerActivity extends CaptureActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent in) {
+        Log.i("CustomScannerActivity", "onActivityResult");
         super.onActivityResult(requestCode, resultCode, in);
 
         if(requestCode == 100){

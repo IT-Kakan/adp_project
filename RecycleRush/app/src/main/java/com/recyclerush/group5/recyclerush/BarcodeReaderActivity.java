@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -17,6 +19,7 @@ import java.util.HashMap;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
 
 public class BarcodeReaderActivity extends AppCompatActivity {
@@ -34,6 +37,18 @@ public class BarcodeReaderActivity extends AppCompatActivity {
                 startActivity(backToMain);
             }
         });
+
+
+        ImageButton cameraButton = (ImageButton) findViewById(R.id.cameraButton1);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cam = new Intent(BarcodeReaderActivity.this, MainActivity.class);
+                startActivity(cam);
+            }
+        });
+
+
     }
 
     @Override
@@ -61,6 +76,9 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
     }
+
+
+
 
     String message = "";
     public void barcodeRead(View view){

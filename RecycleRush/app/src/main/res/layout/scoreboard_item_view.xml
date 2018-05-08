@@ -2,6 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="35dp"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#009446"
     android:orientation="horizontal">
 
     <TextView

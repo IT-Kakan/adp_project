@@ -146,27 +146,30 @@ We committed to the following user stories
 * ID 13. Create a profile for each user - firebase?
 * ID 14. As a user I want to have a visualisation of a seed that grows into a tree depending on my credit score history so that I can see my total amount of recycling
 * ID 15. View categories - closest place where to recycle what. Not all can be recycled everywhere
+* ID 16. Connect the user profile to facebook. Be able to share something on facebookwall.
 
 ## Work Done
 
 Feature | Time estimated | Time spent per team member
 --------|----------------|--------
-*User story estimation*|*7 hours*|*Kalayu: 1 hour, Johan: 1 hour, Mahshid: 1 hour, Tom: 1 hour, Emil: 1 hour, Jesper O: 1 hour, Jesper R: 1 hour*
-*Acceptance test 3*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Acceptance test*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Planning*|*6 hours 10 mins*|*Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins*
-*ID: 11*.|*6 hours*| *Tom: 6h, Jesper O: x h*
-*ID: 12.*|*4 hours*| *Kalayu: 6h*
-*ID: 13.*|*6 hours*| *Johan: 9h*
-*ID: 14.*|*5 hours*| *Emil: 6h*
+*Sprint planning*|*5 hours 15 mins*|*Kalayu: 45 mins, Johan: 45 mins, Mahshid: 45 mins, Tom: 45 mins, Emil: 45 mins, Jesper O: 45 mins, Jesper R: 45 mins*
+*Stand-up meetings*|*1 hour 15 mins*|*Johan: 15 mins, Mahshid: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*ID: 11*.|*9 hours*| *Tom: 6h, Jesper O: 3 h*
+*ID: 12.*|*6 hours*| *Kalayu: 6h*
+*ID: 13.*|*9 hours*| *Johan: 9h*
+*ID: 14.*|*6 hours*| *Emil: 6h*
 *ID: 15.*|*13 hours*| *Mahshid: 13h*
+*ID: 16.*|*7 hours*| *Jesper R: 7h*
+*Resolved merge conflicts*| *1 hour 50 mins* | *Kalayu: 40 mins, Johan 20 mins, Emil 20 mins, Jesper O: 30 mins*
+*Refactoring*|*1 hour*|*Tom: 30 mins, Jesper O: 30 mins*
+*Unit testing*|*1 hour 10 mins*|*Jesper O: 1 hour 10 mins*
+*Wrote report*|*1 hour 15 mins*|*Kalayu: 15 mins, Johan: 20 mins, Emil: 10 mins, Jesper O: 30 mins*
 
-*Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
-*Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 30 mins, Mahshid: 10 mins, Tom: 10 mins, Emil: 10 mins*
-*Resolved merge conflicts*| *1 hour 20 mins* | *Kalayu: 40 mins, Johan 20 mins, Emil 20 mins*
 
 ## Reflections
+Tom and Jesper O tried out pair programming. We feel that there certainly are many aspects to reflect on, both positive and negative. The topic is, however, rather multifaceted and we think it would too bold to make statements about the general case. We experienced pair programming to be a nice way of working with the product. Talking, sharing ideas, communicating or simply associating with one another had a positive impact on our attitude to the task. We believe that this is important in long-running projects (especially after Lucas' lecture), but also that it is difficult to quantify. In terms of conventional productivity measures, we think that we performed worse when pair programming this task, but we can't name a figure. The first part of the task was more or less routine work and is the main reason for our beliefs. The second part was more about knowledge gathering than anything else and we don't know if there would have been a difference, one way or another, if we were not pair programming. In the end, we think that the task was perhaps not the best for applying this practice on, but we remain optimistic about the human aspect of it.
 
 
 

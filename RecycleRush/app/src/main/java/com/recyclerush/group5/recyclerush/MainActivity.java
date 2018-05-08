@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import java.util.HashMap;
@@ -44,20 +46,16 @@ public class MainActivity extends AppCompatActivity {
         scanIntegrator.initiateScan();
     }
 
-    private void display(ItemObject obj) {
 
-        Intent displayInfo = new Intent(this, SecondActivity.class);
-        displayInfo.putExtra("scanId", obj.getScanId());
-        displayInfo.putExtra("name", obj.getName());
-        displayInfo.putExtra("materials", obj.getMaterials());
-
-        if (obj.isRecyclable()) {
-            currentUser.recycle(obj); // For now, we assume that scanning items means recycling them
-            displayInfo.putExtra("recyc", "Recycable!");
-        } else {
-            displayInfo.putExtra("recyc", "Not Recycable!");
+    private void display(String id) {
+        if(ItemObject.doesExist(id)){
+            //open display activity
+            Intent displayInfo = new Intent(this, DisplayItemInfoActivity.class);
+            displayInfo.putExtra("scanId", id);
+            startActivity(displayInfo);
+        }else {
+            Toast.makeText(getApplicationContext(), "Barcode not found.", Toast.LENGTH_LONG).show();
         }
-        startActivity(displayInfo);
     }
 
     @Override
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                display(ItemObject.getScannedItem(in.getStringExtra("SCAN_RESULT")));
+                display(in.getStringExtra("SCAN_RESULT"));
             }
             catch (NullPointerException e){}
         }

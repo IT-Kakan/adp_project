@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class DisplayUser extends AppCompatActivity {
+public class DisplayUserActivity extends AppCompatActivity {
 
     TextView pointsText;
     TextView usernameText;
@@ -70,7 +69,7 @@ public class DisplayUser extends AppCompatActivity {
 
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft () {
-                Intent backToMain = new Intent(DisplayUser.this, MainActivity.class);
+                Intent backToMain = new Intent(DisplayUserActivity.this, MainActivity.class);
                 backToMain.putExtra("user", user.getUserName());
                 startActivity(backToMain);
             }
@@ -95,7 +94,7 @@ public class DisplayUser extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     public void onComplete(@NonNull Task<Void> task) {
                         // user is now signed out
-                        startActivity(new Intent(DisplayUser.this, MainActivity.class));
+                        startActivity(new Intent(DisplayUserActivity.this, MainActivity.class));
                         finish();
                     }
                 });

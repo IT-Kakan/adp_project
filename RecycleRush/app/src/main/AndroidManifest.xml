@@ -48,9 +48,9 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
-        <activity android:name=".SecondActivity" />
+        <activity android:name=".DisplayItemInfoActivity" />
         <activity android:name=".UserActivity" />
-        <activity android:name=".DisplayUser" />
+        <activity android:name=".DisplayUserActivity" />
         <activity android:name=".ScoreboardActivity"></activity>
 
         <meta-data
@@ -64,7 +64,7 @@
             android:resource="@array/preloaded_fonts" />
 
 
-        <activity android:name=".Categories" />
+        <activity android:name=".CategoriesActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

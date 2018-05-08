@@ -44,7 +44,7 @@ public class UserActivity extends Activity {
             // Successfully signed in
             if (resultCode == RESULT_OK) {
                 CurrentUser.getInstance().logIn();
-                Intent intent = new Intent(UserActivity.this, DisplayUser.class);
+                Intent intent = new Intent(UserActivity.this, DisplayUserActivity.class);
                 intent.putExtra("user", FirebaseAuth.getInstance().getCurrentUser());
                 startActivity(intent);
                 finish();

@@ -35,6 +35,11 @@ public class ItemObject {
         return score;
     }
 
+    //checks if scanned item exists
+    public static boolean doesExist(String id){
+        return (ItemObject.getScannedItem(id) != null);
+    }
+
     public static ItemObject getScannedItem(String id){
         return readFromDB(id);
     }

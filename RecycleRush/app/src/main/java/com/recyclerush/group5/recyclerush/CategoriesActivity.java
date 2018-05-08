@@ -17,7 +17,7 @@ import java.util.HashMap;
  * Created by mahshid on 5/3/18.
  */
 
-public class Categories extends AppCompatActivity{
+public class CategoriesActivity extends AppCompatActivity{
     ListView CatList;
 
     HashMap<Integer, LocationObject> MapDatail = new HashMap<>();
@@ -51,7 +51,7 @@ public class Categories extends AppCompatActivity{
                 Gson gs = new Gson();
                 SetRecycleAddress(position);
                 String json = gs.toJson(MapDatail.values());
-                Intent displayMap = new Intent(Categories.this, LocationActivity.class);
+                Intent displayMap = new Intent(CategoriesActivity.this, LocationActivity.class);
                 displayMap.putExtra("JsonValue", json);
                 startActivity(displayMap);
 

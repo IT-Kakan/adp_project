@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#009446"
-    tools:context="com.recyclerush.group5.recyclerush.SecondActivity"
+    tools:context="com.recyclerush.group5.recyclerush.DisplayItemInfoActivity"
     tools:layout_editor_absoluteY="25dp">
 
     <TextView

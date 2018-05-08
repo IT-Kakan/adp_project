@@ -5,22 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
-
-import java.util.HashMap;
 
 import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ImageButton;
-
 
 public class BarcodeReaderActivity extends AppCompatActivity {
     CurrentUser currentUser = CurrentUser.getInstance();
@@ -38,7 +31,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
             }
         });
 
-
         ImageButton cameraButton = (ImageButton) findViewById(R.id.cameraButton1);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,8 +39,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
                 startActivity(cam);
             }
         });
-
-
     }
 
     @Override
@@ -57,60 +47,23 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_camera:
-                openScanner();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void openScanner() {
-        currentUser = CurrentUser.getInstance();
-        IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-        scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
-        scanIntegrator.addExtra("name", currentUser.getUserName());
-        scanIntegrator.addExtra("score", currentUser.getScore());
-        scanIntegrator.initiateScan();
-    }
-
-
-
-
-    String message = "";
     public void barcodeRead(View view){
         EditText usersBarcode = (EditText) findViewById(R.id.editText_1);
-        // Toast.makeText(MainActivity.this, usersBarcode.getText().toString(), Toast.LENGTH_SHORT).show();
         if (usersBarcode.getText().toString().isEmpty()) {
-            // message = "Please enter a barcode";
             Toast.makeText(BarcodeReaderActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
         } else {
-            display(ItemObject.getScannedItem(usersBarcode.getText().toString()));
+            display(usersBarcode.getText().toString());
         }
     }
 
-    private void display(ItemObject obj) {
-        if(obj==null){
-            String message = "Barcode not found.";
-            Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-            return;
+    private void display(String id) {
+        if(ItemObject.doesExist(id)){
+            Intent displayInfo = new Intent(this, DisplayItemInfoActivity.class);
+            displayInfo.putExtra("scanId", id);
+            startActivity(displayInfo);
+        }else {
+            Toast.makeText(getApplicationContext(), "Barcode not found.", Toast.LENGTH_LONG).show();
         }
-
-        Intent displayInfo = new Intent(this, SecondActivity.class);
-        displayInfo.putExtra("scanId", obj.getScanId());
-        displayInfo.putExtra("name", obj.getName());
-        displayInfo.putExtra("materials", obj.getMaterials());
-
-        if (obj.isRecyclable()) {
-            currentUser.recycle(obj);
-            displayInfo.putExtra("recyc", "Recycable!");
-        } else {
-            displayInfo.putExtra("recyc", "Not Recycable!");
-        }
-        startActivity(displayInfo);
     }
 
     @Override
@@ -120,7 +73,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                display(ItemObject.getScannedItem(in.getStringExtra("SCAN_RESULT")));
+                display(in.getStringExtra("SCAN_RESULT"));
             }
             catch (NullPointerException e){}
         }

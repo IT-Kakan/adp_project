@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_light_background"
-    tools:context="com.recyclerush.group5.recyclerush.DisplayUser"
+    tools:context="com.recyclerush.group5.recyclerush.DisplayUserActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <android.support.constraint.ConstraintLayout

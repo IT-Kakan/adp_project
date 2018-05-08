@@ -19,7 +19,6 @@ public class ScoreboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
 
-
         scoreboard = this.findViewById(R.id.ListViewScoreboard);
         userList = getDummyUserList();
         //sort userList by score (descending)
@@ -49,5 +48,4 @@ public class ScoreboardActivity extends AppCompatActivity {
         tempUL.add(CurrentUser.getInstance());
         return tempUL;
     }
-
 }

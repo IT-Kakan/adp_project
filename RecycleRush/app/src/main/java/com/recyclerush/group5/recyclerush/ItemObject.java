@@ -16,7 +16,7 @@ public class ItemObject {
         this.scanId = scanId;
         this.recyclable = recycleable;
         this.materials = materials;
-        this.score = 1; //For now, score is independent of item.
+        this.score = 20; //For now, score is independent of item.
     }
 
     public String getName (){

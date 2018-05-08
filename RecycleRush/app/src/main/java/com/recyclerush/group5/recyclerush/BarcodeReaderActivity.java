@@ -5,42 +5,50 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
 
 import java.util.HashMap;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 
 
 public class BarcodeReaderActivity extends AppCompatActivity {
-    HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    HashMap<String, CurrentUser> userMap = new HashMap<String, CurrentUser>();
     CurrentUser currentUser = CurrentUser.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initDummyObjects();
         setContentView(R.layout.activity_barcode_reader);
 
+        findViewById(android.R.id.content).setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeRight() {
+                Intent backToMain = new Intent(BarcodeReaderActivity.this, MainActivity.class);
+                backToMain.putExtra("user", currentUser.getUserName());
+                startActivity(backToMain);
+            }
+        });
 
-    }
+
+        ImageButton cameraButton = (ImageButton) findViewById(R.id.cameraButton1);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cam = new Intent(BarcodeReaderActivity.this, MainActivity.class);
+                startActivity(cam);
+            }
+        });
 
 
-    private void initDummyObjects(){
-        ItemObject redbull = new ItemObject("Redbull","7340131610000", true, "metal" );
-        map.put(redbull.getScanId(), redbull);
-        ItemObject snus = new ItemObject("Snus", "7311250004360", true, "plastic, paper");
-        map.put(snus.getScanId(), snus);
-        ItemObject tom = new ItemObject("Tom", "5901234123457", true, "paper");
-        map.put(tom.getScanId(), tom);
     }
 
     @Override
@@ -51,7 +59,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.action_camera:
                 openScanner();
@@ -61,25 +68,17 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         }
     }
 
-
     private void openScanner() {
-
-        try{
-
-            //String user = getIntent().getExtras().getString("user");
-            //addMember(user);
-            currentUser = CurrentUser.getInstance();
-
-        }catch(Exception e){
-        }
-
+        currentUser = CurrentUser.getInstance();
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
         scanIntegrator.addExtra("name", currentUser.getUserName());
         scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
-
     }
+
+
+
 
     String message = "";
     public void barcodeRead(View view){
@@ -89,9 +88,8 @@ public class BarcodeReaderActivity extends AppCompatActivity {
             // message = "Please enter a barcode";
             Toast.makeText(BarcodeReaderActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
         } else {
-            display(usersBarcode.getText().toString());
+            display(ItemObject.getScannedItem(usersBarcode.getText().toString()));
         }
-
     }
 
     private void display(ItemObject obj) {
@@ -107,20 +105,12 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         displayInfo.putExtra("materials", obj.getMaterials());
 
         if (obj.isRecyclable()) {
+            currentUser.recycle(obj);
             displayInfo.putExtra("recyc", "Recycable!");
         } else {
             displayInfo.putExtra("recyc", "Not Recycable!");
         }
         startActivity(displayInfo);
-    }
-
-
-    private void display(String barcode){
-        display(getScannedItem(barcode));
-    }
-
-    private ItemObject getScannedItem(String id){
-        return map.get(id);
     }
 
     @Override
@@ -130,21 +120,9 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         if (scanningResult != null) {
             try {
                 Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
-                display(in.getStringExtra("SCAN_RESULT"));
+                display(ItemObject.getScannedItem(in.getStringExtra("SCAN_RESULT")));
             }
             catch (NullPointerException e){}
         }
     }
-    /*
-    private void addMember(String user){
-        if (getUser(user) == null){
-            //user not in list
-            userMap.put(user, new User(user));
-        }
-    }
-    private User getUser(String id){
-        return userMap.get(id);
-    }
-    */
-
 }

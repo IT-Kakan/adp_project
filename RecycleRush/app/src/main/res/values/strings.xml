@@ -22,4 +22,7 @@
     <string name="UserName">name</string>
     <string name="Score">score</string>
     <string name="Place">place</string>
+    <string name="title_activity_location">Map</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="camera_button">camera_button</string>
 </resources>

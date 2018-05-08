@@ -22,6 +22,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,7 @@ public class SecondActivity extends Activity{
 
 
     ConstraintLayout layout;
+    CurrentUser currentUser = CurrentUser.getInstance();
 
     @Override
     //@TargetApi(23)
@@ -62,6 +64,16 @@ public class SecondActivity extends Activity{
             public void onClick(View v) {
                 openMaps(v);
 
+            }
+        });
+
+        ImageButton cameraButton = findViewById(R.id.cameraButton);
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent backToMain = new Intent(SecondActivity.this, MainActivity.class);
+                backToMain.putExtra("user", currentUser.getUserName());
+                startActivity(backToMain);
             }
         });
 

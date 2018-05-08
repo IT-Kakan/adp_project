@@ -34,8 +34,9 @@ public class DisplayUser extends AppCompatActivity {
         user = CurrentUser.getInstance();
         setContentView(R.layout.activity_display_user);
         View userView = this.findViewById(android.R.id.content);
-        pointsText= findViewById(R.id.points_profile);
-        usernameText= findViewById(R.id.username_profile);
+        pointsText = findViewById(R.id.points_profile);
+        pointsText.setText("0/100");
+        usernameText = findViewById(R.id.username_profile);
         usernameText.setText(user.getUserName());
         image = findViewById(R.id.imageView2);
 
@@ -94,7 +95,7 @@ public class DisplayUser extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     public void onComplete(@NonNull Task<Void> task) {
                         // user is now signed out
-                        startActivity(new Intent(DisplayUser.this, UserActivity.class));
+                        startActivity(new Intent(DisplayUser.this, MainActivity.class));
                         finish();
                     }
                 });

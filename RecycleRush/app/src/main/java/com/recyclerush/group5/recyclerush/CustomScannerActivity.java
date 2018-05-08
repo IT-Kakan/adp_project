@@ -33,16 +33,9 @@ public class CustomScannerActivity extends CaptureActivity {
 
     @Override
     protected DecoratedBarcodeView initializeContent() {
-
         setContentView(R.layout.custom_barcode_scanner);
-
         DecoratedBarcodeView barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);
-
-
-
-
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
-
             public void onSwipeRight() {
                 String username = CurrentUser.getInstance().getUserName();
 
@@ -50,36 +43,31 @@ public class CustomScannerActivity extends CaptureActivity {
 
                 // Here it should change view to the profile
 
-                if (username.equals("unknown")) {
+                if (!CurrentUser.getInstance().isLoggedIn()) {
                     Intent userAct = new Intent(CustomScannerActivity.this, UserActivity.class);
                     startActivityForResult(userAct, 100);
                 } else {
                     Intent startDisplayUser  = new Intent (CustomScannerActivity.this, DisplayUser.class);
-                    startDisplayUser.putExtra("score", points);
-                    startDisplayUser.putExtra("username", username);
                     startActivity(startDisplayUser);
                 }
             }
 
-            public void onSwipeLeft()
-            {
-                Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
-                startActivity(intent);
-                //Intent barcodee = new Intent(CustomScannerActivity.this, ThirdActivtiy.class);
-                //startActivity(barcodee);
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(CustomScannerActivity.this, Categories.class);
+                startActivity(backToMain);
             }
 
-
+            public void onSwipeLeft() {
+                Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
+                startActivity(intent);
+            }
         });
 
-
-        Button enterBarcode = (Button) findViewById(R.id.button3);
+        Button enterBarcode = findViewById(R.id.button3);
         enterBarcode.setOnClickListener(new View.OnClickListener()
         {
-
             public void onClick(View v)
             {
-
               // Toast.makeText(getApplicationContext(), "STRING MESSAGE", Toast.LENGTH_LONG).show();
                     // Launch the third activity
 
@@ -87,9 +75,6 @@ public class CustomScannerActivity extends CaptureActivity {
                 startActivity(intent);
             }
         });
-
-
-
         return barcodeScannerView;
     }
 
@@ -99,9 +84,7 @@ public class CustomScannerActivity extends CaptureActivity {
 
         if(requestCode == 100){
             //if someone logged in, set that user as current
-            String user = in.getStringExtra("name");
             Intent sendToUserInfo = new Intent(this, MainActivity.class);
-            sendToUserInfo.putExtra("user", user);
             startActivity(sendToUserInfo);
         }
     }

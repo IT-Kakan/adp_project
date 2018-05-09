@@ -1,6 +1,7 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +13,6 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    boolean first = true;
     // The current user of the app, unknown as login-state
     CurrentUser currentUser;
 
@@ -21,9 +21,12 @@ public class MainActivity extends AppCompatActivity {
         Log.i("MainActivity", "onCreate");
         super.onCreate(savedInstanceState);
         //start loginscreen, and wait for a loginresult
+
+        /* New Handler to start the Menu-Activity
+         * and close this Splash-Screen after some seconds.*/
         currentUser = CurrentUser.getInstance();
         if (!currentUser.isLoggedIn()) {
-            currentUser.setUserName("unknown");
+           currentUser.setUserName("unknown");
         }
         openScanner();
     }

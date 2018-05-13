@@ -18,6 +18,7 @@ public class CurrentUser extends User {
     private static CurrentUser instance;
     private final String TAG = "CurrentUser";
     private boolean isLoggedIn;
+    private String uId;
     private boolean dbScoreFetched;
     private DatabaseReference userRef;
 
@@ -33,7 +34,8 @@ public class CurrentUser extends User {
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             try{
                 userName = user.getDisplayName();
-                userRef = database.getReference(userName);
+                uId = user.getUid();
+                userRef = database.getReference("users").child(uId);
             } catch (NullPointerException e) {
                 e.printStackTrace();
             }
@@ -61,7 +63,7 @@ public class CurrentUser extends User {
                 try{
                     Log.i("CurrentUser", "Score from database: " + value);
                     if(!dbScoreFetched) {
-                        Log.i("CurrentUser", "Score from databse not fetched");
+                        Log.i("CurrentUser", "Score from database not fetched");
                         dbScoreFetched = true;
                         score += Integer.parseInt(value);
                         userRef.setValue("" + score);
@@ -100,6 +102,7 @@ public class CurrentUser extends User {
         Log.d(TAG, "Add points: " + points);
         if(points >= 0 && isLoggedIn) {
             this.score += points;
+            Log.i(TAG, "Writing " + score + "to database for user with key " + userRef.getKey());
             userRef.setValue("" + this.score);
         } else if(points >= 0) {
             this.score += points;
@@ -110,5 +113,9 @@ public class CurrentUser extends User {
 
     public boolean isLoggedIn() {
         return isLoggedIn;
+    }
+
+    public String getuId() {
+        return uId;
     }
 }

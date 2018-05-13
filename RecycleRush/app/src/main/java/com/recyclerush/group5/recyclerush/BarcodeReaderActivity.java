@@ -58,6 +58,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
     private void display(String id) {
         if(ItemObject.doesExist(id)){
+            currentUser.recycle(ItemObject.getScannedItem(id));
             Intent displayInfo = new Intent(this, DisplayItemInfoActivity.class);
             displayInfo.putExtra("scanId", id);
             startActivity(displayInfo);

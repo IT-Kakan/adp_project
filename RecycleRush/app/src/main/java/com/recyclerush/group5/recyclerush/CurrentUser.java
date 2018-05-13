@@ -21,6 +21,7 @@ public class CurrentUser extends User {
     private String uId;
     private boolean dbScoreFetched;
     private DatabaseReference userRef;
+    private DatabaseReference scoreRef;
 
     private CurrentUser() {
         super();
@@ -36,6 +37,8 @@ public class CurrentUser extends User {
                 userName = user.getDisplayName();
                 uId = user.getUid();
                 userRef = database.getReference("users").child(uId);
+                userRef.child("username").setValue(userName);
+                scoreRef = userRef.child("score");
             } catch (NullPointerException e) {
                 e.printStackTrace();
             }
@@ -52,24 +55,25 @@ public class CurrentUser extends User {
         userName = "unknown";
         this.score = 0;
     }
-
+    //TODO modify use to be uId: username = ..
+    //                           score = ..
     private void fetchUserData() {
-        userRef.addValueEventListener(new ValueEventListener() {
+        scoreRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
+                Log.i(TAG, "Value from database: " + value);
                 try{
-                    Log.i("CurrentUser", "Score from database: " + value);
                     if(!dbScoreFetched) {
-                        Log.i("CurrentUser", "Score from database not fetched");
+                        Log.i(TAG, "Score from database not fetched");
                         dbScoreFetched = true;
                         score += Integer.parseInt(value);
-                        userRef.setValue("" + score);
+                        scoreRef.setValue("" + score);
                     }
                 } catch (Exception e) {
-                    userRef.setValue("" + score);
+                    scoreRef.setValue("" + score);
                 }
                 Log.d(TAG, "Value is: " + score);
             }
@@ -103,7 +107,7 @@ public class CurrentUser extends User {
         if(points >= 0 && isLoggedIn) {
             this.score += points;
             Log.i(TAG, "Writing " + score + "to database for user with key " + userRef.getKey());
-            userRef.setValue("" + this.score);
+            scoreRef.setValue("" + this.score);
         } else if(points >= 0) {
             this.score += points;
         } else {

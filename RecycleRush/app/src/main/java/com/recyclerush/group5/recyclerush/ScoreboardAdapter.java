@@ -1,6 +1,8 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +13,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ScoreboardAdapter extends ArrayAdapter {
-    private ArrayList<User> userList;
+    private List<User> userList;
     private Context mContext;
 
     // View lookup cache
@@ -23,7 +26,7 @@ public class ScoreboardAdapter extends ArrayAdapter {
         TextView textViewScore;
     }
 
-    public ScoreboardAdapter(ArrayList<User> users, Context context){
+    public ScoreboardAdapter(List<User> users, Context context){
         super(context, R.layout.scoreboard_item_view, users);
         this.userList = users;
         this.mContext = context;
@@ -61,7 +64,14 @@ public class ScoreboardAdapter extends ArrayAdapter {
         viewHolder.textViewName.setText(user.getUserName());
         viewHolder.textViewScore.setText(user.getScore()+"");
 
-        Log.d("XXX", "score: "+user.getScore());
+        //TODO make this look prettier
+        if(user instanceof CurrentUser) {
+            viewHolder.textViewPlace.setTypeface(null, Typeface.BOLD_ITALIC);
+            viewHolder.textViewName.setTypeface(null, Typeface.BOLD_ITALIC);
+            viewHolder.textViewScore.setTypeface(null, Typeface.BOLD_ITALIC );
+        }
+
+        Log.d("ScoreboardAdapter", "score: "+user.getScore());
 
         // Return the completed view to render on screen
         return convertView;

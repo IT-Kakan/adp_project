@@ -57,6 +57,9 @@ public class ItemObject {
             case "5901234123457": //Tom barcode
                 result = new ItemObject("5901234123457","Tom",  true, "paper");
                 break;
+            case "123": //Test barcode
+                result = new ItemObject("5901234123457","Coca Cola",  true, "plutonium");
+                break;
             default:
                 break;
 

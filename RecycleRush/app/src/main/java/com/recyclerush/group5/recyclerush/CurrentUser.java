@@ -42,7 +42,7 @@ public class CurrentUser extends User {
             } catch (NullPointerException e) {
                 e.printStackTrace();
             }
-            fetchUserData();
+            addListener();
             isLoggedIn = true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,25 +55,25 @@ public class CurrentUser extends User {
         userName = "unknown";
         this.score = 0;
     }
-    //TODO modify use to be uId: username = ..
-    //                           score = ..
-    private void fetchUserData() {
+
+    private void addListener() {
         scoreRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
+                //String value = dataSnapshot.getValue(String.class);
+                Long value =  dataSnapshot.getValue(Long.class);
                 Log.i(TAG, "Value from database: " + value);
                 try{
                     if(!dbScoreFetched) {
                         Log.i(TAG, "Score from database not fetched");
                         dbScoreFetched = true;
-                        score += Integer.parseInt(value);
-                        scoreRef.setValue("" + score);
+                        score += value;
+                        scoreRef.setValue(score);
                     }
                 } catch (Exception e) {
-                    scoreRef.setValue("" + score);
+                    scoreRef.setValue(score);
                 }
                 Log.d(TAG, "Value is: " + score);
             }
@@ -107,7 +107,7 @@ public class CurrentUser extends User {
         if(points >= 0 && isLoggedIn) {
             this.score += points;
             Log.i(TAG, "Writing " + score + "to database for user with key " + userRef.getKey());
-            scoreRef.setValue("" + this.score);
+            scoreRef.setValue(this.score);
         } else if(points >= 0) {
             this.score += points;
         } else {

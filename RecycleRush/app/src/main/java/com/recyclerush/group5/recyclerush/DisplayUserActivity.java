@@ -41,9 +41,9 @@ public class DisplayUserActivity extends AppCompatActivity {
         image = findViewById(R.id.imageView2);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userRef = database.getReference("users")
+        DatabaseReference scoreRef = database.getReference("users")
                 .child(user.getuId()).child("score");
-        userRef.addValueEventListener(new ValueEventListener() {
+        scoreRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int points = user.getScore();

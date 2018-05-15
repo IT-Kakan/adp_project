@@ -60,7 +60,7 @@ public class DisplayUserActivity extends AppCompatActivity {
                     pointsText.setText(points + "/400");
                     image.setImageResource(R.drawable.fourth_stage);
                 } else {
-                    pointsText.setText(points);
+                    pointsText.setText("" + points);
                     image.setImageResource(R.drawable.full_oak);
                 }
             }

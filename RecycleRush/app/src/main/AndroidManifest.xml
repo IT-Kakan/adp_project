@@ -49,7 +49,6 @@
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
         <activity android:name=".DisplayItemInfoActivity" />
-        <activity android:name=".UserActivity" />
         <activity android:name=".DisplayUserActivity" />
         <activity android:name=".ScoreboardActivity"></activity>
 

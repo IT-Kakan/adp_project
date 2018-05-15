@@ -101,10 +101,8 @@ public class CurrentUser extends User {
     }
 
     public void addScore(int points) throws IllegalArgumentException {
-        Log.d(TAG, "Add points: " + points);
         if(points >= 0 && isLoggedIn) {
             this.score += points;
-            Log.i(TAG, "Writing " + score + "to database for user with key " + userRef.getKey());
             scoreRef.setValue(this.score);
         } else if(points >= 0) {
             this.score += points;

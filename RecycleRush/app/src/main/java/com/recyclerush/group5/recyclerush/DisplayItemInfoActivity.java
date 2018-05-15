@@ -70,7 +70,6 @@ public class DisplayItemInfoActivity extends Activity{
 
         });
 
-
         ImageButton cameraButton = findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +80,6 @@ public class DisplayItemInfoActivity extends Activity{
             }
         });
 
-        //find object
         ItemObject item = ItemObject.getScannedItem(getIntent().getExtras().getString("scanId"));
         if (item==null) {
             Log.d("DEBUG", "item == null");

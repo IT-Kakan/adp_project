@@ -20,15 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("MainActivity", "onCreate");
         super.onCreate(savedInstanceState);
-        //start loginscreen, and wait for a loginresult
-
-        /* New Handler to start the Menu-Activity
-         * and close this Splash-Screen after some seconds.*/
-        currentUser = CurrentUser.getInstance();
-        if (!currentUser.isLoggedIn()) {
-           currentUser.setUserName("unknown");
-        }
-        openScanner();
     }
 
     protected void onResume() {
@@ -44,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
     private void openScanner() {
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);
         scanIntegrator.setCaptureActivity(CustomScannerActivity.class);
-        scanIntegrator.addExtra("name", currentUser.getUserName());
-        scanIntegrator.addExtra("score", currentUser.getScore());
         scanIntegrator.initiateScan();
     }
 
@@ -63,15 +52,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent in) {
-        Log.i("MainActivity", "onActivityResults");
         super.onActivityResult(requestCode, resultCode, in);
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, in);
         if (scanningResult != null) {
             try {
-                Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
                 display(in.getStringExtra("SCAN_RESULT"));
             }
-            catch (NullPointerException e){}
+            catch (NullPointerException e){
+                e.printStackTrace();
+            }
         }
     }
 }

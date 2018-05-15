@@ -26,12 +26,11 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         findViewById(android.R.id.content).setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeRight() {
                 Intent backToMain = new Intent(BarcodeReaderActivity.this, MainActivity.class);
-                backToMain.putExtra("user", currentUser.getUserName());
                 startActivity(backToMain);
             }
         });
 
-        ImageButton cameraButton = (ImageButton) findViewById(R.id.cameraButton1);
+        ImageButton cameraButton = findViewById(R.id.cameraButton1);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +47,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
     }
 
     public void barcodeRead(View view){
-        EditText usersBarcode = (EditText) findViewById(R.id.editText_1);
+        EditText usersBarcode = findViewById(R.id.editText_1);
         if (usersBarcode.getText().toString().isEmpty()) {
             Toast.makeText(BarcodeReaderActivity.this, "Please enter a barcode", Toast.LENGTH_SHORT).show();
         } else {

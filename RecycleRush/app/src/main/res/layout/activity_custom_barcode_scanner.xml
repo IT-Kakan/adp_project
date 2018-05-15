@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
     android:orientation="vertical"
     tools:layout_editor_absoluteY="25dp">
-
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/zxing_barcode_scanner"
         android:layout_width="0dp"
-        android:layout_height="494dp"
+        android:layout_height="463dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,27 +29,15 @@
     </com.journeyapps.barcodescanner.DecoratedBarcodeView>
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="152dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="498dp"
-        android:src="@drawable/dotsmid"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="134dp"
-        android:layout_height="54dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="4dp"
         android:src="@drawable/baseline_keyboard_arrow_up_white_48"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toBottomOf="@+id/zxing_barcode_scanner" />
 
 
 </android.support.constraint.ConstraintLayout>

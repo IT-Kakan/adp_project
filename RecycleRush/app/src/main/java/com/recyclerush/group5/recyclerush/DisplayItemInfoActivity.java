@@ -60,6 +60,17 @@ public class DisplayItemInfoActivity extends Activity{
             }
         });
 
+        View itemView = this.findViewById(android.R.id.content);
+
+        itemView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()){
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(DisplayItemInfoActivity.this, CategoriesActivity.class);
+                startActivity(backToMain);
+            }
+
+        });
+
+
         ImageButton cameraButton = findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override

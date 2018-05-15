@@ -19,6 +19,17 @@ public class CustomScannerActivity extends CaptureActivity {
     @Override
     protected DecoratedBarcodeView initializeContent() {
         setContentView(R.layout.activity_custom_barcode_scanner);
+
+        View thisView = this.findViewById(android.R.id.content);
+        thisView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(CustomScannerActivity.this, CategoriesActivity.class);
+                startActivity(backToMain);
+            }
+
+        });
+
+
         DecoratedBarcodeView barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeRight() {
@@ -37,29 +48,17 @@ public class CustomScannerActivity extends CaptureActivity {
                 }
             }
 
-            public void onSwipeTop (){
-                Intent backToMain = new Intent(CustomScannerActivity.this, CategoriesActivity.class);
-                startActivity(backToMain);
-            }
-
             public void onSwipeLeft() {
                 Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
                 startActivity(intent);
             }
-        });
 
-        Button enterBarcode = findViewById(R.id.button3);
-        enterBarcode.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-              // Toast.makeText(getApplicationContext(), "STRING MESSAGE", Toast.LENGTH_LONG).show();
-                    // Launch the third activity
-
-                Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
-                startActivity(intent);
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(CustomScannerActivity.this, CategoriesActivity.class);
+                startActivity(backToMain);
             }
         });
+
         return barcodeScannerView;
     }
 

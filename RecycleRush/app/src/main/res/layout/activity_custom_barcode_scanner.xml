@@ -4,41 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#009446"
-    android:orientation="vertical">
+    android:background="@android:color/background_dark"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteY="25dp">
 
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="45dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginTop="2dp"
-        android:background="@drawable/penimage"
-        android:onClick="penFun"
-        app:layout_constraintBottom_toTopOf="@+id/zxing_barcode_scanner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="m" />
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/zxing_barcode_scanner"
-        android:layout_width="364dp"
-        android:layout_height="501dp"
+        android:layout_width="0dp"
+        android:layout_height="494dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
         app:zxing_preview_scaling_strategy="fitXY"
         app:zxing_use_texture_view="false">
 
     </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="152dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="498dp"
+        android:src="@drawable/dotsmid"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="134dp"
+        android:layout_height="54dp"
+        android:src="@drawable/baseline_keyboard_arrow_up_white_48"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 
 </android.support.constraint.ConstraintLayout>

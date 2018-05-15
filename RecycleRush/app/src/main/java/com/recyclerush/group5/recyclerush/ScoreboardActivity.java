@@ -39,27 +39,7 @@ public class ScoreboardActivity extends AppCompatActivity {
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                List<User> userList = new LinkedList<>();
-                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                    // the try/catch should filter out users who are registered in the database
-                    // but haven't initialized a score (extremely rare, but it could happen)
-                    try {
-                        if (userSnapshot.getKey().equals(CurrentUser.getInstance().getuId())) {
-                            userList.add(CurrentUser.getInstance());
-                        } else {
-                            User user = new OtherUser(userSnapshot.child("username").getValue(String.class));
-                            Log.i(TAG, user.getUserName());
-                            user.addScore(userSnapshot.child("score").getValue(Integer.class));
-                            userList.add(user);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-                // Query...orderByChildren(score) sorts users with lower scores first
-                Collections.reverse(userList);
-                adapter = new ScoreboardAdapter(userList, getApplicationContext());
-                scoreboard.setAdapter(adapter);
+                handleDataChange(dataSnapshot);
             }
 
             @Override
@@ -67,5 +47,29 @@ public class ScoreboardActivity extends AppCompatActivity {
                 Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
             }
         });
+    }
+
+    private void handleDataChange(DataSnapshot dataSnapshot) {
+        List<User> userList = new LinkedList<>();
+        for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+            // the try/catch should filter out users who are registered in the database
+            // but haven't initialized a score (extremely rare, but it could happen)
+            try {
+                if (userSnapshot.getKey().equals(CurrentUser.getInstance().getuId())) {
+                    userList.add(CurrentUser.getInstance());
+                } else {
+                    User user = new OtherUser(userSnapshot.child("username").getValue(String.class));
+                    Log.i(TAG, user.getUserName());
+                    user.addScore(userSnapshot.child("score").getValue(Integer.class));
+                    userList.add(user);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        // Query...orderByChildren(score) sorts users with lower scores first
+        Collections.reverse(userList);
+        adapter = new ScoreboardAdapter(userList, getApplicationContext());
+        scoreboard.setAdapter(adapter);
     }
 }

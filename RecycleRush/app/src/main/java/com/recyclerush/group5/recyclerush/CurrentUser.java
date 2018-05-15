@@ -60,22 +60,7 @@ public class CurrentUser extends User {
         scoreRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                //String value = dataSnapshot.getValue(String.class);
-                Long value =  dataSnapshot.getValue(Long.class);
-                Log.i(TAG, "Value from database: " + value);
-                try{
-                    if(!dbScoreFetched) {
-                        Log.i(TAG, "Score from database not fetched");
-                        dbScoreFetched = true;
-                        score += value;
-                        scoreRef.setValue(score);
-                    }
-                } catch (Exception e) {
-                    scoreRef.setValue(score);
-                }
-                Log.d(TAG, "Value is: " + score);
+                handleDataChange(dataSnapshot);
             }
 
             @Override
@@ -83,6 +68,19 @@ public class CurrentUser extends User {
                 Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+    }
+
+    private void handleDataChange(DataSnapshot dataSnapshot) {
+        Long value =  dataSnapshot.getValue(Long.class);
+        try{
+            if(!dbScoreFetched) {
+                dbScoreFetched = true;
+                score += value;
+                scoreRef.setValue(score);
+            }
+        } catch (Exception e) {
+            scoreRef.setValue(score);
+        }
     }
 
     public static CurrentUser getInstance() {

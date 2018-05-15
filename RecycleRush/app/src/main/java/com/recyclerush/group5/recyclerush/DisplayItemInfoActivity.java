@@ -29,7 +29,6 @@ import java.util.Locale;
 public class DisplayItemInfoActivity extends Activity{
     TextView text1;
     TextView text2;
-    TextView text3;
     //TODO set text to this button when the name of the closest recycling place is known
     Button mapsButton;
     LocationManager locationManager;
@@ -49,7 +48,6 @@ public class DisplayItemInfoActivity extends Activity{
 
         text1=(TextView) findViewById(R.id.textView);
         text2=(TextView) findViewById(R.id.textView2);
-        text3=(TextView) findViewById(R.id.textView3);
         mapsButton = findViewById(R.id.button_open_maps);
 
         mapsButton.setOnClickListener(new View.OnClickListener() {
@@ -98,8 +96,6 @@ public class DisplayItemInfoActivity extends Activity{
 
             Snackbar snack = Snackbar.make(layout, isRecyclableText, Snackbar.LENGTH_INDEFINITE);
             snack.show();
-
-            text3.setText("Material:");
 
             setupLocation();
         }

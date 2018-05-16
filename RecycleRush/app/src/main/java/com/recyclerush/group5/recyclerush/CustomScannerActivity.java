@@ -3,17 +3,16 @@ package com.recyclerush.group5.recyclerush;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 
+
 /**
  * This activity has a margin.
  */
 public class CustomScannerActivity extends CaptureActivity {
-    TextView text1;
     TextView text2;
 
     @Override
@@ -28,7 +27,6 @@ public class CustomScannerActivity extends CaptureActivity {
             }
 
         });
-
 
         DecoratedBarcodeView barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {

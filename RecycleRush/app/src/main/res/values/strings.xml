@@ -27,4 +27,5 @@
     <string name="camera_button">camera_button</string>
     <string name="splashscreen">splashscreen</string>
     <string name="hello_world_splash">Hello World, splash</string>
+
 </resources>

@@ -9,16 +9,15 @@
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/zxing_barcode_scanner"
-        android:layout_width="344dp"
-        android:layout_height="485dp"
+        android:layout_width="357dp"
+        android:layout_height="455dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
         app:zxing_preview_scaling_strategy="fitXY"
         app:zxing_use_texture_view="false">
 
@@ -27,10 +26,11 @@
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="134dp"
-        android:layout_height="62dp"
+        android:layout_height="74dp"
         android:src="@drawable/baseline_keyboard_arrow_up_white_48"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="501dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

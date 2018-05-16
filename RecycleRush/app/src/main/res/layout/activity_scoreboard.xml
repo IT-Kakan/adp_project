@@ -14,52 +14,53 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="31dp"
-        android:layout_marginTop="58dp"
         android:src="@drawable/winning1"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/winner"
         android:layout_width="113dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="208dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/username"
         android:textAlignment="center"
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/winner_points"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/winner_points"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginBottom="272dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:text="@string/points_profile"
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/winner"
         app:layout_constraintTop_toBottomOf="@+id/winner" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="215dp"
-        android:layout_height="46dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="150dp"
         android:layout_marginTop="12dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@color/cardview_light_background"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/winner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -67,23 +68,36 @@
 
     <ListView
         android:id="@+id/ListViewScoreboard"
-        android:layout_width="304dp"
+        android:layout_width="0dp"
         android:layout_height="207dp"
-        android:layout_marginBottom="53dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winner_points"></ListView>
+        app:layout_constraintTop_toBottomOf="@+id/winner_points">
+
+    </ListView>
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="59dp"
-        android:layout_height="41dp"
-        android:layout_marginBottom="216dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:srcCompat="@drawable/silver2" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="59dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="149dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/bronzzzzzz" />
+
 </android.support.constraint.ConstraintLayout>

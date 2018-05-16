@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -24,6 +25,8 @@ public class ScoreboardAdapter extends ArrayAdapter {
         TextView textViewPlace;
         TextView textViewName;
         TextView textViewScore;
+        TextView winner;
+        TextView winnerScore;
     }
 
     public ScoreboardAdapter(List<User> users, Context context){
@@ -46,9 +49,12 @@ public class ScoreboardAdapter extends ArrayAdapter {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.scoreboard_item_view, parent, false);
-            viewHolder.textViewPlace = (TextView) convertView.findViewById(R.id.textViewPlace);
-            viewHolder.textViewName = (TextView) convertView.findViewById(R.id.textViewName);
-            viewHolder.textViewScore = (TextView) convertView.findViewById(R.id.textViewScore);
+            viewHolder.textViewPlace = convertView.findViewById(R.id.textViewPlace);
+            viewHolder.textViewName = convertView.findViewById(R.id.textViewName);
+            viewHolder.textViewScore = convertView.findViewById(R.id.textViewScore);
+
+            viewHolder.winner = convertView.findViewById(R.id.winner);
+            viewHolder.winnerScore = convertView.findViewById(R.id.winner_points);
 
            // result=convertView;
 
@@ -60,9 +66,16 @@ public class ScoreboardAdapter extends ArrayAdapter {
 
         lastPosition = position;
 
-        viewHolder.textViewPlace.setText((position+1)+".");
-        viewHolder.textViewName.setText(user.getUserName());
-        viewHolder.textViewScore.setText(user.getScore()+"");
+        if (position == 0) {
+            // HÄR BORDE DEN SOM LEDER VISAS
+           // viewHolder.winner.setText(user.getUserName());
+           // viewHolder.winnerScore.setText(user.getScore() + "");
+        } else {
+            viewHolder.textViewPlace.setText((position+1)+".");
+            viewHolder.textViewName.setText(user.getUserName());
+            viewHolder.textViewScore.setText(user.getScore()+"");
+        }
+
 
         //TODO make this look prettier
         if(user instanceof CurrentUser) {

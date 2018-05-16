@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
     //noinspection GradleDependency
     implementation 'com.google.android.gms:play-services-auth:15.0.0'
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
 
 }
 

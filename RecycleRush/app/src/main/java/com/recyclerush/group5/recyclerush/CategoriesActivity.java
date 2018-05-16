@@ -49,7 +49,6 @@ public class CategoriesActivity extends AppCompatActivity{
         butt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Barcode not found.", Toast.LENGTH_LONG).show();
                 sendToMap(0);
             }
         });

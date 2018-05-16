@@ -46,6 +46,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
                 Intent backToMain = new Intent(BarcodeReaderActivity.this, MainActivity.class);
                 backToMain.putExtra("user", currentUser.getUserName());
                 startActivity(backToMain);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
     }

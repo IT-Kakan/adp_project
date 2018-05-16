@@ -11,11 +11,11 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="253dp"
-        android:layout_height="0dp"
+        android:layout_width="224dp"
+        android:layout_height="224dp"
+        android:layout_marginBottom="112dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/barcode2" />
 
@@ -23,14 +23,28 @@
         android:id="@+id/searchView"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="439dp"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="80dp"
         android:background="@color/cardview_shadow_start_color"
         android:fadingEdge="horizontal|vertical"
         android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_google_signin_btn_text_light_pressed"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

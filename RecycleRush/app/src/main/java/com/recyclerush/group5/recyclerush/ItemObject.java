@@ -52,13 +52,16 @@ public class ItemObject {
                 result = new ItemObject("7340131610000", "Redbull", true, "metal" );
                 break;
             case "7311250004360": //Snus barcode
-                result = new ItemObject("7311250004360","Snus" , true, "plastic, paper");
+                result = new ItemObject("7311250004360","Snus" , true, "plastic");
                 break;
             case "5901234123457": //Tom barcode
                 result = new ItemObject("5901234123457","Tom",  true, "paper");
                 break;
             case "123": //Test barcode
                 result = new ItemObject("5901234123457","Coca Cola",  true, "plutonium");
+                break;
+            case "9783319051543": //Book
+                result = new ItemObject("9783319051543","Book",  true, "paper");
                 break;
             default:
                 break;

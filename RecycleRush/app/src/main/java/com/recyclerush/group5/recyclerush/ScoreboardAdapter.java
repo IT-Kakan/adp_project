@@ -1,6 +1,7 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.Log;
@@ -53,9 +54,6 @@ public class ScoreboardAdapter extends ArrayAdapter {
             viewHolder.textViewName = convertView.findViewById(R.id.textViewName);
             viewHolder.textViewScore = convertView.findViewById(R.id.textViewScore);
 
-            viewHolder.winner = convertView.findViewById(R.id.winner);
-            viewHolder.winnerScore = convertView.findViewById(R.id.winner_points);
-
            // result=convertView;
 
             convertView.setTag(viewHolder);
@@ -66,11 +64,7 @@ public class ScoreboardAdapter extends ArrayAdapter {
 
         lastPosition = position;
 
-        if (position == 0) {
-            // HÄR BORDE DEN SOM LEDER VISAS
-           // viewHolder.winner.setText(user.getUserName());
-           // viewHolder.winnerScore.setText(user.getScore() + "");
-        } else {
+        if (position != 0) {
             viewHolder.textViewPlace.setText((position+1)+".");
             viewHolder.textViewName.setText(user.getUserName());
             viewHolder.textViewScore.setText(user.getScore()+"");
@@ -84,7 +78,7 @@ public class ScoreboardAdapter extends ArrayAdapter {
             viewHolder.textViewScore.setTypeface(null, Typeface.BOLD_ITALIC );
         }
 
-        Log.d("ScoreboardAdapter", "score: "+user.getScore());
+        Log.d("ScoreboardAdapter", "Score: "+user.getScore());
 
         // Return the completed view to render on screen
         return convertView;

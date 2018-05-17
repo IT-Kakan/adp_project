@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -69,6 +71,14 @@ public class ScoreboardActivity extends AppCompatActivity {
         }
         // Query...orderByChildren(score) sorts users with lower scores first
         Collections.reverse(userList);
+        User first = userList.get(0);
+
+        TextView winnerName = findViewById(R.id.winner);
+        TextView winnerScore = findViewById(R.id.winner_points);
+
+        winnerName.setText(first.getUserName());
+        winnerScore.setText(first.getScore() + "");
+
         adapter = new ScoreboardAdapter(userList, getApplicationContext());
         scoreboard.setAdapter(adapter);
     }

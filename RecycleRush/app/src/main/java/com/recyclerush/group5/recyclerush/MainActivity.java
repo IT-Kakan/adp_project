@@ -11,10 +11,6 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     HashMap<String, ItemObject> map = new HashMap<String, ItemObject>();
-    // The current user of the app, unknown as login-state
-    //CurrentUser currentUser;
-    CurrentUser currentUser = CurrentUser.getInstance();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         openScanner();
-
     }
 
     private void openScanner() {
@@ -38,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private void display(String id) {
         if(ItemObject.doesExist(id)){
             //open display activity
-            currentUser.recycle(ItemObject.getScannedItem(id));
+            CurrentUser.getInstance().recycle(ItemObject.getScannedItem(id));
             Intent displayInfo = new Intent(this, DisplayItemInfoActivity.class);
             displayInfo.putExtra("scanId", id);
             startActivity(displayInfo);

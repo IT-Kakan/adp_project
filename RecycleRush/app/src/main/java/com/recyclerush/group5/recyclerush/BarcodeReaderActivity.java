@@ -11,9 +11,7 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-
 public class BarcodeReaderActivity extends AppCompatActivity {
-    CurrentUser currentUser = CurrentUser.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +47,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
 
     private void display(String id) {
         if(ItemObject.doesExist(id)){
-            currentUser.recycle(ItemObject.getScannedItem(id));
+            CurrentUser.getInstance().recycle(ItemObject.getScannedItem(id));
             Intent displayInfo = new Intent(this, DisplayItemInfoActivity.class);
             displayInfo.putExtra("scanId", id);
             startActivity(displayInfo);

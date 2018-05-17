@@ -3,7 +3,6 @@ package com.recyclerush.group5.recyclerush;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -12,8 +11,6 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
-
-import android.view.Menu;
 
 public class BarcodeReaderActivity extends AppCompatActivity {
     CurrentUser currentUser = CurrentUser.getInstance();
@@ -40,11 +37,6 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.main, menu);//Menu Resource, Menu
-        return true;
-    }
 
     public void barcodeRead(View view){
         EditText usersBarcode = findViewById(R.id.editText_1);
@@ -72,10 +64,11 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, in);
         if (scanningResult != null) {
             try {
-                Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
+               // Log.i("barcode", in.getStringExtra("SCAN_RESULT"));
                 display(in.getStringExtra("SCAN_RESULT"));
             }
             catch (NullPointerException e){}
         }
     }
+
 }

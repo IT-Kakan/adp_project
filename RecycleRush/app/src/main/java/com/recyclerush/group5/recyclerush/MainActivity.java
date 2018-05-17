@@ -18,24 +18,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //Log.i("MainActivity", "onCreate");
         super.onCreate(savedInstanceState);
-        openScanner();
     }
 
-    /*
     protected void onResume() {
         super.onResume();
-        //Log.i("MainActivity", "onResume");
-        //currentUser = CurrentUser.getInstance();
-        if (!currentUser.isLoggedIn()) {
-            currentUser.setUserName("unknown");
-        }
-       //openScanner();
+        openScanner();
 
     }
-
-    */
 
     private void openScanner() {
         IntentIntegrator scanIntegrator = new IntentIntegrator(this);

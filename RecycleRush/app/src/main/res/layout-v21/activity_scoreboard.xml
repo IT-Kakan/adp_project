@@ -13,8 +13,9 @@
         android:id="@+id/imageView6"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
         android:src="@drawable/winning1"
-        app:layout_constraintBottom_toBottomOf="@+id/winner_points"
+        app:layout_constraintBottom_toTopOf="@+id/ListViewScoreboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -22,7 +23,7 @@
     <TextView
         android:id="@+id/winner"
         android:layout_width="89dp"
-        android:layout_height="33dp"
+        android:layout_height="23dp"
         android:text="@string/username"
         android:textAlignment="center"
         android:textColor="@color/cardview_light_background"
@@ -30,15 +31,14 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/winner_points"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/winner_points"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="6dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="24dp"
         android:layout_marginEnd="16dp"
         android:text="@string/points_profile"
         android:textColor="@color/cardview_light_background"
@@ -51,8 +51,8 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="215dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="174dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="143dp"
         android:elevation="20dp"
         android:text="Scoreboard"
         android:textAlignment="center"
@@ -69,72 +69,63 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar4"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="63dp"
         android:layout_alignParentBottom="true"
         android:background="@color/common_google_signin_btn_text_light_pressed"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ListViewScoreboard" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <TextView
+        android:id="@+id/pointsuser"
         android:layout_width="0dp"
-        android:layout_height="94dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="35dp"
+        android:elevation="3dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        android:elevation="1dp"
+        app:layout_constraintStart_toEndOf="@+id/nameuser"
+        app:layout_constraintTop_toBottomOf="@+id/nameuser"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/nameuser"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="3dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/pointsuser"
+        app:layout_constraintEnd_toStartOf="@+id/pointsuser"
+        app:layout_constraintStart_toEndOf="@+id/place"
+        app:layout_constraintTop_toBottomOf="@+id/ListViewScoreboard"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="40dp"
+        android:elevation="3dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/nameuser"
+        app:layout_constraintEnd_toStartOf="@+id/nameuser"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar4">
-
-        <TextView
-            android:id="@+id/place"
-            android:layout_width="0dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="40dp"
-            android:elevation="3dp"
-            android:text="TextView"
-            app:layout_constraintBaseline_toBaselineOf="@+id/nameuser"
-            app:layout_constraintEnd_toStartOf="@+id/nameuser"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:targetApi="lollipop" />
-
-        <TextView
-            android:id="@+id/nameuser"
-            android:layout_width="0dp"
-            android:layout_height="37dp"
-            android:layout_centerHorizontal="true"
-            android:elevation="3dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toStartOf="@+id/pointsuser"
-            app:layout_constraintStart_toEndOf="@+id/place"
-            tools:layout_editor_absoluteY="514dp"
-            tools:targetApi="lollipop" />
-
-        <TextView
-            android:id="@+id/pointsuser"
-            android:layout_width="0dp"
-            android:layout_height="37dp"
-            android:layout_marginEnd="36dp"
-            android:elevation="3dp"
-            android:text="TextView"
-            app:layout_constraintBaseline_toBaselineOf="@+id/nameuser"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/nameuser"
-            tools:targetApi="lollipop" />
-
-    </android.support.constraint.ConstraintLayout>
+        tools:targetApi="lollipop" />
 
     <ListView
         android:id="@+id/ListViewScoreboard"
         android:layout_width="0dp"
-        android:layout_height="188dp"
-        android:layout_marginBottom="40dp"
+        android:layout_height="215dp"
+        android:layout_marginBottom="62dp"
         android:layout_marginEnd="40dp"
         android:layout_marginStart="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar4"
+        app:layout_constraintBottom_toTopOf="@+id/nameuser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

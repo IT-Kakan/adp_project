@@ -24,6 +24,8 @@ public class ScoreboardActivity extends AppCompatActivity {
     ArrayList<User> userList;
     private static ScoreboardAdapter adapter;
     ListView scoreboard;
+    CurrentUser currentUser = CurrentUser.getInstance();
+
     //TODO: find all users; sort by score; populate scoreboard
 
     @Override
@@ -75,6 +77,13 @@ public class ScoreboardActivity extends AppCompatActivity {
 
         TextView winnerName = findViewById(R.id.winner);
         TextView winnerScore = findViewById(R.id.winner_points);
+
+        TextView currUserName = findViewById(R.id.nameuser);
+        TextView currUserPoints = findViewById(R.id.pointsuser);
+        TextView currUserPlace = findViewById(R.id.place);
+
+        currUserName.setText(currentUser.getUserName());
+        currUserPoints.setText(currentUser.getScore() + "");
 
         winnerName.setText(first.getUserName());
         winnerScore.setText(first.getScore() + "");

@@ -26,8 +26,6 @@ public class ScoreboardAdapter extends ArrayAdapter {
         TextView textViewPlace;
         TextView textViewName;
         TextView textViewScore;
-        TextView winner;
-        TextView winnerScore;
     }
 
     public ScoreboardAdapter(List<User> users, Context context){

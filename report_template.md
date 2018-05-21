@@ -190,7 +190,7 @@ Feature | Time estimated | Time spent per team member
 *Sprint retrospective*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
 *Acceptance test*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
 *Stand-up meetings*|*50 mins*|*Kalayu 10 mins, Johan 10 mins, Mahshid 10 mins, Emil 10 mins, Jesper O: 10 mins*
-*Wrote postmortem*|*5 hours 45 mins*|*Tom: x hours y mins, Jesper O: 5 hours 45 mins, Jesper R: x hours y mins*
+*Wrote postmortem*|*5 hours 45 mins*|*Tom: x hours y mins, Jesper O: 5 hours 45 mins, Jesper R: 5 hours 0 mins*
 *Postmortem review*|*6 hours 35 mins*|*Kalayu: 1 hour 5 mins, Johan: 1 hour 5 mins, Mahshid: 1 hour 5 mins, Tom: 35 mins, Emil 1 hour 5 mins, Jesper O: 1 hour 5 mins, Jesper R: 35 mins*
 *Presentation planning*|*6 hours 25 mins*|*Kalayu: 55 mins, Johan: 55 mins, Mahshid: 55 mins, Tom: 55 mins, Emil 55 mins, Jesper O: 55 mins, Jesper R: 55 mins*
 
@@ -216,17 +216,44 @@ Reflect on the agile practice practiced:
 - How efficient were the practices, given the time they took to use?
 
 # Postmortem
-Once the project is finished, summarize your experiences.
-The postmortem part shall be 2000-3000 words long.
 
-Considering the following:
+Agile practices reflection
+Given the limited experience that a single project of this type provides, we would argue that Meyer’s assessment of agile is comparatively aligned with ours. However, we feel that several practices were not sufficiently tried out to give us proper assessments. As discussed later in the report, we agree with Meyer that test-first, pair-programming and onsite customer are questionable practices or perhaps limited to specific cases. We also confirm that small releases is a beneficial practice, at least in this project.
+General thoughts on agile practices
+Practice interaction
+We argue that the agile practices interact in a multitude of ways, both positively and negatively. We won’t cover them all in detail, but rather focus on which we argue are the top three interactions. Broadly speaking, the practices synergize well with each other, both as complementary ideas and through amplification effects.
 
-- With regards to the agile practices, reflect on the combined experience from all sprints.
+The first interaction we will discuss is the synergy between the practices planning game and sustainable pace. The former empowers the developers in reasoning about, estimating and communicating how much effort each task will require. We believe that these estimates are more accurate than those arising in traditional planning. The work units are encouraged to be small and the developers are experts on the subject of their own competence. The more accurate the estimates are, the more accurate the velocity assessments become. Consequently, schedule-related overtime and burnout effects are less likely to occur.
 
-- Which practices had the most impact on the software developed?
-  Think of both positives and negatives.
+Second, we argue that the practice of small releases synergises well with continuous integration. The former implies that the duration for which the product may be in an undeployable state is lowered. One important criterion for being deployable is that all tests should pass. The practice of continuous integration aims to ensure that every code change results in a product that passes all tests. In other words, in the extreme case, continuous integration pushes the duration between deployable versions to zero.
 
-- What would you do differently in a future but similar project?
+As discussed above, continuous integration aims to ensure that every change of the codebase results in a correct product. We believe that the risk of breaking a working part of the product is a major deterrent for conducting refactoring. By eliminating this risk (at least as far as the tests are concerned), continuous integration synergises well with refactoring.
+
+Practice efficiency
+All in all, we find it difficult to assess the practices in general only from the project. The project was quite limited in scope and expected longevity, which meant that the consequences of the practices were skewed. We believe that some practices give diminishing returns, perhaps even becoming a liability with time. Conversely, we believe that other practices become more efficient with time.
+Planning game
+We found the planning game to be a useful practice in this project and employed it throughout the entirety of the project. We certainly did not execute the practice perfectly, as there were a few occurrences where we and the customer decided on commitments that were not estimated. Such execution carries risks of over- or underestimating the velocity of the team, potentially resulting in repercussions for the team, customer or other stakeholders.
+Small releases
+At the end of each iteration, we introduced new features to the app that are integrated, working and tested. Each iteration was about 1-2 weeks long and for each iteration, we released running and tested features chosen by our customer. Our goal for each sprint was to finish a small set of functionality, based on the user stories and deliver visibly improved software to the customer. Throughout the project, the length of cycles differed a bit which hampered the time distribution and workload. Otherwise, the small releases were helpful for this project, since at the end of each iteration the customer could give us feedback on the newly introduced functionality. We believe that it’s critical to get feedback at an early stage of development to avoid unnecessary blunders.
+Metaphor
+We did not employ the metaphor practice in this project. The intent of the application and its software components were quite palpable. As a result, there seldom was any confusion between stakeholders that warranted the need for metaphors.
+Simple design
+We found that our project naturally joined with the simple design practice. The scope of the application was both small and emergent, which meant that it was natural to defer architectural decisions. The problem domain exhibited no inherent complexity that would require strong coordination of components. We think that this is a common property of mobile applications, which leads to this practice being quite apt for that kind of projects. However, we are unsure of how the practice applies to large-scale systems or domains where the components are intrinsically complex.
+Test-first
+The test-first practice was not well suited for this GUI intensive project. The initial thought was to adopt the test automation pyramid as a strategy. This would provide us with running unit tests after every build and give us feedback immediately. However, GUI testing often requires a human touch and is difficult to create with scripts. Based on previous experience, GUI testing often require a lot of programming and can be time-consuming. Consequently, we decided to not focus on this principle in order to dedicate time to the other principles.
+
+
+Refactoring
+In this project, refactoring did not become an ingrained part of the standard development process. This meant that every developed feature accrued technical debt. Refactoring was instead done in a reactive and ad-hoc fashion, which did not yield the potential benefits. Arguably, this may have been a result of the size of the project. Since the beginning, we have not expected the longevity of the codebase to exceed the time and effort designated by the course. In other words, the cost of the technical debt is comparatively low, even in instances were refactoring would yield a higher rewardthe debt’s “interest” would be high. Consequently, the incentive to perform refactoring was low and may not properly reflect our behaviour in large-scale software projects.
+
+Pair-programming
+Pair-programming was generally an agreeable practice, but it is difficult to assess the trade-offs. Depending on how the balancing factors are weighted, our opinion of pair-programming differs. On one hand, we generally thought that the practice was useful for knowledge, morale and comradeship. On the other hand, we felt that pair-programming easily became a waste of resources, which might lower morale and comradeship. One aspect to consider is what support the practice could gain from appropriate tools. We believe that we would have appreciated more if pair-programming was conducted in a collaborative document environment (e.g. Google Docs or Teletype in Atom).
+
+Collective Code ownership
+Because the team was self-organised and lacked imposed power hierarchies, collective code ownership emerged naturally in this project. Although there probably was some skill variance within the team, we were peers to a larger extent than would be expected in industry. We are all quite limited in our experience, both general and specific. As a result, tasks were assigned in an ad-hoc fashion where personal preference played an unusually large part. We think that this approach led to the members being less overconfident and more humble, which in turn led to high acceptance of modifications made by the rest of the team.
+
+
+
 
 
 # Project outcome

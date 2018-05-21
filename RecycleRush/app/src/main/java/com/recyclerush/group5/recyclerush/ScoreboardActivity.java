@@ -84,6 +84,8 @@ public class ScoreboardActivity extends AppCompatActivity {
 
         currUserName.setText(currentUser.getUserName());
         currUserPoints.setText(currentUser.getScore() + "");
+        currUserPlace.setText(userList.indexOf(currentUser)+1+".");
+
 
         winnerName.setText(first.getUserName());
         winnerScore.setText(first.getScore() + "");

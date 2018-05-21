@@ -174,7 +174,7 @@ Tom and Jesper O tried out pair programming. We feel that there certainly are ma
 
 
 
-# Sprint X Log
+# Sprint 5 Log
 Per sprint, fill out one sprint log section and its subsections.
 
 ## Commitment
@@ -186,7 +186,13 @@ Please report on all activities; for example, in addition to coding, planning an
 
 Feature | Time estimated | Time spent per team member
 --------|----------------|--------
-*Name and ID of each feature*|*X hours*|*Member A: Y hours, Member B: Z hours*
+*Meeting*|*3 hours 30 mins*|*Kalayu: 30 mins, Johan: 30 mins, Mahshid: 30 mins, Tom: 30 mins, Emil: 30 mins, Jesper O: 30 mins, Jesper R: 30 mins*
+*Sprint retrospective*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*Acceptance test*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*Stand-up meetings*|*50 mins*|*Kalayu 10 mins, Johan 10 mins, Mahshid 10 mins, Emil 10 mins, Jesper O: 10 mins*
+*Wrote postmortem*|*5 hours 45 mins*|*Tom: x hours y mins, Jesper O: 5 hours 45 mins, Jesper R: x hours y mins*
+*Postmortem review*|*6 hours 35 mins*|*Kalayu: 1 hour 5 mins, Johan: 1 hour 5 mins, Mahshid: 1 hour 5 mins, Tom: 35 mins, Emil 1 hour 5 mins, Jesper O: 1 hour 5 mins, Jesper R: 35 mins*
+*Presentation planning*|*6 hours 25 mins*|*Kalayu: 55 mins, Johan: 55 mins, Mahshid: 55 mins, Tom: 55 mins, Emil 55 mins, Jesper O: 55 mins, Jesper R: 55 mins*
 
 ## Reflections
 Reflect on how the work worked.

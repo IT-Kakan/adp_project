@@ -68,14 +68,6 @@ public class ScoreboardAdapter extends ArrayAdapter {
             viewHolder.textViewScore.setText(user.getScore()+"");
         }
 
-
-        //TODO make this look prettier
-        if(user instanceof CurrentUser) {
-            viewHolder.textViewPlace.setTypeface(null, Typeface.BOLD_ITALIC);
-            viewHolder.textViewName.setTypeface(null, Typeface.BOLD_ITALIC);
-            viewHolder.textViewScore.setTypeface(null, Typeface.BOLD_ITALIC );
-        }
-
         Log.d("ScoreboardAdapter", "Score: "+user.getScore());
 
         // Return the completed view to render on screen

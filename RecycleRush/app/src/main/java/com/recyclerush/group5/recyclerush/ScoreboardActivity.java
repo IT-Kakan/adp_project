@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +24,8 @@ public class ScoreboardActivity extends AppCompatActivity {
     ArrayList<User> userList;
     private static ScoreboardAdapter adapter;
     ListView scoreboard;
+    CurrentUser currentUser = CurrentUser.getInstance();
+
     //TODO: find all users; sort by score; populate scoreboard
 
     @Override
@@ -69,6 +73,23 @@ public class ScoreboardActivity extends AppCompatActivity {
         }
         // Query...orderByChildren(score) sorts users with lower scores first
         Collections.reverse(userList);
+        User first = userList.get(0);
+
+        TextView winnerName = findViewById(R.id.winner);
+        TextView winnerScore = findViewById(R.id.winner_points);
+
+        TextView currUserName = findViewById(R.id.nameuser);
+        TextView currUserPoints = findViewById(R.id.pointsuser);
+        TextView currUserPlace = findViewById(R.id.place);
+
+        currUserName.setText(currentUser.getUserName());
+        currUserPoints.setText(currentUser.getScore() + "");
+        currUserPlace.setText(userList.indexOf(currentUser)+1+".");
+
+
+        winnerName.setText(first.getUserName());
+        winnerScore.setText(first.getScore() + "");
+
         adapter = new ScoreboardAdapter(userList, getApplicationContext());
         scoreboard.setAdapter(adapter);
     }

@@ -4,7 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.auth.AuthUI;
@@ -25,10 +28,26 @@ public class CustomScannerActivity extends CaptureActivity {
     private static final String TAG = "CustomScannerActivity";
     TextView text1;
     TextView text2;
+    private ImageButton mButton;
+    private Animation mBounceAnimation;
 
     @Override
     protected DecoratedBarcodeView initializeContent() {
         setContentView(R.layout.activity_custom_barcode_scanner);
+
+        View thisView = this.findViewById(android.R.id.content);
+        thisView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(CustomScannerActivity.this, CategoriesActivity.class);
+                startActivity(backToMain);
+            }
+
+        });
+
+        mButton = findViewById(R.id.imageButton);
+        mBounceAnimation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.bounce_animation);
+        mButton.startAnimation(mBounceAnimation);
+
         DecoratedBarcodeView barcodeScannerView = findViewById(R.id.zxing_barcode_scanner);
         barcodeScannerView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeRight() {
@@ -38,28 +57,25 @@ public class CustomScannerActivity extends CaptureActivity {
                 } else {
                     firebaseLogin();
                 }
-            }
 
-            public void onSwipeTop (){
-                Intent backToMain = new Intent(CustomScannerActivity.this, CategoriesActivity.class);
-                startActivity(backToMain);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
 
             public void onSwipeLeft() {
                 Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+
+            }
+
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(CustomScannerActivity.this, CategoriesActivity.class);
+                startActivity(backToMain);
+                overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out);
             }
         });
 
-        Button enterBarcode = findViewById(R.id.button3);
-        enterBarcode.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(CustomScannerActivity.this, BarcodeReaderActivity.class);
-                startActivity(intent);
-            }
-        });
         return barcodeScannerView;
     }
 

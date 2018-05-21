@@ -1,6 +1,7 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,9 +48,9 @@ public class ScoreboardAdapter extends ArrayAdapter {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.scoreboard_item_view, parent, false);
-            viewHolder.textViewPlace = (TextView) convertView.findViewById(R.id.textViewPlace);
-            viewHolder.textViewName = (TextView) convertView.findViewById(R.id.textViewName);
-            viewHolder.textViewScore = (TextView) convertView.findViewById(R.id.textViewScore);
+            viewHolder.textViewPlace = convertView.findViewById(R.id.textViewPlace);
+            viewHolder.textViewName = convertView.findViewById(R.id.textViewName);
+            viewHolder.textViewScore = convertView.findViewById(R.id.textViewScore);
 
            // result=convertView;
 
@@ -60,18 +62,13 @@ public class ScoreboardAdapter extends ArrayAdapter {
 
         lastPosition = position;
 
-        viewHolder.textViewPlace.setText((position+1)+".");
-        viewHolder.textViewName.setText(user.getUserName());
-        viewHolder.textViewScore.setText(user.getScore()+"");
-
-        //TODO make this look prettier
-        if(user instanceof CurrentUser) {
-            viewHolder.textViewPlace.setTypeface(null, Typeface.BOLD_ITALIC);
-            viewHolder.textViewName.setTypeface(null, Typeface.BOLD_ITALIC);
-            viewHolder.textViewScore.setTypeface(null, Typeface.BOLD_ITALIC );
+        if (position != 0) {
+            viewHolder.textViewPlace.setText((position+1)+".");
+            viewHolder.textViewName.setText(user.getUserName());
+            viewHolder.textViewScore.setText(user.getScore()+"");
         }
 
-        Log.d("ScoreboardAdapter", "score: "+user.getScore());
+        Log.d("ScoreboardAdapter", "Score: "+user.getScore());
 
         // Return the completed view to render on screen
         return convertView;

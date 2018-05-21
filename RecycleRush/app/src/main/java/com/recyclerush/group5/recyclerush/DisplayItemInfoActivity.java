@@ -29,7 +29,6 @@ import java.util.Locale;
 public class DisplayItemInfoActivity extends Activity{
     TextView text1;
     TextView text2;
-    TextView text3;
     //TODO set text to this button when the name of the closest recycling place is known
     Button mapsButton;
     LocationManager locationManager;
@@ -49,7 +48,6 @@ public class DisplayItemInfoActivity extends Activity{
 
         text1=(TextView) findViewById(R.id.textView);
         text2=(TextView) findViewById(R.id.textView2);
-        text3=(TextView) findViewById(R.id.textView3);
         mapsButton = findViewById(R.id.button_open_maps);
 
         mapsButton.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +68,7 @@ public class DisplayItemInfoActivity extends Activity{
 
         });
 
-        ImageButton cameraButton = findViewById(R.id.cameraButton);
+        Button cameraButton = findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,17 +85,16 @@ public class DisplayItemInfoActivity extends Activity{
             text1.setText(item.getName());
             text2.setText(item.getMaterials());
 
-            layout = (ConstraintLayout) findViewById(R.id.layout);
+            layout = findViewById(R.id.layout);
             String isRecyclableText;
             if (item.isRecyclable())
                 isRecyclableText = "Recycable!";
             else
                 isRecyclableText = "Not Recycable!";
 
-            Snackbar snack = Snackbar.make(layout, isRecyclableText, Snackbar.LENGTH_INDEFINITE);
-            snack.show();
+            TextView recycText = findViewById(R.id.textView3);
+            recycText.setText(isRecyclableText);
 
-            text3.setText("Material:");
 
             setupLocation();
         }

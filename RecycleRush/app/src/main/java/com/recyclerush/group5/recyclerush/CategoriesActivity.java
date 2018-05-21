@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 
 
@@ -18,7 +21,15 @@ import java.util.HashMap;
  */
 
 public class CategoriesActivity extends AppCompatActivity{
-    ListView CatList;
+    Button butt1;
+    Button butt2;
+    Button butt3;
+    Button butt4;
+    Button butt5;
+    Button butt6;
+    Button butt7;
+    CurrentUser currentUser = CurrentUser.getInstance();
+
 
     HashMap<Integer, LocationObject> MapDatail = new HashMap<>();
     Context CTX;
@@ -27,36 +38,79 @@ public class CategoriesActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
+        butt1 = findViewById(R.id.button2);
+        butt2 = findViewById(R.id.button4);
+        butt3 = findViewById(R.id.button5);
+        butt4 = findViewById(R.id.button6);
+        butt5 = findViewById(R.id.button7);
+        butt6 = findViewById(R.id.button8);
+        butt7 = findViewById(R.id.button9);
 
-        CatList = findViewById(R.id.listView);
-// Defined Array values to show in ListView
-        String[] values = new String[] { "Automotive",
-                "Batteries",
-                "Glass",
-                "Paper",
-                "Plastic",
-                "Electronics",
-                "Aluminium"
-        };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_2, android.R.id.text1, values);
-
-        CatList.setAdapter(adapter);
-
-
-        CatList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        // good coding inc
+        butt1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Gson gs = new Gson();
-                SetRecycleAddress(position);
-                String json = gs.toJson(MapDatail.values());
-                Intent displayMap = new Intent(CategoriesActivity.this, LocationActivity.class);
-                displayMap.putExtra("JsonValue", json);
-                startActivity(displayMap);
-
+            public void onClick(View view) {
+                sendToMap(0);
             }
         });
+
+        butt2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToMap(1);
+            }
+        });
+
+        butt3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToMap(2);
+            }
+        });
+
+        butt4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToMap(3);
+            }
+        });
+        butt5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToMap(4);
+            }
+        });
+        butt6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToMap(5);
+            }
+        });
+        butt7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToMap(6);
+            }
+        });
+
+        findViewById(android.R.id.content).setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
+            public void onSwipeBottom() {
+                Intent backToMain = new Intent(CategoriesActivity.this, MainActivity.class);
+                backToMain.putExtra("user", currentUser.getUserName());
+                startActivity(backToMain);
+                overridePendingTransition(R.anim.push_down_in, R.anim.push_down_out);
+            }
+        });
+
+    }
+
+    public void sendToMap (int value) {
+        Gson gs = new Gson();
+        SetRecycleAddress(value);
+        String json = gs.toJson(MapDatail.values());
+        Intent displayMap = new Intent(CategoriesActivity.this, LocationActivity.class);
+        displayMap.putExtra("JsonValue", json);
+        startActivity(displayMap);
     }
 
     public void SetRecycleAddress(int Value) {
@@ -141,5 +195,7 @@ public class CategoriesActivity extends AppCompatActivity{
                 break;
         }
     }
+
+
 
 }

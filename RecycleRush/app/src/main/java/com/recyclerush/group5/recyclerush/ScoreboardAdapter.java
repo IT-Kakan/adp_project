@@ -37,7 +37,7 @@ public class ScoreboardAdapter extends ArrayAdapter {
     private int lastPosition = -1;
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
+         // Get the data item for this position
         User user = (User)getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         ViewHolder viewHolder; // view lookup cache stored in tag
@@ -66,6 +66,10 @@ public class ScoreboardAdapter extends ArrayAdapter {
             viewHolder.textViewPlace.setText((position+1)+".");
             viewHolder.textViewName.setText(user.getUserName());
             viewHolder.textViewScore.setText(user.getScore()+"");
+        } else{
+            viewHolder.textViewPlace.setText("Place");
+            viewHolder.textViewName.setText("Name");
+            viewHolder.textViewScore.setText("Score");
         }
 
         Log.d("ScoreboardAdapter", "Score: "+user.getScore());

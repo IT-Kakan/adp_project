@@ -18,7 +18,7 @@ public class BarcodeReaderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_barcode_reader);
 
         final SearchView searchBar = findViewById(R.id.searchView);
-        searchBar.setQueryHint("Enter barcode");
+        searchBar.setQueryHint("Enter barcode BITCH");
         searchBar.onActionViewExpanded();
         searchBar.setOnClickListener(new View.OnClickListener() {
             @Override

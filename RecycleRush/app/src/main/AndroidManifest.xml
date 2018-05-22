@@ -21,9 +21,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/recyckubgsgkigi"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/recyckubgsgkigi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -32,7 +32,7 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/SplashTheme">>
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,9 +48,8 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".UserActivity" />
-        <activity android:name=".DisplayUser" />
+        <activity android:name=".DisplayItemInfoActivity" />
+        <activity android:name=".DisplayUserActivity" />
         <activity android:name=".ScoreboardActivity"></activity>
 
         <meta-data
@@ -64,7 +63,7 @@
             android:resource="@array/preloaded_fonts" />
 
 
-        <activity android:name=".Categories" />
+        <activity android:name=".CategoriesActivity" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

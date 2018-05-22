@@ -1,20 +1,15 @@
 package com.recyclerush.group5.recyclerush;
 
 import android.Manifest;
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.Service;
 import android.content.Intent;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -24,7 +19,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -32,10 +26,9 @@ import java.util.Locale;
  * Created by emillundgren on 2018-04-12.
  */
 
-public class SecondActivity extends Activity{
+public class DisplayItemInfoActivity extends Activity{
     TextView text1;
     TextView text2;
-    TextView text3;
     //TODO set text to this button when the name of the closest recycling place is known
     Button mapsButton;
     LocationManager locationManager;
@@ -44,7 +37,6 @@ public class SecondActivity extends Activity{
     String recyclingName;
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
-
     ConstraintLayout layout;
     CurrentUser currentUser = CurrentUser.getInstance();
 
@@ -52,11 +44,10 @@ public class SecondActivity extends Activity{
     //@TargetApi(23)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.second_layout);
+        setContentView(R.layout.activity_display_item_info);
 
         text1=(TextView) findViewById(R.id.textView);
         text2=(TextView) findViewById(R.id.textView2);
-        text3=(TextView) findViewById(R.id.textView3);
         mapsButton = findViewById(R.id.button_open_maps);
 
         mapsButton.setOnClickListener(new View.OnClickListener() {
@@ -67,33 +58,48 @@ public class SecondActivity extends Activity{
             }
         });
 
-        ImageButton cameraButton = findViewById(R.id.cameraButton);
+        View itemView = this.findViewById(android.R.id.content);
+
+        itemView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()){
+            public void onSwipeTop (){
+                Intent backToMain = new Intent(DisplayItemInfoActivity.this, CategoriesActivity.class);
+                startActivity(backToMain);
+            }
+
+        });
+
+        Button cameraButton = findViewById(R.id.cameraButton);
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent backToMain = new Intent(SecondActivity.this, MainActivity.class);
+                Intent backToMain = new Intent(DisplayItemInfoActivity.this, MainActivity.class);
                 backToMain.putExtra("user", currentUser.getUserName());
                 startActivity(backToMain);
             }
         });
 
+        ItemObject item = ItemObject.getScannedItem(getIntent().getExtras().getString("scanId"));
+        if (item==null) {
+            Log.d("DEBUG", "item == null");
+        }else {
+            text1.setText(item.getName());
+            text2.setText(item.getMaterials());
 
-        text1.setText(getIntent().getExtras().getString("name"));
-        text2.setText(getIntent().getExtras().getString("materials"));
+            layout = findViewById(R.id.layout);
+            String isRecyclableText;
+            if (item.isRecyclable())
+                isRecyclableText = "Recycable!";
+            else
+                isRecyclableText = "Not Recycable!";
 
-        layout = (ConstraintLayout) findViewById(R.id.layout);
-        Snackbar snack = Snackbar.make(layout, getIntent().getExtras().getString("recyc"), Snackbar.LENGTH_INDEFINITE);
-        // View snackView = snack.getView();
-        // TextView textView = snackView.findViewById(android.support.design.R.id.snackbar_text);
-        // textView.setBackgroundColor(0xFF009446);
+            TextView recycText = findViewById(R.id.textView3);
+            recycText.setText(isRecyclableText);
 
-        snack.show();
 
-        text3.setText("Material:");
-
-        setupLocation();
-
+            setupLocation();
+        }
     }
+
     private void setupLocation(){
         LocationManager locationManager= (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         //Log.d("Network", "Network");

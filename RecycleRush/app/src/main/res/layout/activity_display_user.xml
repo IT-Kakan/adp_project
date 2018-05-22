@@ -5,15 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardview_light_background"
-    tools:context="com.recyclerush.group5.recyclerush.DisplayUser"
-    tools:layout_editor_absoluteY="81dp">
+    tools:context="com.recyclerush.group5.recyclerush.DisplayUserActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="196dp"
+        android:background="@color/common_google_signin_btn_text_light_pressed"
+        android:elevation="20dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:targetApi="lollipop" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="64dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="21dp"
+        android:src="@drawable/dots_left"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar6"
+        tools:targetApi="lollipop" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="383dp"
-        android:layout_height="248dp"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/gradientposter"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -64,31 +99,27 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="313dp"
-        android:layout_height="249dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="252dp"
+        android:layout_width="0dp"
+        android:layout_height="207dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginStart="35dp"
         android:contentDescription="@string/full_oak"
+        app:layout_constraintBottom_toTopOf="@+id/log_out_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/log_out_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:onClick="logOut"
         android:text="Log out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.984" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>

@@ -146,79 +146,148 @@ We committed to the following user stories
 * ID 13. Create a profile for each user - firebase?
 * ID 14. As a user I want to have a visualisation of a seed that grows into a tree depending on my credit score history so that I can see my total amount of recycling
 * ID 15. View categories - closest place where to recycle what. Not all can be recycled everywhere
+* ID 16. Connect the user profile to facebook. Be able to share something on facebookwall.
 
 ## Work Done
 
 Feature | Time estimated | Time spent per team member
 --------|----------------|--------
-*User story estimation*|*7 hours*|*Kalayu: 1 hour, Johan: 1 hour, Mahshid: 1 hour, Tom: 1 hour, Emil: 1 hour, Jesper O: 1 hour, Jesper R: 1 hour*
-*Acceptance test 3*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Coach meeting*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
+*Acceptance test*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
 *Sprint retrospective*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Tom: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins*
-*Planning*|*6 hours 10 mins*|*Kalayu: 50 mins, Johan: 50 mins, Mahshid: 50 mins, Tom: 50 mins, Emil: 50 mins, Jesper O: 50 mins, Jesper R: 50 mins*
-*ID: 11*.|*6 hours*| *Tom: 6h, Jesper O: x h*
-*ID: 12.*|*4 hours*| *Kalayu: 6h*
-*ID: 13.*|*6 hours*| *Johan: 9h*
-*ID: 14.*|*5 hours*| *Emil: 6h*
+*Sprint planning*|*5 hours 15 mins*|*Kalayu: 45 mins, Johan: 45 mins, Mahshid: 45 mins, Tom: 45 mins, Emil: 45 mins, Jesper O: 45 mins, Jesper R: 45 mins*
+*Stand-up meetings*|*1 hour 15 mins*|*Johan: 15 mins, Mahshid: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*ID: 11*.|*9 hours*| *Tom: 6h, Jesper O: 3 h*
+*ID: 12.*|*6 hours*| *Kalayu: 6h*
+*ID: 13.*|*9 hours*| *Johan: 9h*
+*ID: 14.*|*6 hours*| *Emil: 6h*
 *ID: 15.*|*13 hours*| *Mahshid: 13h*
+*ID: 16.*|*7 hours*| *Jesper R: 7h*
+*Resolved merge conflicts*| *1 hour 50 mins* | *Kalayu: 40 mins, Johan 20 mins, Emil 20 mins, Jesper O: 30 mins*
+*Refactoring*|*1 hour*|*Tom: 30 mins, Jesper O: 30 mins*
+*Unit testing*|*1 hour 10 mins*|*Jesper O: 1 hour 10 mins*
+*Wrote report*|*1 hour 15 mins*|*Kalayu: 15 mins, Johan: 20 mins, Emil: 10 mins, Jesper O: 30 mins*
 
-*Stand-up meetings*|*2 hours 20 mins*|*Kalayu: 20 mins, Johan: 20 mins, Mahshid: 20 mins, Emil: 20 mins, Jesper O: 20 mins, Jesper R: 20 mins, Tom: 20 mins*
-*Wrote report*|*2 hours 30 mins*|*Kalayu: 30 mins,  Jesper O: 1 hour 10 mins, Jesper R: 30 mins, Johan: 30 mins, Mahshid: 10 mins, Tom: 10 mins, Emil: 10 mins*
-*Resolved merge conflicts*| *1 hour 20 mins* | *Kalayu: 40 mins, Johan 20 mins, Emil 20 mins*
 
 ## Reflections
+Tom and Jesper O tried out pair programming. We feel that there certainly are many aspects to reflect on, both positive and negative. The topic is, however, rather multifaceted and we think it would too bold to make statements about the general case. We experienced pair programming to be a nice way of working with the product. Talking, sharing ideas, communicating or simply associating with one another had a positive impact on our attitude to the task. We believe that this is important in long-running projects (especially after Lucas' lecture), but also that it is difficult to quantify. In terms of conventional productivity measures, we think that we performed worse when pair programming this task, but we can't name a figure. The first part of the task was more or less routine work and is the main reason for our beliefs. The second part was more about knowledge gathering than anything else and we don't know if there would have been a difference, one way or another, if we were not pair programming. In the end, we think that the task was perhaps not the best for applying this practice on, but we remain optimistic about the human aspect of it.
 
 
 
 
-# Sprint X Log
-Per sprint, fill out one sprint log section and its subsections.
+# Sprint 5 Log
+
 
 ## Commitment
-List the features/stories that the team committed to finish during the sprint.
+
+We committed to the following user stories
+
+* ID 17: Connect scoreboard to user database
+* ID 18: Make the app look crisp
+* ID 19: debug scanning / navigation
+* ID 20: Can see the categories from the scan item screen
+
 
 ## Work Done
-Log what was accomplished, and how.
-Please report on all activities; for example, in addition to coding, planning and design discussion.
 
 Feature | Time estimated | Time spent per team member
 --------|----------------|--------
-*Name and ID of each feature*|*X hours*|*Member A: Y hours, Member B: Z hours*
-
-## Reflections
-Reflect on how the work worked.
-This data will form the basis for your final reflection.
-As the postmortem will be a writeup, it's fine to use shorthand notes, bullet list, and similar.
-Keep within 1000-1500 words.
-
-Discuss any deviations from the sprint commitment.
-
-Reflect on the agile practice practiced:
-
-- Did your experience correspond to or contradict with what literature claims?
-
-    - Analysis of why. Mostly interesting if something unexpected happens, but even
-      if everything runs according to plan, reflecting on the underlying mechanisms
-      can be interesting.
-
-- How did the practices interact?
-  Did they complement or counteract each other?
-
-- How efficient were the practices, given the time they took to use?
+*Meeting*|*3 hours 30 mins*|*Kalayu: 30 mins, Johan: 30 mins, Mahshid: 30 mins, Tom: 30 mins, Emil: 30 mins, Jesper O: 30 mins, Jesper R: 30 mins*
+*Sprint retrospective*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*Acceptance test*|*1 hour 45 mins*|*Kalayu: 15 mins, Johan: 15 mins, Mahshid: 15 mins, Tom: 15 mins, Emil: 15 mins, Jesper O: 15 mins, Jesper R: 15 mins*
+*Stand-up meetings*|*50 mins*|*Kalayu 10 mins, Johan 10 mins, Mahshid 10 mins, Emil 10 mins, Jesper O: 10 mins*
+*ID 17*|*3 hours*|*Johan: 3 hours*
+*ID 18*|*12 hours*|*Emil: 12 hours*
+*ID 19*|*3 hours*|*Kalayu: 3 hours*
+*ID 20*|*30 mins*|*Mahshid: 30 mins*
+*Refactoring*|*5 hours 30 mins*|*Johan: 2 hours 30 mins, Tom: 3 hours*
+*Wrote postmortem*|*10 hours 45 mins*|*Tom: x hours y mins, Jesper O: 5 hours 45 mins, Jesper R: 5 hours 0 mins*
+*Postmortem review*|*6 hours 35 mins*|*Kalayu: 1 hour 5 mins, Johan: 1 hour 5 mins, Mahshid: 1 hour 5 mins, Tom: 35 mins, Emil 1 hour 5 mins, Jesper O: 1 hour 5 mins, Jesper R: 35 mins*
+*Presentation planning*|*6 hours 25 mins*|*Kalayu: 55 mins, Johan: 55 mins, Mahshid: 55 mins, Tom: 55 mins, Emil 55 mins, Jesper O: 55 mins, Jesper R: 55 mins*
+*Wrote report*|*2 hour 10 mins*|*Jesper O: 2 hour 10 mins*
 
 # Postmortem
-Once the project is finished, summarize your experiences.
-The postmortem part shall be 2000-3000 words long.
 
-Considering the following:
+## Agile practices reflection
+Given the limited experience that a single project of this type provides, we would argue that Meyer's assessment of agile is comparatively aligned with ours. However, we feel that several practices were not sufficiently tried out to give us proper assessments. As discussed later in the report, we agree with Meyer that test-first, pair-programming and onsite customer are questionable practices or perhaps limited to specific cases. We also confirm that small releases is a beneficial practice, at least in this project.
 
-- With regards to the agile practices, reflect on the combined experience from all sprints.
+### General thoughts on agile practices
 
-- Which practices had the most impact on the software developed?
-  Think of both positives and negatives.
+#### Practice interaction
+We argue that the agile practices interact in a multitude of ways, both positively and negatively. We won't cover them all in detail, but rather focus on which we argue are the top three interactions. Broadly speaking, the practices synergize well with each other, both as complementary ideas and through amplification effects.
 
-- What would you do differently in a future but similar project?
+The first interaction we will discuss is the synergy between the practices planning game and sustainable pace. The former empowers the developers in reasoning about, estimating and communicating how much effort each task will require. We believe that these estimates are more accurate than those arising in traditional planning. The work units are encouraged to be small and the developers are experts on the subject of their own competence. The more accurate the estimates are, the more accurate the velocity assessments become. Consequently, schedule-related overtime and burnout effects are less likely to occur.
+
+Second, we argue that the practice of small releases synergises well with continuous integration. The former implies that the duration for which the product may be in an undeployable state is lowered. One important criterion for being deployable is that all tests should pass. The practice of continuous integration aims to ensure that every code change results in a product that passes all tests. In other words, in the extreme case, continuous integration pushes the duration between deployable versions to zero.
+
+As discussed above, continuous integration aims to ensure that every change of the codebase results in a correct product. We believe that the risk of breaking a working part of the product is a major deterrent for conducting refactoring. By eliminating this risk (at least as far as the tests are concerned), continuous integration synergises well with refactoring.
+
+#### Practice efficiency
+All in all, we find it difficult to assess the practices in general only from the project. The project was quite limited in scope and expected longevity, which meant that the consequences of the practices were skewed. We believe that some practices give diminishing returns, perhaps even becoming a liability with time. Conversely, we believe that other practices become more efficient with time.
+
+### Planning game
+We found the planning game to be a useful practice in this project and employed it throughout the entirety of the project. We certainly did not execute the practice perfectly, as there were a few occurrences where we and the customer decided on commitments that were not estimated. Such execution carries risks of over- or underestimating the velocity of the team, potentially resulting in repercussions for the team, customer or other stakeholders.
+
+### Small releases
+At the end of each iteration, we introduced new features to the app that are integrated, working and tested. Each iteration was about 1-2 weeks long and for each iteration, we released running and tested features chosen by our customer. Our goal for each sprint was to finish a small set of functionality, based on the user stories and deliver visibly improved software to the customer. Throughout the project, the length of cycles differed a bit which hampered the time distribution and workload. Otherwise, the small releases were helpful for this project, since at the end of each iteration the customer could give us feedback on the newly introduced functionality. We believe that it's critical to get feedback at an early stage of development to avoid unnecessary blunders.
+
+### Metaphor
+We did not employ the metaphor practice in this project. The intent of the application and its software components were quite palpable. As a result, there seldom was any confusion between stakeholders that warranted the need for metaphors.
+
+### Simple design
+We found that our project naturally joined with the simple design practice. The scope of the application was both small and emergent, which meant that it was natural to defer architectural decisions. The problem domain exhibited no inherent complexity that would require strong coordination of components. We think that this is a common property of mobile applications, which leads to this practice being quite apt for that kind of projects. However, we are unsure of how the practice applies to large-scale systems or domains where the components are intrinsically complex.
+
+### Test-first
+The test-first practice was not well suited for this GUI intensive project. The initial thought was to adopt the test automation pyramid as a strategy. This would provide us with running unit tests after every build and give us feedback immediately. However, GUI testing often requires a human touch and is difficult to create with scripts. Based on previous experience, GUI testing often require a lot of programming and can be time-consuming. Consequently, we decided to not focus on this principle in order to dedicate time to the other principles.
+
+### Refactoring
+In this project, refactoring did not become an ingrained part of the standard development process. This meant that every developed feature accrued technical debt. Refactoring was instead done in a reactive and ad-hoc fashion, which did not yield the potential benefits. Arguably, this may have been a result of the size of the project. Since the beginning, we have not expected the longevity of the codebase to exceed the time and effort designated by the course. In other words, the cost of the technical debt is comparatively low, even in instances were refactoring would yield a higher reward. Consequently, the incentive to perform refactoring was low and may not properly reflect our behaviour in large-scale software projects.
+
+### Pair-programming
+Pair-programming was generally an agreeable practice, but it is difficult to assess the trade-offs. Depending on how the balancing factors are weighted, our opinion of pair-programming differs. On one hand, we generally thought that the practice was useful for knowledge, morale and comradeship. On the other hand, we felt that pair-programming easily became a waste of resources, which might lower morale and comradeship. One aspect to consider is what support the practice could gain from appropriate tools. We believe that we would have appreciated more if pair-programming was conducted in a collaborative document environment (e.g. Google Docs or Teletype in Atom).
+
+### Collective Code ownership
+Because the team was self-organised and lacked imposed power hierarchies, collective code ownership emerged naturally in this project. Although there probably was some skill variance within the team, we were peers to a larger extent than would be expected in industry. We are all quite limited in our experience, both general and specific. As a result, tasks were assigned in an ad-hoc fashion where personal preference played an unusually large part. We think that this approach led to the members being less overconfident and more humble, which in turn led to high acceptance of modifications made by the rest of the team.
+
+### Continuous Integration
+We were unable to sufficiently explore continuous integration, as we lacked experience with the suggested tools. Continuous integration is intended to be used in a combination of different automated tests such as unit tests, integration tests and hardware tests. In an early stage of the project, we configured the continuous integration environment, using Travis CI. Each push to git was supposed to go through a set of tests and then the developer is given direct feedback. However, we were not able to create a sufficient amount of different tests for this to be rewarding for the development. We struggled with finding what code fragments to test and were it would be helpful to execute a test driver development. 
+Sustainable Pace
+The practice of sustainable pace could not fully be reflected in this project. Because of the limitations of the setting, we could not fully reflect on the practice of sustainable pace in the project. Indeed, we rather experienced the opposite effect in the sense that the pace was too slow to spark much engagement in the development of the product. That said, the alternative of consciously subject the students to an unsustainable pace seems irresponsible. We believe that there is some middle ground, but it may be a difficult target to find within the current constraints of the course. 
+
+### Onsite Customer
+The structure of this project did not in a satisfactory manner support the idea of an onsite customer. A project with this structure requires frequent communication with the customer. The customer is not supposed to help the development team, but to be a great part of the thoughts and ideas. At the beginning of the project, the customer and the development team created user stories for the application’s desired functionality. Moreover, throughout the project, the customer negotiated a set of user stories that should be included in the next release. The meetings with the customer were strictly time-limited and the discussions were rushed through. We met the customer for about 15 minutes per sprint. Onsite implies that the customer is available on demand whenever the team develops the product. While we could meet the customer at the workshops, we often developed during the weekends. Furthermore, the customer did not become a part of the team in the same manner as we expect the onsite customer to be. Estimation and planning is the key of every iteration in an agile project and the customer should show great commitment in these sessions to provide a better understanding of the issues. However, due to the strict time limit of these sessions, we were not able to have the desired discussions.
+
+### Coding Standards
+The coding standards we applied were not automatically enforced and were insufficient to eliminate individual differences in coding style. There is more to one’s style than is commonly covered in style guides; code elegance is seldom a matter of issues like the placement of curly brackets. While small details definitely may result in heated arguments, the benefit of adopting a standard is not obvious. Of course, a standard that educates team members in readability are beneficial, but they often they are considered with nothing more than style. Style is in many cases a personal preference, neither more right or wrong than another. It seems like coding standards often result in one preference type being annoyed while programming, instead of another at reviewing. We argue that it would be more useful to handle style differences through IDE, where the code could be displayed in different styles depending on the user’s settings.
+
+## Most impactful practices
+
+### Positive
+Small Releases was a practice that we all valued very much since it enabled quick and easy changes and allowed to manage the progress of the project. We met with the customer at the end of each sprint to present the current release. That enabled us to ensure that the customer was satisfied and that we were working on things that mattered to him. Also, the progress was easily tracked with the small releases because we could perceive the weekly growth.
+
+### Negative
+In this project, two agile practices had substantial negative import on the product. Interestingly, we argue that this outcome is innate for neither practice but rather a consequence of inexperience or constraints.
+
+#### Planning game 
+The planning game practice was problematic, in no small part due to the inexperience of the team members. The estimates were inaccurate and were often more akin to guessing or hand-waving than to well-grounded estimates. This was particularly evident in the earlier sprints, which could perhaps be explained by the students adapting to the practice. However, there are other explanations just a probable, such as group maturity.
+
+#### Onsite Customer 
+The onsite customer was arguably not practised correctly, as we discussed in earlier sections. Above all else, the customer was biased in favour of the group and was in many senses more like a coach than a customer. They did not strive to achieve the maximum sustainable velocity and thus often made unrealistic trade-offs during the sprint planning. In addition, the customer was less available than what we understand is expected in this practice. We met with the customer for a quarter-hour at the beginning of each sprint, much of which was wasted due to context switching and recaps. Even when meeting with the customer outside of the allocated time slots, the communication was constrained in a way that is not reflected in the literature.
+
+## Future considerations
+If the group were to do a similar project in the future, the first and foremost thing would be structuring the responsibilities better. With a more structured group a lot of problems would be avoided. We feel that there should be some delegation of administrative tasks, so the responsibilities doesn’t remain floating. This could be achieved with a stronger focus on one single agile methodology, instead of combining some of them. 
+
+For the future project we would also put more thought into the planning game. We really liked the initial idea with the game, with estimations for each user story and plan the prospective sprint based on the result. However, we had a hard time estimating the development capacity and putting arbitrary numbers for each task. We feel like this is something that you learn after you’ve been doing it for a while, but until that, the estimations remain inaccurate and the impact of the planning game is rather low. 
+
+The last thing we would have done differently is to emphasize communication more. Many time consuming problems were rooted in misunderstandings and would be easy to avoid with great established communication. Many of the group member also prefer to do more pair-programming in a future project, since the beginning of pair programming always includes a time of getting used to each other’s way of working. Once both involved group members get to know each other’s way of working better, we feel like the productivity could be raised a lot.
 
 
 # Project outcome
-Document the project, for example using screenshots.
+![](Screenshot_20180521-094430.png)
+![](Screenshot_20180521-094446.png)
+![](Screenshot_20180521-094315.png)
+![](Screenshot_20180521-094528.png)
+![](Screenshot_20180521-094414.png)
+![](cameraview.png)
+![](login_screen.png)
+![](manual_input.png)
+![](scoreboard.png)

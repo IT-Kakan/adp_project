@@ -8,19 +8,19 @@ import android.support.annotation.NonNull;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class DisplayUser extends AppCompatActivity {
+public class DisplayUserActivity extends AppCompatActivity {
 
     TextView pointsText;
     TextView usernameText;
@@ -41,8 +41,9 @@ public class DisplayUser extends AppCompatActivity {
         image = findViewById(R.id.imageView2);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userRef = database.getReference(user.getUserName());
-        userRef.addValueEventListener(new ValueEventListener() {
+        DatabaseReference scoreRef = database.getReference("users")
+                .child(user.getuId()).child("score");
+        scoreRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int points = user.getScore();
@@ -59,7 +60,7 @@ public class DisplayUser extends AppCompatActivity {
                     pointsText.setText(points + "/400");
                     image.setImageResource(R.drawable.fourth_stage);
                 } else {
-                    pointsText.setText(points);
+                    pointsText.setText("" + points);
                     image.setImageResource(R.drawable.full_oak);
                 }
             }
@@ -70,7 +71,7 @@ public class DisplayUser extends AppCompatActivity {
 
         userView.setOnTouchListener(new OnSwipeTouchListener(getApplicationContext()) {
             public void onSwipeLeft () {
-                Intent backToMain = new Intent(DisplayUser.this, MainActivity.class);
+                Intent backToMain = new Intent(DisplayUserActivity.this, MainActivity.class);
                 backToMain.putExtra("user", user.getUserName());
                 startActivity(backToMain);
             }
@@ -95,7 +96,7 @@ public class DisplayUser extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     public void onComplete(@NonNull Task<Void> task) {
                         // user is now signed out
-                        startActivity(new Intent(DisplayUser.this, MainActivity.class));
+                        startActivity(new Intent(DisplayUserActivity.this, MainActivity.class));
                         finish();
                     }
                 });

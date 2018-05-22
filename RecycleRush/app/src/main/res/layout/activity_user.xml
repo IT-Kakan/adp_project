@@ -7,6 +7,29 @@
     android:background="#009446"
     tools:context="com.recyclerush.group5.recyclerush.UserActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_google_signin_btn_text_light_pressed"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="64dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toStartOf="@+id/toolbar3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/toolbar3"
+        app:layout_constraintTop_toTopOf="@+id/toolbar3"
+        android:src="@drawable/dots_left" />
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="231dp"

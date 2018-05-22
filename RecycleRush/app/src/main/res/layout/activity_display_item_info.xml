@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.recyclerush.group5.recyclerush.DisplayItemInfoActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="230dp"
+        android:layout_height="0dp"
+        android:layout_alignBaseline="@+id/button_open_maps"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="144dp"
+        android:elevation="5dp"
+        android:text="@string/textview"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_open_maps"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/button_open_maps"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="123dp"
+        android:layout_height="156dp"
+        android:layout_marginBottom="1dp"
+        android:elevation="7dp"
+        android:onClick="openMaps"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:targetApi="lollipop" />
+
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="87dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/camericon"
+        android:contentDescription="@string/camera_button"
+        android:elevation="5dp"
+        android:src="@drawable/camericon"
+        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop" />
+
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="56dp"
+        android:adjustViewBounds="true"
+        android:elevation="3dp"
+        android:src="@drawable/recycbutt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cameraButton"
+        tools:targetApi="lollipop" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="126dp"
+        android:layout_height="52dp"
+        android:layout_centerInParent="true"
+        android:elevation="4dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_open_maps"
+        tools:targetApi="lollipop" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="384dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
+        android:elevation="2dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/paper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        tools:targetApi="lollipop" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="112dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="107dp"
+        android:elevation="6dp"
+        android:text="Recycable!"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#42bcfd"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_open_maps" />
+
+</android.support.constraint.ConstraintLayout>
